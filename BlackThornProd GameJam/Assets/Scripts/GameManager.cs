@@ -8,10 +8,14 @@ public class GameManager : MonoBehaviour
 {
     //public GameObject gameOverPanel;
     //public GameObject pausePanel;
+
+    public List<Planet> objPlanet;
+
     public GameObject _Player;
+    //public GameObject currentPlanet;
+
     public GameManager gameMng;
 
-    public GameObject[] targetPlanet;
     public int intPlanetIndex;
 
    // public string Truck;
@@ -22,6 +26,10 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // Initialize planets
+        Planet currentPlanet = new Planet(100, false);
+        objPlanet.Add(currentPlanet);
+
         _Player = GameObject.FindGameObjectWithTag("Player");
         if (gameMng == null)
         {

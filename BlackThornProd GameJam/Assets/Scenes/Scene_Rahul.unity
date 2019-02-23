@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 384007487}
   - component: {fileID: 384007486}
   m_Layer: 0
-  m_Name: GameManger
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,14 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6bf1bdcc850e54cad2ea786c6affc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objPlanet:
+  - {fileID: 800888803}
   _Player: {fileID: 1251895336}
   gameMng: {fileID: 384007486}
-  targetPlanet:
-  - {fileID: 800888799}
   intPlanetIndex: 0
-  Truck: 
-  Main: 
-  otherPanelOpen: 0
 --- !u!4 &384007487
 Transform:
   m_ObjectHideFlags: 0
@@ -174,6 +171,7 @@ GameObject:
   - component: {fileID: 800888801}
   - component: {fileID: 800888800}
   - component: {fileID: 800888802}
+  - component: {fileID: 800888803}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -259,6 +257,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.09
+--- !u!114 &800888803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800888799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fba5781e1cbb7546897ce1d98c5a207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intHealth: 0
+  blnDead: 0
 --- !u!1 &1251895336
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fltSpeed: 100
   fltAngle: 0
-  gameMng: {fileID: 0}
+  gameMng: {fileID: 384007486}
   Player: {fileID: 1251895336}
 --- !u!1 &1422987506
 GameObject:
@@ -541,5 +553,5 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

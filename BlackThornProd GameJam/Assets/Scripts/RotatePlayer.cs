@@ -16,11 +16,13 @@ public class RotatePlayer : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-       // gameMng.GetComponent<GameManager>();
+       
     }
 
     // Update is called once per frame
     void Update() {
-        transform.RotateAround(gameMng.targetPlanet[gameMng.intPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal")* fltSpeed * Time.deltaTime);
+        transform.RotateAround(gameMng.objPlanet[gameMng.intPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal")* fltSpeed * Time.deltaTime);
     }
+
+
 }
