@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RotatePlayer : MonoBehaviour {
 
+    public GameObject gmObjPlanet;
+    public GameObject gmObjPlayer;
+
     // Start is called before the first frame update
     void Start() {
         
