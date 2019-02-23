@@ -6,6 +6,9 @@ public class RotatePlayer : MonoBehaviour {
 
     public float speed;
 
+    public GameObject gmObjPlanet;
+    public GameObject gmObjPlayer;
+
     // Start is called before the first frame update
     void Start() {
         
