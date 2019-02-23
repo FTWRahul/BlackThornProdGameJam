@@ -12,7 +12,6 @@ public class GameManager : MonoBehaviour
     public List<Planet> objPlanet;
 
     public GameObject _Player;
-    //public GameObject currentPlanet;
 
     public GameManager gameMng;
 
@@ -40,7 +39,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+        
     }
 
     public void EndGame()
