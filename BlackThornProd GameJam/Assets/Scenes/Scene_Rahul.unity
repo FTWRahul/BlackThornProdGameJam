@@ -327,10 +327,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae6b99e6ea09ebf4a8859f009d908978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fltSpeed: 50
+  fltSpeed: 100
   fltAngle: 0
-  axis: {x: 0, y: 0, z: 0}
-  targetPlanet: {fileID: 800888799}
+  intPlanetNum: 0
+  targetPlanet:
+  - {fileID: 800888799}
   Player: {fileID: 1251895336}
 --- !u!1 &1422987506
 GameObject:

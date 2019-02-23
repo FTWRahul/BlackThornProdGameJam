@@ -6,11 +6,11 @@ public class RotatePlayer : MonoBehaviour {
 
     public float fltSpeed;
     public float fltAngle;
+    public int intPlanetNum;
 
-   public Vector3 axis;
-
-    public GameObject targetPlanet;
+    public GameObject[] targetPlanet;
     public GameObject Player;
+
 
     // Start is called before the first frame update
     void Start() {
@@ -19,6 +19,6 @@ public class RotatePlayer : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.RotateAround(targetPlanet.transform.position, new Vector3(0,0,-1), Input.GetAxis("Horizontal")* fltSpeed * Time.deltaTime);
+        transform.RotateAround(targetPlanet[intPlanetNum].transform.position, Vector3.back, Input.GetAxis("Horizontal")* fltSpeed * Time.deltaTime);
     }
 }
