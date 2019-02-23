@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         // Initialize planets
         Planet newPlanet = new Planet(100, false, true);
-        objPlanet.Add(newPlanet);
+        //objPlanet.Add(newPlanet);
 
         objPlanet[intPlanetIndex].blnCurrent = true;
 
