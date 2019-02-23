@@ -6,7 +6,7 @@ public class EnemyMove : MonoBehaviour {
 
     public float fltSpeed;
 
-    //public GameObject Enemy;
+    public GameManager gameMng;
 
 
     // Start is called before the first frame update

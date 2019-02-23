@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
 
     public List<Planet> objPlanet;
 
-    public GameObject _Player;
+    //public GameObject _Player;
 
     public GameManager gameMng;
 
@@ -26,10 +26,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Initialize planets
-        Planet currentPlanet = new Planet(100, false);
-        objPlanet.Add(currentPlanet);
+        Planet newPlanet = new Planet(100, false, true);
+        objPlanet.Add(newPlanet);
 
-        _Player = GameObject.FindGameObjectWithTag("Player");
+        objPlanet[intPlanetIndex].blnCurrent = true;
+
+        //_Player = GameObject.FindGameObjectWithTag("Player");
         if (gameMng == null)
         {
             gameMng = this.gameObject.GetComponent<GameManager>();
