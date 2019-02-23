@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RotatePlayer : MonoBehaviour {
 
+    public float speed;
+
     // Start is called before the first frame update
     void Start() {
         
@@ -11,6 +13,6 @@ public class RotatePlayer : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        
+        transform.RotateAround(Vector3.zero, Vector3.up, speed * Time.deltaTime);
     }
 }
