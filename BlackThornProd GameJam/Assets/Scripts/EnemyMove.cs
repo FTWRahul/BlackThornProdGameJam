@@ -5,17 +5,18 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour {
 
     public float fltSpeed;
+    public bool blnDead;
 
     public GameManager gameMng;
 
-
-    // Start is called before the first frame update
-    void Start() {
-        
-    }
-
     // Update is called once per frame
     void Update() {
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position , fltSpeed * Time.deltaTime);
+        if (blnDead) {
+            fltSpeed = 0;
+        } else {
+            transform.position = Vector3.MoveTowards(gameObject.transform.position,
+                                                 gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position,
+                                                 fltSpeed * Time.deltaTime);
+        }
     }
 }
