@@ -29,10 +29,6 @@ public class EnemyMove : MonoBehaviour {
 
             // Destroy enemy
             Destroy(gameObject, 3f);
-
-            if (collision.gameObject.GetComponent<Planet>().intHealth < 1) {
-                Debug.Log("GAME OVER");
-            }
         }
     }
 }
