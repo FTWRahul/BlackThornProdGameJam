@@ -37,12 +37,15 @@ public class RotatePlayer : MonoBehaviour {
         {
             transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltAngularSpeed * Time.deltaTime);
         } else { // Check distance between player and hit point
-            if (Vector3.Magnitude(transform.position - new Vector3(hit.point.x, hit.point.y, 0f)) < 0.8f) {
+            if (Vector3.Magnitude(transform.position - new Vector3(hit.point.x, hit.point.y, 0f)) < gameMng.fltPlayerDistPlanet) {
+
+                // Manage indices for target and current planet
                 blnMovingBetweenPlanets = false;
                 gameMng.objPlanet[gameMng.intCurrentPlanetIndex].blnCurrent = false;
                 gameMng.objPlanet[gameMng.intTargetPlanetIndex].blnTarget = false;
                 gameMng.objPlanet[gameMng.intTargetPlanetIndex].blnCurrent = true;
                 gameMng.intCurrentPlanetIndex = gameMng.intTargetPlanetIndex;
+                
                 // Rotate the player to be aligned with the planet's surface
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, transform.position - gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position);
             }
