@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     // Comfort distance between player and surface of the planet
     public float fltPlayerDistPlanet;
 
-    // public string Truck;
-    //public string Main;
+    public string Main;
+    public string Master;
     //private bool isPaused;
     //public bool otherPanelOpen;
 
@@ -84,7 +84,11 @@ public class GameManager : MonoBehaviour
     }
     public void MainMenu()
     {
-       // SceneManager.LoadScene(Main);
+        SceneManager.LoadScene(Main);
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene(Master);
     }
     public void QuitGame()
     {
