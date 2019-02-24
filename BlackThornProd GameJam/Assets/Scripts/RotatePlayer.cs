@@ -70,7 +70,8 @@ public class RotatePlayer : MonoBehaviour {
     //Moving the player between 2 panets
     void MoveToPlanet()
     {
-        transform.position = Vector3.MoveTowards(transform.position, gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position, fltLinearSpeed * Time.deltaTime );
+        //transform.position = Vector3.MoveTowards(transform.position, gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position, fltLinearSpeed * Time.deltaTime );
+        transform.position = Vector3.MoveTowards(transform.position, hit.point, fltLinearSpeed * Time.deltaTime);
     }
 
     //Spawns and shoots a bullet from the tip of the ship
