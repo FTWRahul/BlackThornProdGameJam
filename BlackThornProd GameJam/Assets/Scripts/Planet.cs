@@ -10,12 +10,13 @@ public class Planet : MonoBehaviour {
     public int intHealth;
     public bool blnDead;
     public bool blnCurrent;
+    public bool blnTarget;
 
     // Reference for Game Manager
     public GameManager gameMng;
 
     // Planet Constructor
-    public Planet(int inHealth, bool inDead, bool inCurrent) {
+    public Planet(int inHealth, bool inDead, bool inCurrent, bool inTarget) {
         intHealth = inHealth;
         blnDead = inDead;
         blnCurrent = inCurrent;
@@ -28,13 +29,13 @@ public class Planet : MonoBehaviour {
             intHealth--;
 
             Debug.Log(intHealth);
-
+            
             // Game Over
             if (intHealth < 1) {
                 Debug.Log("GAME OVER");
                 gameMng.EndGame();
             }
-
+            collision.gameObject.GetComponent<EnemyMove>().fltSpeed = 0;
             // Destroy enemy
             Destroy(collision.gameObject, 3f);
         }

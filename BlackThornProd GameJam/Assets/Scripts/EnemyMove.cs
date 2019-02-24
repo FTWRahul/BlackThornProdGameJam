@@ -16,6 +16,6 @@ public class EnemyMove : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        transform.position = Vector3.MoveTowards(gameObject.transform.position, gameMng.objPlanet[gameMng.intPlanetIndex].transform.position , fltSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(gameObject.transform.position, gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position , fltSpeed * Time.deltaTime);
     }
 }

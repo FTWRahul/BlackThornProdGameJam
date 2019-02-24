@@ -15,9 +15,11 @@ public class GameManager : MonoBehaviour
 
     public GameManager gameMng;
 
-    public int intPlanetIndex;
+    public int intCurrentPlanetIndex;
+    public int intTargetPlanetIndex;
 
-   // public string Truck;
+
+    // public string Truck;
     //public string Main;
     //private bool isPaused;
     //public bool otherPanelOpen;
@@ -26,10 +28,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Initialize planets
-        Planet newPlanet = new Planet(100, false, true);
+        Planet newPlanet = new Planet(100, false, true, false);
         //objPlanet.Add(newPlanet);
 
-        objPlanet[intPlanetIndex].blnCurrent = true;
+        objPlanet[intCurrentPlanetIndex].blnCurrent = true;
 
         //_Player = GameObject.FindGameObjectWithTag("Player");
         if (gameMng == null)
@@ -41,7 +43,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for(int i = 0; i < objPlanet.Count; i++)
+        {
+            if(objPlanet[i].blnTarget)
+            {
+                intTargetPlanetIndex = i;
+                break;
+            }
+        }
     }
 
     public void EndGame()

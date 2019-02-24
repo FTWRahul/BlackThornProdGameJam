@@ -13,6 +13,12 @@ public class RotatePlayer : MonoBehaviour {
 
     //public GameObject[] targetPlanet;
     public GameObject Player;
+    public GameObject bullet;
+
+    public GameObject playerTip;
+    public GameObject shootDirection;
+    public float fltMoveDistance;
+    public bool blnMovingBetweenPlanets;
 
 
     // Start is called before the first frame update
@@ -23,8 +29,44 @@ public class RotatePlayer : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         // Make the player rotate with the horizontal movement keys
-        transform.RotateAround(gameMng.objPlanet[gameMng.intPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal")* fltSpeed * Time.deltaTime);
+        if(!blnMovingBetweenPlanets)
+        {
+            transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltSpeed * Time.deltaTime);
+        }
+
+        //Casts a ray in a direction
+        RaycastHit2D hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltMoveDistance);
+        //Checks if the ray hits obj tagged Planet
+        if(hit.collider.CompareTag("Planet"))
+        {
+            //Checking for player input
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                //changes the bool for the selected planet
+                hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
+                //MoveToPlanet();
+                blnMovingBetweenPlanets = true;
+            }
+        }
+        if(blnMovingBetweenPlanets)
+        {
+            MoveToPlanet();
+        }
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            ShootBullet();
+        }
     }
 
+    //Moving the player between 2 panets
+    void MoveToPlanet()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position, 10 * Time.deltaTime );
+    }
 
+    //Spawns and shoots a bullet from the tip of the ship
+    void ShootBullet()
+    {
+        Instantiate(bullet, playerTip.transform.position, Quaternion.identity);
+    }
 }
