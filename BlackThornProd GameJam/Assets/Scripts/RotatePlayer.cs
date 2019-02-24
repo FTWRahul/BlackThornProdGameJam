@@ -22,12 +22,11 @@ public class RotatePlayer : MonoBehaviour {
     public bool blnMovingBetweenPlanets;
 
     private RaycastHit2D hit;
-    //private Vector3 shootVector;
 
 
     // Start is called before the first frame update
     void Start() {
-        //shootVector = shootDirection.transform.position - playerTip.transform.position;
+        
     }
 
     // Update is called once per frame
@@ -41,10 +40,11 @@ public class RotatePlayer : MonoBehaviour {
 
                 // Manage indices for target and current planet
                 blnMovingBetweenPlanets = false;
-                gameMng.objPlanet[gameMng.intCurrentPlanetIndex].blnCurrent = false;
-                gameMng.objPlanet[gameMng.intTargetPlanetIndex].blnTarget = false;
-                gameMng.objPlanet[gameMng.intTargetPlanetIndex].blnCurrent = true;
-                gameMng.intCurrentPlanetIndex = gameMng.intTargetPlanetIndex;
+                gameMng.ManageTargets();
+                //gameMng.objPlanet[gameMng.intCurrentPlanetIndex].blnCurrent = false;
+                //gameMng.objPlanet[gameMng.intTargetPlanetIndex].blnTarget = false;
+                //gameMng.objPlanet[gameMng.intTargetPlanetIndex].blnCurrent = true;
+                //gameMng.intCurrentPlanetIndex = gameMng.intTargetPlanetIndex;
                 
                 // Rotate the player to be aligned with the planet's surface
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, transform.position - gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position);
@@ -67,6 +67,7 @@ public class RotatePlayer : MonoBehaviour {
 
                     //changes the bool for the selected planet
                     hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
+                    gameMng.FindTarget();
                     //MoveToPlanet();
                     blnMovingBetweenPlanets = true;
                 }
