@@ -20,6 +20,8 @@ public class RotatePlayer : MonoBehaviour {
     public float fltMoveDistance;
     public bool blnMovingBetweenPlanets;
 
+    private RaycastHit2D hit;
+
 
     // Start is called before the first frame update
     void Start() {
@@ -34,20 +36,26 @@ public class RotatePlayer : MonoBehaviour {
             transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltSpeed * Time.deltaTime);
         }
 
+        hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltMoveDistance);
         //Casts a ray in a direction
-        RaycastHit2D hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltMoveDistance);
-        //Checks if the ray hits obj tagged Planet
-        if(hit.collider.CompareTag("Planet"))
-        {
-            //Checking for player input
-            if(Input.GetKeyDown(KeyCode.Space))
+        //if(Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltMoveDistance), out hit)
+        //if (Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltMoveDistance))
+        if(hit)
+        {     
+            //Checks if the ray hits obj tagged Planet
+            if (hit.collider.CompareTag("Planet"))
             {
-                //changes the bool for the selected planet
-                hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
-                //MoveToPlanet();
-                blnMovingBetweenPlanets = true;
+                //Checking for player input
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    //changes the bool for the selected planet
+                    hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
+                    //MoveToPlanet();
+                    blnMovingBetweenPlanets = true;
+                }
             }
         }
+        
         if(blnMovingBetweenPlanets)
         {
             MoveToPlanet();
@@ -67,6 +75,6 @@ public class RotatePlayer : MonoBehaviour {
     //Spawns and shoots a bullet from the tip of the ship
     void ShootBullet()
     {
-        Instantiate(bullet, playerTip.transform.position, Quaternion.identity);
+        Instantiate(bullet, playerTip.transform.position, Player.transform.rotation);
     }
 }
