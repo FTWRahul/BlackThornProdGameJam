@@ -450,6 +450,11 @@ PrefabInstance:
       propertyPath: intHealth
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2159311573124985488, guid: f11785a66aa41fa4f86332c2a1c10853,
+        type: 3}
+      propertyPath: gameMng
+      value: 
+      objectReference: {fileID: 307189389}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_LocalPosition.x

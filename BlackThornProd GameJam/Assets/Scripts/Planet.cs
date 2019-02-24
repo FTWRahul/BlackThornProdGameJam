@@ -6,12 +6,13 @@ using System;
 [Serializable]
 public class Planet : MonoBehaviour {
 
-    // Settings for the planets
-
-    //public string strPlanetName;
+    // Settings for the planet
     public int intHealth;
     public bool blnDead;
     public bool blnCurrent;
+
+    // Reference for Game Manager
+    public GameManager gameMng;
 
     // Planet Constructor
     public Planet(int inHealth, bool inDead, bool inCurrent) {
@@ -31,6 +32,7 @@ public class Planet : MonoBehaviour {
             // Game Over
             if (intHealth < 1) {
                 Debug.Log("GAME OVER");
+                gameMng.EndGame();
             }
 
             // Destroy enemy

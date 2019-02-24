@@ -110,9 +110,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fba5781e1cbb7546897ce1d98c5a207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intHealth: 100
+  intHealth: 3
   blnDead: 0
   blnCurrent: 0
+  gameMng: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
 --- !u!50 &2159311573124985495
 Rigidbody2D:
   serializedVersion: 4
