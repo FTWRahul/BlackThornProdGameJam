@@ -67,6 +67,13 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+
+    }
     public void PlayAgain()
     {
         Time.timeScale = 1f;
