@@ -28,8 +28,8 @@ public class BulletShoot : MonoBehaviour {
             // Kill the Enemy and destroy both Enemy and Bullet
             collision.GetComponent<EnemyMove>().blnDead = true;
             fltVerticalSpeed = 0;
-            Destroy(collision.gameObject, 2f);
-            Destroy(bullet, 2f);
+            Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
+            Destroy(bullet, gameMng.fltAnimaDestroyBullet);
 
             // Increase score
         }

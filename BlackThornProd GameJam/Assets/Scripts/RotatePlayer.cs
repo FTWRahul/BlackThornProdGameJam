@@ -5,8 +5,9 @@ using UnityEngine;
 public class RotatePlayer : MonoBehaviour {
 
     /* Variables */
-    public float fltSpeed;
-    public float fltAngle;
+    public float fltAngularSpeed;
+    public float fltLinearSpeed; 
+    //public float fltAngle;
     //public int intPlanetNum;
 
     public GameManager gameMng;
@@ -33,7 +34,7 @@ public class RotatePlayer : MonoBehaviour {
         // Make the player rotate with the horizontal movement keys
         if(!blnMovingBetweenPlanets)
         {
-            transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltSpeed * Time.deltaTime);
+            transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltAngularSpeed * Time.deltaTime);
         }
 
         hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltMoveDistance);
@@ -69,7 +70,7 @@ public class RotatePlayer : MonoBehaviour {
     //Moving the player between 2 panets
     void MoveToPlanet()
     {
-        transform.position = Vector3.MoveTowards(transform.position, gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position, 10 * Time.deltaTime );
+        transform.position = Vector3.MoveTowards(transform.position, gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position, fltLinearSpeed * Time.deltaTime );
     }
 
     //Spawns and shoots a bullet from the tip of the ship

@@ -37,7 +37,7 @@ public class Planet : MonoBehaviour {
             }
             collision.gameObject.GetComponent<EnemyMove>().fltSpeed = 0;
             // Destroy enemy
-            Destroy(collision.gameObject, 3f);
+            Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
         }
     }
 }

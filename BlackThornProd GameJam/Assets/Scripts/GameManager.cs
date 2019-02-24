@@ -15,9 +15,13 @@ public class GameManager : MonoBehaviour
 
     public GameManager gameMng;
 
+    // Indices for the planets
     public int intCurrentPlanetIndex;
     public int intTargetPlanetIndex;
 
+    // Animation times
+    public float fltAnimaDestroyEnemy;
+    public float fltAnimaDestroyBullet;
 
     // public string Truck;
     //public string Main;
@@ -33,7 +37,11 @@ public class GameManager : MonoBehaviour
 
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
 
+
+
         //_Player = GameObject.FindGameObjectWithTag("Player");
+
+        // Assign a Game Manager if there is not one
         if (gameMng == null)
         {
             gameMng = this.gameObject.GetComponent<GameManager>();
