@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverPanel;
-    //public GameObject pausePanel;
+    public GameObject pausePanel;
 
     public List<Planet> objPlanet;
 
@@ -26,8 +26,8 @@ public class GameManager : MonoBehaviour
     // Comfort distance between player and surface of the planet
     public float fltPlayerDistPlanet;
 
-    // public string Truck;
-    //public string Main;
+    public string Main;
+    public string Master;
     //private bool isPaused;
     //public bool otherPanelOpen;
 
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         Time.timeScale = 0f;
-        gameOverPanel.SetActive(true);
+        pausePanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
 
     }
@@ -102,7 +102,11 @@ public class GameManager : MonoBehaviour
     }
     public void MainMenu()
     {
-       // SceneManager.LoadScene(Main);
+        SceneManager.LoadScene(Main);
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene(Master);
     }
     public void QuitGame()
     {
