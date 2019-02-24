@@ -22,11 +22,12 @@ public class RotatePlayer : MonoBehaviour {
     public bool blnMovingBetweenPlanets;
 
     private RaycastHit2D hit;
+    //private Vector3 shootVector;
 
 
     // Start is called before the first frame update
     void Start() {
-       
+        //shootVector = shootDirection.transform.position - playerTip.transform.position;
     }
 
     // Update is called once per frame
@@ -35,6 +36,13 @@ public class RotatePlayer : MonoBehaviour {
         if(!blnMovingBetweenPlanets)
         {
             transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltAngularSpeed * Time.deltaTime);
+        } else { // Check distance between player and hit point
+            if (Vector3.Magnitude(transform.position - new Vector3(hit.point.x, hit.point.y, 0f)) < 0.8f) {
+                blnMovingBetweenPlanets = false;
+
+                // Rotate the player to be aligned with the planet's surface
+                transform.rotation = Quaternion.FromToRotation(Vector3.up, transform.position - gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position);
+            }
         }
 
         hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltMoveDistance);
@@ -49,6 +57,8 @@ public class RotatePlayer : MonoBehaviour {
                 //Checking for player input
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    Debug.Log(hit.point);
+
                     //changes the bool for the selected planet
                     hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
                     //MoveToPlanet();
@@ -67,10 +77,10 @@ public class RotatePlayer : MonoBehaviour {
         }
     }
 
-    //Moving the player between 2 panets
+    //Moving the player between 2 planets
     void MoveToPlanet()
     {
-        transform.position = Vector3.MoveTowards(transform.position, gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position, fltLinearSpeed * Time.deltaTime );
+        transform.position = Vector3.MoveTowards(transform.position, hit.point, fltLinearSpeed * Time.deltaTime);
     }
 
     //Spawns and shoots a bullet from the tip of the ship
