@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
     public float fltAnimaDestroyEnemy;
     public float fltAnimaDestroyBullet;
 
+    // Comfort distance between player and surface of the planet
+    public float fltPlayerDistPlanet;
+
     // public string Truck;
     //public string Main;
     //private bool isPaused;

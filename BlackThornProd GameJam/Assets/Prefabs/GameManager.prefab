@@ -43,7 +43,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6bf1bdcc850e54cad2ea786c6affc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
   objPlanet:
   - {fileID: 0}
+  - {fileID: 0}
   gameMng: {fileID: 7164387446919899363}
-  intPlanetIndex: 0
+  intCurrentPlanetIndex: 0
+  intTargetPlanetIndex: 0
+  fltAnimaDestroyEnemy: 2
+  fltAnimaDestroyBullet: 2
+  fltPlayerDistPlanet: 1
