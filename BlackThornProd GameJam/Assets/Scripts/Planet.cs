@@ -19,4 +19,22 @@ public class Planet : MonoBehaviour {
         blnDead = inDead;
         blnCurrent = inCurrent;
     }
+
+    // Detects collision of enemy to planet; decreases the planet's health; destroys enemy
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.CompareTag("Enemy")) {
+            // Decrase health
+            intHealth--;
+
+            Debug.Log(intHealth);
+
+            // Game Over
+            if (intHealth < 1) {
+                Debug.Log("GAME OVER");
+            }
+
+            // Destroy enemy
+            Destroy(collision.gameObject, 3f);
+        }
+    }
 }

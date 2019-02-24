@@ -18,17 +18,4 @@ public class EnemyMove : MonoBehaviour {
     void Update() {
         transform.position = Vector3.MoveTowards(gameObject.transform.position, gameMng.objPlanet[gameMng.intPlanetIndex].transform.position , fltSpeed * Time.deltaTime);
     }
-
-    // Detects collision of enemy to planet; decreases the planet's health; destroys enemy
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.CompareTag("Planet")) {
-            // Decrase health
-            collision.gameObject.GetComponent<Planet>().intHealth--;
-
-            Debug.Log(collision.gameObject.GetComponent<Planet>().intHealth);
-
-            // Destroy enemy
-            Destroy(gameObject, 3f);
-        }
-    }
 }
