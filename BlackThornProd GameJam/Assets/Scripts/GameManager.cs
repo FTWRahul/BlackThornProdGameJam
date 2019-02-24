@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    //public GameObject gameOverPanel;
+    public GameObject gameOverPanel;
     //public GameObject pausePanel;
 
     public List<Planet> objPlanet;
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         Time.timeScale = 0f;
-        //gameOverPanel.SetActive(true);
+        gameOverPanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
     }
     public void PlayAgain()
