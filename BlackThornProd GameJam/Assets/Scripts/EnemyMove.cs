@@ -6,11 +6,18 @@ public class EnemyMove : MonoBehaviour {
 
     public float fltSpeed;
     public bool blnDead;
+    public bool blnKilled;
+    public int intHealth;
 
     public GameManager gameMng;
 
     // Update is called once per frame
     void Update() {
+
+        if(intHealth < 1)
+        {
+            blnDead = true;
+        }
         if (blnDead) {
             fltSpeed = 0;
         } else {
@@ -22,6 +29,9 @@ public class EnemyMove : MonoBehaviour {
 
     private void OnDestroy()
     {
-        gameMng.IncreaseScore();
+        if(blnKilled)
+        {
+            gameMng.IncreaseScore();
+        }
     }
 }

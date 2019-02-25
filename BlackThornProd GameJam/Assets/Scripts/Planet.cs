@@ -35,7 +35,7 @@ public class Planet : MonoBehaviour {
                 Debug.Log("GAME OVER");
                 gameMng.EndGame();
             }
-            collision.gameObject.GetComponent<EnemyMove>().fltSpeed = 0;
+            collision.gameObject.GetComponent<EnemyMove>().blnDead = true;
             // Destroy enemy
             Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
         }

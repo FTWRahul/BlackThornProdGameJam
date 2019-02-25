@@ -26,7 +26,13 @@ public class BulletShoot : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
             // Kill the Enemy and destroy both Enemy and Bullet
-            collision.GetComponent<EnemyMove>().blnDead = true;
+            //collision.GetComponent<EnemyMove>().blnDead = true;
+            collision.GetComponent<EnemyMove>().intHealth--;
+            if(collision.GetComponent<EnemyMove>().intHealth == 0)
+            {
+                collision.GetComponent<EnemyMove>().blnKilled = true;
+
+            }
             fltVerticalSpeed = 0;
             Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
             Destroy(bullet, gameMng.fltAnimaDestroyBullet);
