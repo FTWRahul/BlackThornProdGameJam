@@ -19,4 +19,9 @@ public class EnemyMove : MonoBehaviour {
                                                  fltSpeed * Time.deltaTime);
         }
     }
+
+    private void OnDestroy()
+    {
+        gameMng.IncreaseScore();
+    }
 }
