@@ -50,13 +50,13 @@ MonoBehaviour:
   intCurrentPlanetIndex: 0
   intTargetPlanetIndex: 0
   intPlayerScore: 0
-  fltAnimaDestroyEnemy: 0.5
-  fltAnimaDestroyBullet: 0.5
+  fltAnimaDestroyEnemy: 2
+  fltAnimaDestroyBullet: 2
   fltPlayerDistPlanet: 1
   fltDestroyBullet: 5
   gameOverPanel: {fileID: 0}
   pausePanel: {fileID: 0}
   textPlayerScore: {fileID: 0}
-  Main: 
-  Master: 
+  Main: Main_Menu_Scene
+  Master: Copy-Scene_Master
   blnPaused: 0

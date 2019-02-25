@@ -9,7 +9,13 @@ public class EnemyMove : MonoBehaviour {
     public bool blnKilled;
     public int intHealth;
 
+    public Animator anim;
     public GameManager gameMng;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update() {
