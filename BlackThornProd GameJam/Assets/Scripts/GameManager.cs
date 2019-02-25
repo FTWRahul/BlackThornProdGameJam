@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     // Comfort distance between player and surface of the planet
     public float fltPlayerDistPlanet;
 
+    // Time to destroy the bullets
+    public float fltDestroyBullet;
+
     public string Main;
     public string Master;
     //private bool isPaused;
@@ -40,8 +43,6 @@ public class GameManager : MonoBehaviour
 
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
 
-
-
         //_Player = GameObject.FindGameObjectWithTag("Player");
 
         // Assign a Game Manager if there is not one
@@ -49,19 +50,6 @@ public class GameManager : MonoBehaviour
         {
             gameMng = this.gameObject.GetComponent<GameManager>();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //for(int i = 0; i < objPlanet.Count; i++)
-        //{
-        //    if(objPlanet[i].blnTarget)
-        //    {
-        //        intTargetPlanetIndex = i;
-        //        break;
-        //    }
-        //}
     }
 
     // Check which planet is the target
