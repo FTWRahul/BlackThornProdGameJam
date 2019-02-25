@@ -59,15 +59,35 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < objPlanet.Count; i++)
-        {
-            if(objPlanet[i].blnTarget)
-            {
+        //for(int i = 0; i < objPlanet.Count; i++)
+        //{
+        //    if(objPlanet[i].blnTarget)
+        //    {
+        //        intTargetPlanetIndex = i;
+        //        break;
+        //    }
+        //}
+    }
+
+    // Check which planet is the target
+    public void FindTarget() {
+        for (int i = 0; i < objPlanet.Count; i++) {
+            if (objPlanet[i].blnTarget) {
                 intTargetPlanetIndex = i;
                 break;
             }
         }
     }
+
+    // Manage which planet is the target and which one is the current
+    public void ManageTargets() {
+        objPlanet[intCurrentPlanetIndex].blnCurrent = false;
+        objPlanet[intTargetPlanetIndex].blnTarget = false;
+        objPlanet[intTargetPlanetIndex].blnCurrent = true;
+        intCurrentPlanetIndex = intTargetPlanetIndex;
+    }
+
+    //Updates the score text on UI canvas
     public void IncreaseScore()
     {
         Debug.Log("Starting");
@@ -76,6 +96,7 @@ public class GameManager : MonoBehaviour
         Debug.Log(intPlayerScore);
 
     }
+
     public void EndGame()
     {
         Time.timeScale = 0f;
