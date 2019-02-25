@@ -50,8 +50,8 @@ MonoBehaviour:
   intCurrentPlanetIndex: 0
   intTargetPlanetIndex: 0
   intPlayerScore: 0
-  fltAnimaDestroyEnemy: 2
-  fltAnimaDestroyBullet: 2
+  fltAnimaDestroyEnemy: 1
+  fltAnimaDestroyBullet: 1
   fltPlayerDistPlanet: 1
   fltDestroyBullet: 5
   gameOverPanel: {fileID: 0}
