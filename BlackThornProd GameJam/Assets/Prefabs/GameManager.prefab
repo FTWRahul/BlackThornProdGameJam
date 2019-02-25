@@ -46,7 +46,6 @@ MonoBehaviour:
   objPlanet:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   gameMng: {fileID: 7164387446919899363}
   intCurrentPlanetIndex: 0
   intTargetPlanetIndex: 0
@@ -60,3 +59,4 @@ MonoBehaviour:
   textPlayerScore: {fileID: 0}
   Main: 
   Master: 
+  blnPaused: 0

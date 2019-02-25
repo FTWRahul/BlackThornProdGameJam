@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,10 +31,11 @@ public class GameManager : MonoBehaviour
     //UI refrences
     public GameObject gameOverPanel;
     public GameObject pausePanel;
-    public Text textPlayerScore;
+    public TextMeshProUGUI textPlayerScore;
 
     public string Main;
     public string Master;
+    public bool blnPaused;
     //private bool isPaused;
     //public bool otherPanelOpen;
 
@@ -54,6 +56,23 @@ public class GameManager : MonoBehaviour
         if (gameMng == null)
         {
             gameMng = this.gameObject.GetComponent<GameManager>();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            blnPaused = !blnPaused;
+
+            if (blnPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                UnPauseGame();
+            }
         }
     }
 
@@ -96,7 +115,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         pausePanel.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
-
+    }
+    public void UnPauseGame()
+    {
+        Time.timeScale = 1;
+        pausePanel.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        blnPaused = false;
     }
     public void RetryLevel()
     {
