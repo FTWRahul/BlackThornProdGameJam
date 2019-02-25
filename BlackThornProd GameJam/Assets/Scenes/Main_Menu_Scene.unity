@@ -1845,7 +1845,7 @@ MonoBehaviour:
   pausePanel: {fileID: 0}
   textPlayerScore: {fileID: 0}
   Main: 
-  Master: 
+  Master: Copy-Scene_Master
   blnPaused: 0
 --- !u!1 &507842583
 GameObject:

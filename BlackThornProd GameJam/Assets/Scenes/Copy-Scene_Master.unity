@@ -722,6 +722,16 @@ PrefabInstance:
       propertyPath: textPlayerScore
       value: 
       objectReference: {fileID: 1455767559}
+    - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: Master
+      value: Copy-Scene_Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: Main
+      value: Main_Menu_Scene
+      objectReference: {fileID: 0}
     - target: {fileID: 7164387446919899360, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_Name
