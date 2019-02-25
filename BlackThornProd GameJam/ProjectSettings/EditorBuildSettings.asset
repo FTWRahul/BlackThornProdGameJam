@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Copy-Scene_Master.unity
     guid: 30dcfa72c8945124f870cdea61b86d83
+  - enabled: 1
+    path: Assets/Scenes/Scene_Rahul.unity
+    guid: cb39fc0f69ec911438c754539d666128
   m_configObjects: {}
