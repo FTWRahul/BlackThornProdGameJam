@@ -6,9 +6,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gameOverPanel;
-    public GameObject pausePanel;
-
     public List<Planet> objPlanet;
 
     //public GameObject _Player;
@@ -18,6 +15,7 @@ public class GameManager : MonoBehaviour
     // Indices for the planets
     public int intCurrentPlanetIndex;
     public int intTargetPlanetIndex;
+    public int intPlayerScore;
 
     // Animation times
     public float fltAnimaDestroyEnemy;
@@ -28,6 +26,11 @@ public class GameManager : MonoBehaviour
 
     // Time to destroy the bullets
     public float fltDestroyBullet;
+
+    //UI refrences
+    public GameObject gameOverPanel;
+    public GameObject pausePanel;
+    public Text textPlayerScore;
 
     public string Main;
     public string Master;
@@ -42,6 +45,8 @@ public class GameManager : MonoBehaviour
         //objPlanet.Add(newPlanet);
 
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
+
+        intPlayerScore = 0;
 
         //_Player = GameObject.FindGameObjectWithTag("Player");
 
@@ -70,6 +75,16 @@ public class GameManager : MonoBehaviour
         intCurrentPlanetIndex = intTargetPlanetIndex;
     }
 
+    //Updates the score text on UI canvas
+    public void IncreaseScore()
+    {
+        Debug.Log("Starting");
+        intPlayerScore++;
+        textPlayerScore.text = intPlayerScore.ToString();
+        Debug.Log(intPlayerScore);
+
+    }
+
     public void EndGame()
     {
         Time.timeScale = 0f;
@@ -83,10 +98,10 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
 
     }
-    public void PlayAgain()
+    public void RetryLevel()
     {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene(Truck);
+        SceneManager.LoadScene(Master);
     }
     public void MainMenu()
     {
