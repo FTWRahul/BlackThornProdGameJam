@@ -14,6 +14,7 @@ public class EnemyMove : MonoBehaviour {
 
     private void Start()
     {
+        gameMng = FindObjectOfType<GameManager>();
         anim = GetComponent<Animator>();
     }
 

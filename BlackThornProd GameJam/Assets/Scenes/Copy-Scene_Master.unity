@@ -697,6 +697,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7164387446919899360, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
     - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: objPlanet.Array.data[0]
@@ -731,11 +736,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Main
       value: Main_Menu_Scene
-      objectReference: {fileID: 0}
-    - target: {fileID: 7164387446919899360, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
-        type: 3}
-      propertyPath: m_Name
-      value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 7164387446919899362, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
@@ -1446,6 +1446,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 49.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014557267820431898, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014557267820431898, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014557267820431898, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014557267820431898, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd82d2536d080f42a03c8515d9f828a, type: 3}
