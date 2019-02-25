@@ -97,6 +97,7 @@ MonoBehaviour:
   gameMng: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
   player: {fileID: 7320307287539884739, guid: 5ad92c9b46335054fbd81f2ec1f4f074, type: 3}
   bullet: {fileID: 8066632618770329460}
+  textPlayerScore: {fileID: 0}
 --- !u!61 &3634359771392119702
 BoxCollider2D:
   m_ObjectHideFlags: 0
