@@ -98,7 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fltSpeed: 1
   blnDead: 0
-  gameMng: {fileID: 0}
+  blnKilld: 0
+  intHealth: 1
+  gameMng: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
 --- !u!50 &1520718221127876472
 Rigidbody2D:
   serializedVersion: 4
