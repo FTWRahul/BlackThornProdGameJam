@@ -23,19 +23,23 @@ public class RiftEnemySpawnner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!blnEnemySpawnned)
+        if(fltEnemyCount > -1)
         {
-            SpawnEnemy();
-        }
-        else
-        {
-            fltTimeBetweenSpawn += Time.time;
-            if(fltTimeBetweenSpawn > fltSpawnTime)
+            if (!blnEnemySpawnned)
             {
-                fltTimeBetweenSpawn = 0;
-                blnEnemySpawnned = false;
+                SpawnEnemy();
             }
-        }      
+            else
+            {
+                fltTimeBetweenSpawn += Time.deltaTime;
+                if (fltTimeBetweenSpawn > fltSpawnTime)
+                {
+                    fltTimeBetweenSpawn = 0;
+                    blnEnemySpawnned = false;
+                }
+            }
+        }
+ 
     }
 
     public void SpawnEnemy()
@@ -46,9 +50,10 @@ public class RiftEnemySpawnner : MonoBehaviour
         {
             fltMaxSpawnTime--;
         }
-        if (fltEnemyCount > 1)
+        if (fltEnemyCount > -1)
         {
             Instantiate(enemy, transform.position, Quaternion.identity);
         }
+        fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
     }
 }
