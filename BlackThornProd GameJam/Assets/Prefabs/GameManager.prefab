@@ -54,6 +54,7 @@ MonoBehaviour:
   fltAnimaDestroyEnemy: 0.5
   fltAnimaDestroyBullet: 0.5
   fltPlayerDistPlanet: 1
+  fltDestroyBullet: 5
   gameOverPanel: {fileID: 0}
   pausePanel: {fileID: 0}
   textPlayerScore: {fileID: 0}

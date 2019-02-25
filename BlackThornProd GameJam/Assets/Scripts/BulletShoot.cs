@@ -19,7 +19,7 @@ public class BulletShoot : MonoBehaviour {
     // Make the bullet move forward
     void MoveBullet() {
         transform.Translate(0,fltVerticalSpeed * Time.deltaTime, 0); // Move
-        Destroy(gameObject, 2.5f); // Destroy the bullet after 10 s
+        Destroy(gameObject, gameMng.fltDestroyBullet); // Destroy the bullet after some time
     }
 
     // Make bullet collide with the enemy
