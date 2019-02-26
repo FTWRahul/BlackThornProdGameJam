@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
     public string level3;
     public string level4;
     public string level5;
+    public string currentLevel;
 
     public bool blnPaused;
     //private bool isPaused;
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
 
         intPlayerScore = 0;
 
+        //currentLevel = SceneManager.GetActiveScene().ToString();
         //_Player = GameObject.FindGameObjectWithTag("Player");
 
         // Assign a Game Manager if there is not one
@@ -119,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     // Check if the player won the level
     void CheckForWin() {
-        arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
+        //arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
     }
 
     public void EndGame()
@@ -144,7 +146,7 @@ public class GameManager : MonoBehaviour
     public void RetryLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(Master);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
     public void MainMenu()
     {

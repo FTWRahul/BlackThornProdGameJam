@@ -655,9 +655,8 @@ MonoBehaviour:
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
-  intEnemyCount: 0
   blnEnemySpawnned: 0
-  arrEnemyTypes: 
+  arrEnemyTypes: 0100000001000000020000000200000002000000
 --- !u!212 &428758129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -756,7 +755,6 @@ MonoBehaviour:
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
-  intEnemyCount: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 
 --- !u!212 &527603318
@@ -857,7 +855,6 @@ MonoBehaviour:
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
-  intEnemyCount: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 
 --- !u!212 &608561171
@@ -1398,7 +1395,6 @@ MonoBehaviour:
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
-  intEnemyCount: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 
 --- !u!212 &1466501125

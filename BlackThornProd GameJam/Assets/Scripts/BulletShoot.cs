@@ -33,6 +33,7 @@ public class BulletShoot : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
 
+            collision.gameObject.GetComponent<EnemyMove>().hitSound.Play();
             //Set animations for the bullet hit
             transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - collision.gameObject.transform.position);
             anim.SetBool("Hit", true);
@@ -55,6 +56,8 @@ public class BulletShoot : MonoBehaviour {
         }
         else if(collision.gameObject.CompareTag("Planet"))
         {
+            collision.gameObject.GetComponent<EnemyMove>().hitSound.Play();
+
             //Set animations for the bullet hit
             transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - collision.gameObject.transform.position);
             anim.SetBool("Hit", true);

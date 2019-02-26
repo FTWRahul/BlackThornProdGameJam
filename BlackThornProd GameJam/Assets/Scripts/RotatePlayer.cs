@@ -24,6 +24,8 @@ public class RotatePlayer : MonoBehaviour {
 
     private RaycastHit2D hit;
 
+    public AudioSource shootAudio;
+
 
     // Start is called before the first frame update
     void Start() {
@@ -98,6 +100,7 @@ public class RotatePlayer : MonoBehaviour {
     //Spawns and shoots a bullet from the tip of the ship
     void ShootBullet()
     {
+        shootAudio.Play();
         Instantiate(bullet, playerTip.transform.position, Player.transform.rotation);
     }
 
