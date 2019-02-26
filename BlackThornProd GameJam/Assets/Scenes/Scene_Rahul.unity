@@ -613,21 +613,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &423368938 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6799963619607850432, guid: 8bd82d2536d080f42a03c8515d9f828a,
-    type: 3}
-  m_PrefabInstance: {fileID: 423368936}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &423368940 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6799963618160963769, guid: 8bd82d2536d080f42a03c8515d9f828a,
-    type: 3}
-  m_PrefabInstance: {fileID: 423368936}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &423368941 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6799963619155344623, guid: 8bd82d2536d080f42a03c8515d9f828a,
     type: 3}
   m_PrefabInstance: {fileID: 423368936}
   m_PrefabAsset: {fileID: 0}
@@ -1201,7 +1189,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverPanel
       value: 
-      objectReference: {fileID: 423368941}
+      objectReference: {fileID: 0}
     - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: pausePanel
@@ -1216,7 +1204,7 @@ PrefabInstance:
         type: 3}
       propertyPath: slider1
       value: 
-      objectReference: {fileID: 423368938}
+      objectReference: {fileID: 0}
     - target: {fileID: 7164387446919899362, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1919,7 +1907,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameMng
       value: 
-      objectReference: {fileID: 1434037498}
+      objectReference: {fileID: 0}
     - target: {fileID: 2706287492039449690, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_AnchorMax.x

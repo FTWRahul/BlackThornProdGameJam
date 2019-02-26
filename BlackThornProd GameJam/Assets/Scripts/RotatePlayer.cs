@@ -44,7 +44,11 @@ public class RotatePlayer : MonoBehaviour {
                 // Manage indices for target and current planet
                 blnMovingBetweenPlanets = false;
                 gameMng.ManageTargets();
-                
+                anim.SetBool("BetweenPlanet", false);
+                anim.SetBool("Idle", true);
+
+
+
                 // Rotate the player to be aligned with the planet's surface
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, transform.position - gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position);
             }
@@ -84,6 +88,10 @@ public class RotatePlayer : MonoBehaviour {
     //Moving the player between 2 planets
     void MoveToPlanet()
     {
+        anim.SetBool("BetweenPlanet", true);
+        anim.SetBool("Idle", false);
+
+
         transform.position = Vector3.MoveTowards(transform.position, hit.point, fltLinearSpeed * Time.deltaTime);
     }
 

@@ -8,6 +8,7 @@ public class EnemyMove : MonoBehaviour {
     public bool blnDead;
     public bool blnKilled;
     public int intHealth;
+    public int intEnemyType;
 
     public int intPlanetToKill;
 
