@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8807135991934784702}
   - component: {fileID: 1520718221127876472}
   - component: {fileID: 2424128053656372287}
-  - component: {fileID: 766841753826059921}
   - component: {fileID: 2566283822325343090}
   m_Layer: 0
   m_Name: Enemy
@@ -100,6 +99,7 @@ MonoBehaviour:
   blnDead: 0
   blnKilled: 0
   intHealth: 1
+  intPlanetToKill: 0
   anim: {fileID: 0}
   gameMng: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
 --- !u!50 &1520718221127876472
@@ -149,21 +149,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.44, y: 1.32}
   m_EdgeRadius: 0
---- !u!111 &766841753826059921
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8807135991934784699}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: eec690fec43a9444396d665714b910ce, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!95 &2566283822325343090
 Animator:
   serializedVersion: 3

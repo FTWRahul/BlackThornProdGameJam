@@ -35,7 +35,7 @@ public class EnemyMove : MonoBehaviour {
             fltSpeed = 0;
         } else {
             transform.position = Vector3.MoveTowards(gameObject.transform.position,
-                                                 gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position,
+                                                 gameMng.objPlanet[intPlanetToKill].transform.position,
                                                  fltSpeed * Time.deltaTime);
         }
     }
