@@ -7,18 +7,20 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    // Arrays
-    public List<Planet> objPlanet; // Planets from the Planet class
-    //private List<GameObject> arrEnemiesRemaining;
-    private GameObject[] arrEnemiesRemaining;
-
     // Game Manager
     public GameManager gameMng;
 
+    // Arrays for planets and spawners
+    public List<Planet> objPlanet; // Planets from the Planet class
+    private RiftEnemySpawnner[] arrEnemiesRemaining;
+    
     // Indices for the planets
     public int intCurrentPlanetIndex;
     public int intTargetPlanetIndex;
     public int intPlayerScore;
+
+    // Counter of enemies remaining
+    private int intEnemiesRemaining;
 
     // Animation times
     public float fltAnimaDestroyEnemy;
@@ -48,22 +50,15 @@ public class GameManager : MonoBehaviour
     //private bool isPaused;
     //public bool otherPanelOpen;
 
-    // Sliders for planets' health
-    //public List<Slider> arrSlider;
-    //public Slider slider1;
-
     // Use this for initialization
     void Start()
     {
-        // Initialize planets
-        /////Planet newPlanet = new Planet(100, false, true, false);
-        //objPlanet.Add(newPlanet);
-
+        // Assign initial values
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
 
         intPlayerScore = 0;
 
-        //_Player = GameObject.FindGameObjectWithTag("Player");
+        arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
 
         // Assign a Game Manager if there is not one
         if (gameMng == null)
@@ -118,8 +113,19 @@ public class GameManager : MonoBehaviour
     }
 
     // Check if the player won the level
-    void CheckForWin() {
-        arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
+    public void CheckForWin() {
+        intEnemiesRemaining = 0;
+
+        for (int i = 0; i < arrEnemiesRemaining.Length; i++) {
+            intEnemiesRemaining += arrEnemiesRemaining[i].intEnemyCount;
+        }
+
+        Debug.Log("Enemies remaining: " + intEnemiesRemaining);
+        if (intEnemiesRemaining < 1) {
+            // Good ending for the level
+            Debug.Log("YOU WIN!!");
+            gameMng.EndGame();
+        }
     }
 
     public void EndGame()

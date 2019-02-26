@@ -41,11 +41,14 @@ public class EnemyMove : MonoBehaviour {
         }
     }
 
+    // Increase score and check if all aliens have been killed
     private void OnDestroy()
     {
         if(blnKilled)
         {
             gameMng.IncreaseScore();
         }
+
+        gameMng.CheckForWin();
     }
 }

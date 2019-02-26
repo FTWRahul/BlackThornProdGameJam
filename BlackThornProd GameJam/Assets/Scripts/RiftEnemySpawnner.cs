@@ -11,7 +11,7 @@ public class RiftEnemySpawnner : MonoBehaviour
     public float fltMaxSpawnTime;
     public float fltTimeBetweenSpawn;
     public float fltSpawnTime;
-    private int intEnemyCount;
+    public int intEnemyCount;
     public bool blnEnemySpawnned = true;
     public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
 
