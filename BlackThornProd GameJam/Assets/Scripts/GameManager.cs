@@ -46,14 +46,20 @@ public class GameManager : MonoBehaviour
     //private bool isPaused;
     //public bool otherPanelOpen;
 
+    // Sliders for planets' health
+    //public List<Slider> arrSlider;
+    //public Slider slider1;
+
     // Use this for initialization
     void Start()
     {
         // Initialize planets
-        Planet newPlanet = new Planet(100, false, true, false);
+        /////Planet newPlanet = new Planet(100, false, true, false);
         //objPlanet.Add(newPlanet);
 
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
+        //slider1.maxValue = objPlanet[intCurrentPlanetIndex].intHealth;
+        //slider1.value = slider1.maxValue;
 
         intPlayerScore = 0;
 

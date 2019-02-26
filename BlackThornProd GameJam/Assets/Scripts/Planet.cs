@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 [Serializable]
@@ -14,6 +15,7 @@ public class Planet : MonoBehaviour {
     public bool blnCurrent;
     public bool blnTarget;
     public Animator anim;
+    public Slider sliderHealth;
 
     // Reference for Game Manager
     public GameManager gameMng;
@@ -21,6 +23,8 @@ public class Planet : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+        sliderHealth.maxValue = intHealth;
+        sliderHealth.value = sliderHealth.maxValue;
     }
 
     // Planet Constructor
@@ -35,7 +39,9 @@ public class Planet : MonoBehaviour {
         if (collision.gameObject.CompareTag("Enemy")) {
             // Decrase health
             intHealth--;
-            if(intHealth < int2ndAnimState)
+            sliderHealth.value--;
+
+            if (intHealth < int2ndAnimState)
             {
                 anim.SetTrigger("Damaged2");
             }

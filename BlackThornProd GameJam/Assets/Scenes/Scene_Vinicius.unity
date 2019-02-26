@@ -211,6 +211,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &91818238 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6799963619607850432, guid: 8bd82d2536d080f42a03c8515d9f828a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1473033969}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &91818240 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6799963619607850438, guid: 8bd82d2536d080f42a03c8515d9f828a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1473033969}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91818238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &539895290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -960,6 +978,11 @@ PrefabInstance:
       propertyPath: textPlayerScore
       value: 
       objectReference: {fileID: 1473033970}
+    - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: slider1
+      value: 
+      objectReference: {fileID: 91818238}
     - target: {fileID: 7164387446919899360, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_Name
@@ -1054,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 2159311573124985516, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985488, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
@@ -1389,32 +1412,32 @@ PrefabInstance:
     - target: {fileID: 6799963619435768563, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6799963619435768563, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6799963619435768563, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6799963618545707890, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6799963618545707890, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6799963618545707890, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6799963618797715857, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
@@ -1609,6 +1632,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963619789643275, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963619607850438, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963619607850438, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963619789643273, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd82d2536d080f42a03c8515d9f828a, type: 3}
@@ -1817,13 +1860,18 @@ PrefabInstance:
     - target: {fileID: 2159311573124985488, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: intHealth
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985488, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: gameMng
       value: 
       objectReference: {fileID: 1434105815}
+    - target: {fileID: 2159311573124985488, guid: f11785a66aa41fa4f86332c2a1c10853,
+        type: 3}
+      propertyPath: sliderHealth
+      value: 
+      objectReference: {fileID: 91818240}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_LocalPosition.x
