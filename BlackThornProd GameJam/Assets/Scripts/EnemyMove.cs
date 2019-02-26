@@ -9,13 +9,19 @@ public class EnemyMove : MonoBehaviour {
     public bool blnKilled;
     public int intHealth;
 
+    public int intPlanetToKill;
+
+
     public Animator anim;
     public GameManager gameMng;
 
     private void Start()
     {
+        intPlanetToKill = Random.Range(0, gameMng.objPlanet.Count);
         gameMng = FindObjectOfType<GameManager>();
         anim = GetComponent<Animator>();
+        transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - gameMng.objPlanet[intPlanetToKill].transform.position);
+
     }
 
     // Update is called once per frame
