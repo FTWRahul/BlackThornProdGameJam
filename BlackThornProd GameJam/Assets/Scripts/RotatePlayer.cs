@@ -18,7 +18,7 @@ public class RotatePlayer : MonoBehaviour {
 
     public GameObject playerTip;
     public GameObject shootDirection;
-    public float fltMoveDistance;
+    public float fltRayCastDistance;
     public bool blnMovingBetweenPlanets;
 
     private RaycastHit2D hit;
@@ -47,7 +47,7 @@ public class RotatePlayer : MonoBehaviour {
             }
         }
 
-        hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltMoveDistance);
+        hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltRayCastDistance);
         //Casts a ray in a direction
         if(hit)
         {     
