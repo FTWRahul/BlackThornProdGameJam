@@ -185,11 +185,12 @@ MonoBehaviour:
   fltAngularSpeed: 100
   fltLinearSpeed: 10
   gameMng: {fileID: 0}
+  anim: {fileID: 0}
   Player: {fileID: 7320307287539884739}
   bullet: {fileID: 8066632618770329460, guid: 7efb80ea157ba654bae88773b5426cc7, type: 3}
   playerTip: {fileID: 866549367}
   shootDirection: {fileID: 188494280}
-  fltMoveDistance: 500
+  fltRayCastDistance: 0
   blnMovingBetweenPlanets: 0
 --- !u!95 &7698726484734165016
 Animator:
