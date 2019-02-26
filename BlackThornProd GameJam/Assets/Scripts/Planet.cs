@@ -23,6 +23,7 @@ public class Planet : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+        gameMng = FindObjectOfType<GameManager>();
 
         // Set up the health bar
         sliderHealth = GetComponentInChildren<Slider>();
