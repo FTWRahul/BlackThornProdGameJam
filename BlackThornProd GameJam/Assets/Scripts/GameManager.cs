@@ -33,8 +33,15 @@ public class GameManager : MonoBehaviour
     public GameObject pausePanel;
     public TextMeshProUGUI textPlayerScore;
 
+    //Scene management and level strings
     public string Main;
     public string Master;
+    public string level1;
+    public string level2;
+    public string level3;
+    public string level4;
+    public string level5;
+
     public bool blnPaused;
     //private bool isPaused;
     //public bool otherPanelOpen;
@@ -130,6 +137,7 @@ public class GameManager : MonoBehaviour
     }
     public void MainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(Main);
     }
     public void StartGame()
@@ -140,5 +148,30 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Quitting Game");
+    }
+    public void Level1()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(level1);
+    }
+    public void Level2()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(level2);
+    }
+    public void Level3()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(level3);
+    }
+    public void Level4()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(level4);
+    }
+    public void Level5()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(level5);
     }
 }

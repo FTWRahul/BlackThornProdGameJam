@@ -36,6 +36,9 @@ public class Planet : MonoBehaviour {
                 gameMng.EndGame();
             }
             collision.gameObject.GetComponent<EnemyMove>().blnDead = true;
+            collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - transform.position);
+            collision.GetComponent<EnemyMove>().anim.SetBool("PlanetHit", true);
+
             // Destroy enemy
             Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
         }

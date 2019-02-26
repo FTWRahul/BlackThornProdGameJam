@@ -11,6 +11,13 @@ public class BulletShoot : MonoBehaviour {
     public GameObject player;
     public GameObject bullet;
 
+    public Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update() {
         MoveBullet();
@@ -25,19 +32,34 @@ public class BulletShoot : MonoBehaviour {
     // Make bullet collide with the enemy
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
+
+            //Set animations for the bullet hit
+            transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - collision.gameObject.transform.position);
+            anim.SetBool("Hit", true);
+            Destroy(bullet, gameMng.fltAnimaDestroyBullet);
+
             // Kill the Enemy and destroy both Enemy and Bullet
             //collision.GetComponent<EnemyMove>().blnDead = true;
             collision.GetComponent<EnemyMove>().intHealth--;
             if(collision.GetComponent<EnemyMove>().intHealth == 0)
             {
                 collision.GetComponent<EnemyMove>().blnKilled = true;
+                //collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - collision.gameObject.transform.position);
+                collision.GetComponent<EnemyMove>().anim.SetBool("Killed", true);
+                Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
 
             }
             fltVerticalSpeed = 0;
-            Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
-            Destroy(bullet, gameMng.fltAnimaDestroyBullet);
 
             // Increase score
+        }
+        else if(collision.gameObject.CompareTag("Planet"))
+        {
+            //Set animations for the bullet hit
+            transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - collision.gameObject.transform.position);
+            anim.SetBool("Hit", true);
+            fltVerticalSpeed = 0;
+            Destroy(bullet, gameMng.fltAnimaDestroyBullet);
         }
     }
 }
