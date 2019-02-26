@@ -15,7 +15,7 @@ public class Planet : MonoBehaviour {
     public bool blnCurrent;
     public bool blnTarget;
     public Animator anim;
-    public Slider sliderHealth;
+    private Slider sliderHealth;
 
     // Reference for Game Manager
     public GameManager gameMng;
@@ -23,6 +23,8 @@ public class Planet : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+
+        sliderHealth = GetComponentInChildren<Slider>();
         sliderHealth.maxValue = intHealth;
         sliderHealth.value = sliderHealth.maxValue;
     }
