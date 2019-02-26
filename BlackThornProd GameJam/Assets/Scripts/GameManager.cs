@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
     public string level3;
     public string level4;
     public string level5;
+    public string currentLevel;
 
     public bool blnPaused;
     //private bool isPaused;
@@ -59,6 +60,8 @@ public class GameManager : MonoBehaviour
         intPlayerScore = 0;
 
         arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
+
+        //currentLevel = SceneManager.GetActiveScene().ToString();
 
         // Assign a Game Manager if there is not one
         if (gameMng == null)
@@ -150,7 +153,7 @@ public class GameManager : MonoBehaviour
     public void RetryLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(Master);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
     }
     public void MainMenu()
     {
