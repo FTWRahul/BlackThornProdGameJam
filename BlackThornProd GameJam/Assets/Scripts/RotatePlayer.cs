@@ -11,6 +11,7 @@ public class RotatePlayer : MonoBehaviour {
     //public int intPlanetNum;
 
     public GameManager gameMng;
+    public Animator anim;
 
     //public GameObject[] targetPlanet;
     public GameObject Player;
@@ -26,7 +27,7 @@ public class RotatePlayer : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +36,8 @@ public class RotatePlayer : MonoBehaviour {
         if(!blnMovingBetweenPlanets)
         {
             transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltAngularSpeed * Time.deltaTime);
+            SetAnimations();
+
         } else { // Check distance between player and hit point
             if (Vector3.Magnitude(transform.position - new Vector3(hit.point.x, hit.point.y, 0f)) < gameMng.fltPlayerDistPlanet) {
 
@@ -88,5 +91,25 @@ public class RotatePlayer : MonoBehaviour {
     void ShootBullet()
     {
         Instantiate(bullet, playerTip.transform.position, Player.transform.rotation);
+    }
+
+    void SetAnimations()
+    {
+        if (Input.GetAxisRaw("Horizontal") == 0)
+        {
+            anim.SetBool("Idle", true);
+
+        }
+        else if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            anim.SetBool("Idle", false);
+
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            anim.SetBool("Idle", false);
+
+            anim.SetTrigger("RightThruster");
+        }
     }
 }
