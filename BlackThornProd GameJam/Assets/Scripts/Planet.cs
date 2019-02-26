@@ -23,6 +23,8 @@ public class Planet : MonoBehaviour {
     private void Start()
     {
         anim = GetComponent<Animator>();
+
+        sliderHealth = GetComponentInChildren<Slider>();
         sliderHealth.maxValue = intHealth;
         sliderHealth.value = sliderHealth.maxValue;
     }
