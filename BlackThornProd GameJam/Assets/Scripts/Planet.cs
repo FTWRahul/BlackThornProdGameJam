@@ -8,12 +8,20 @@ public class Planet : MonoBehaviour {
 
     // Settings for the planet
     public int intHealth;
+    public int int1stAnimState;
+    public int int2ndAnimState;
     public bool blnDead;
     public bool blnCurrent;
     public bool blnTarget;
+    public Animator anim;
 
     // Reference for Game Manager
     public GameManager gameMng;
+
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Planet Constructor
     public Planet(int inHealth, bool inDead, bool inCurrent, bool inTarget) {
@@ -27,6 +35,14 @@ public class Planet : MonoBehaviour {
         if (collision.gameObject.CompareTag("Enemy")) {
             // Decrase health
             intHealth--;
+            if(intHealth < int2ndAnimState)
+            {
+                anim.SetTrigger("Damaged2");
+            }
+            else if(intHealth < int1stAnimState )
+            {
+                anim.SetTrigger("Damaged1");
+            }
 
             Debug.Log(intHealth);
             

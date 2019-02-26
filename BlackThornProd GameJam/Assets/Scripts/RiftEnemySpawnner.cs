@@ -39,7 +39,6 @@ public class RiftEnemySpawnner : MonoBehaviour
                 }
             }
         }
- 
     }
 
     public void SpawnEnemy()
