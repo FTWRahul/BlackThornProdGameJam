@@ -790,7 +790,7 @@ MonoBehaviour:
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
   blnEnemySpawnned: 0
-  arrEnemyTypes: 04000000080000000a000000
+  arrEnemyTypes: 0100000002000000030000000400000005000000
 --- !u!1001 &1281743467
 PrefabInstance:
   m_ObjectHideFlags: 0
