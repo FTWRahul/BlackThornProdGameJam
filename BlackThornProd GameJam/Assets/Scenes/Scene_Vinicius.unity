@@ -142,13 +142,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d4600e5adab0458e9c8dc0868e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
   enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
-  fltEnemyCount: 5
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
   blnEnemySpawnned: 0
+  arrEnemyTypes: 
 --- !u!212 &47308574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -442,13 +443,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d4600e5adab0458e9c8dc0868e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
   enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
-  fltEnemyCount: 5
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
   blnEnemySpawnned: 0
+  arrEnemyTypes: 
 --- !u!212 &640542601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -781,13 +783,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d4600e5adab0458e9c8dc0868e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
   enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
-  fltEnemyCount: 5
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
   blnEnemySpawnned: 0
+  arrEnemyTypes: 04000000080000000a000000
 --- !u!1001 &1281743467
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -995,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1341282840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1008,13 +1011,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d4600e5adab0458e9c8dc0868e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
   enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
-  fltEnemyCount: 5
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
   blnEnemySpawnned: 0
+  arrEnemyTypes: 
 --- !u!212 &1341282841
 SpriteRenderer:
   m_ObjectHideFlags: 0
