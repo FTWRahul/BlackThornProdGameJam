@@ -7,10 +7,11 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public List<Planet> objPlanet;
+    // Arrays
+    public List<Planet> objPlanet; // Planets from the Planet class
+    public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
 
-    //public GameObject _Player;
-
+    // Game Manager
     public GameManager gameMng;
 
     // Indices for the planets
