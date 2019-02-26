@@ -293,6 +293,14 @@ PrefabInstance:
       propertyPath: fltRayCastDistance
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 866549368, guid: 5ad92c9b46335054fbd81f2ec1f4f074, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.759
+      objectReference: {fileID: 0}
+    - target: {fileID: 866549368, guid: 5ad92c9b46335054fbd81f2ec1f4f074, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ad92c9b46335054fbd81f2ec1f4f074, type: 3}
 --- !u!1 &640542599
