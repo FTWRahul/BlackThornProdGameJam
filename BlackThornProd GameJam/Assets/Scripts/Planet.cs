@@ -15,7 +15,7 @@ public class Planet : MonoBehaviour {
     public bool blnCurrent;
     public bool blnTarget;
     public Animator anim;
-    public Slider sliderHealth;
+    private Slider sliderHealth;
 
     // Reference for Game Manager
     public GameManager gameMng;
