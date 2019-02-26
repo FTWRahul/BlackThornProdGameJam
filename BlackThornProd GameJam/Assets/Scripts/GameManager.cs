@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     // Arrays
     public List<Planet> objPlanet; // Planets from the Planet class
+    //private List<GameObject> arrEnemiesRemaining;
+    private GameObject[] arrEnemiesRemaining;
 
     // Game Manager
     public GameManager gameMng;
@@ -58,8 +60,6 @@ public class GameManager : MonoBehaviour
         //objPlanet.Add(newPlanet);
 
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
-        //slider1.maxValue = objPlanet[intCurrentPlanetIndex].intHealth;
-        //slider1.value = slider1.maxValue;
 
         intPlayerScore = 0;
 
@@ -110,11 +110,16 @@ public class GameManager : MonoBehaviour
     //Updates the score text on UI canvas
     public void IncreaseScore()
     {
-        Debug.Log("Starting");
+        //Debug.Log("Starting");
         intPlayerScore++;
         textPlayerScore.text = intPlayerScore.ToString();
-        Debug.Log(intPlayerScore);
+        //Debug.Log(intPlayerScore);
 
+    }
+
+    // Check if the player won the level
+    void CheckForWin() {
+        arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
     }
 
     public void EndGame()
