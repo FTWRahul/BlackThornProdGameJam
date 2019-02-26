@@ -4,27 +4,33 @@ using UnityEngine;
 
 public class RiftEnemySpawnner : MonoBehaviour
 {
-
+    public GameManager gameMng;
     public GameObject enemy;
+    private GameObject EnemyTemp; // Temporary reference for the intantiated enemy object
     public float fltMinSpawnTime;
     public float fltMaxSpawnTime;
-    public float fltEnemyCount;
     public float fltTimeBetweenSpawn;
     public float fltSpawnTime;
+    private int intEnemyCount;
     public bool blnEnemySpawnned = true;
+    public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
 
     // Start is called before the first frame update
     void Start()
     {
         //Define random spawn time for the enemy to spawn from the rift
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
+
+        // Assign the Game Manager and 
+        gameMng = FindObjectOfType<GameManager>();
+        intEnemyCount = arrEnemyTypes.Count;
     }
 
     // Update is called once per frame
     void Update()
     {
         //Check how many enemys are remaining
-        if(fltEnemyCount > -1)
+        if(intEnemyCount > 0)
         {
             //Check if enemy was spawnned
             if (!blnEnemySpawnned)
@@ -50,12 +56,14 @@ public class RiftEnemySpawnner : MonoBehaviour
     public void SpawnEnemy()
     {
         blnEnemySpawnned = true;
-        fltEnemyCount--;
-        if(fltMaxSpawnTime>2)
+        intEnemyCount--;
+        if(fltMaxSpawnTime > 2)
         {
             fltMaxSpawnTime--;
         }
-        Instantiate(enemy, transform.position, Quaternion.identity);
+        Debug.Log(intEnemyCount);
+        EnemyTemp = Instantiate(enemy, transform.position, Quaternion.identity);
+        EnemyTemp.GetComponent<EnemyMove>().intHealth = arrEnemyTypes[intEnemyCount];
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
     }
 }
