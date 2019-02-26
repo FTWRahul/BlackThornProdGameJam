@@ -95,21 +95,42 @@ public class RotatePlayer : MonoBehaviour {
 
     void SetAnimations()
     {
-        if (Input.GetAxisRaw("Horizontal") == 0)
+        if (Input.GetAxisRaw("AnimHorz") == 0)
         {
             anim.SetBool("Idle", true);
-
+            anim.SetBool("LeftThruster", false);
+            anim.SetBool("RightThruster", false);
         }
-        else if (Input.GetAxisRaw("Horizontal") > 0)
+        else if (Input.GetAxisRaw("AnimHorz") > 0)
         {
             anim.SetBool("Idle", false);
+            anim.SetBool("RightThruster", false);
 
+            //if (!anim.GetBool("LeftThruster"))
+            //{
+            //    anim.SetBool("LeftTran", true);
+            anim.SetBool("LeftThruster", true);
+            //}
+            //else
+            //{
+            //    anim.SetBool("LeftTran", false);
+            //}
         }
-        else if (Input.GetAxisRaw("Horizontal") < 0)
+        else if (Input.GetAxisRaw("AnimHorz") < 0)
+
         {
             anim.SetBool("Idle", false);
+            anim.SetBool("LeftThruster", false);
 
-            anim.SetTrigger("RightThruster");
+            //    if (!anim.GetBool("RightThruster"))
+            //    {
+            //        anim.SetBool("RightTran", true);
+            anim.SetBool("RightThruster", true);
+            //    }
+            //    else
+            //    {
+            //        anim.SetBool("RightTran", false);
+            //    }
         }
     }
 }
