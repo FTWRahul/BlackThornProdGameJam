@@ -24,9 +24,11 @@ public class Planet : MonoBehaviour {
     {
         anim = GetComponent<Animator>();
 
+        // Set up the health bar
         sliderHealth = GetComponentInChildren<Slider>();
         sliderHealth.maxValue = intHealth;
         sliderHealth.value = sliderHealth.maxValue;
+        sliderHealth.gameObject.SetActive(false);
     }
 
     // Planet Constructor
@@ -39,7 +41,8 @@ public class Planet : MonoBehaviour {
     // Detects collision of enemy to planet; decreases the planet's health; destroys enemy
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
-            // Decrase health
+            // Decrase health and show that in the health bar
+            sliderHealth.gameObject.SetActive(true);
             intHealth--;
             sliderHealth.value--;
 
@@ -65,6 +68,16 @@ public class Planet : MonoBehaviour {
 
             // Destroy enemy
             Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
-        }
+
+            // Disable the health bar after all the animations
+            //yield new WaitForSeconds(1);
+            StartCoroutine(LateCall());
+            }
+    }
+
+    IEnumerator LateCall() {
+        yield return new WaitForSeconds(1);
+
+        sliderHealth.gameObject.SetActive(false);
     }
 }
