@@ -649,13 +649,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d4600e5adab0458e9c8dc0868e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
   enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
-  fltEnemyCount: 5
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
+  intEnemyCount: 0
   blnEnemySpawnned: 0
+  arrEnemyTypes: 
 --- !u!212 &428758129
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -748,13 +750,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d4600e5adab0458e9c8dc0868e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
   enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
-  fltEnemyCount: 5
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
+  intEnemyCount: 0
   blnEnemySpawnned: 0
+  arrEnemyTypes: 
 --- !u!212 &527603318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -847,13 +851,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d4600e5adab0458e9c8dc0868e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
   enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
-  fltEnemyCount: 5
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
+  intEnemyCount: 0
   blnEnemySpawnned: 0
+  arrEnemyTypes: 
 --- !u!212 &608561171
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1386,13 +1392,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d4600e5adab0458e9c8dc0868e653, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMng: {fileID: 0}
   enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
-  fltEnemyCount: 5
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
+  intEnemyCount: 0
   blnEnemySpawnned: 0
+  arrEnemyTypes: 
 --- !u!212 &1466501125
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1527,6 +1535,11 @@ PrefabInstance:
       propertyPath: gameMng
       value: 
       objectReference: {fileID: 1434037498}
+    - target: {fileID: 7745404077881710029, guid: f11785a66aa41fa4f86332c2a1c10853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2706287492039449690, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1907,6 +1920,11 @@ PrefabInstance:
         type: 3}
       propertyPath: gameMng
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745404077881710029, guid: f11785a66aa41fa4f86332c2a1c10853,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2706287492039449690, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
