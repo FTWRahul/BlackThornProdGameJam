@@ -1,11 +1,15 @@
 fileFormatVersion: 2
-guid: 8bc5ce01ed265404b8c1e98dfc7e52c7
+guid: 6cd4700853304b845b25eb01e2ee03b1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Player_Ship_SpriteSheet_TransitionRight_0
-    21300002: Player_Ship_SpriteSheet_TransitionRight_1
-    21300004: Player_Ship_SpriteSheet_TransitionRight_2
-    21300006: Player_Ship_SpriteSheet_TransitionRight_3
+    21300000: Player_Ship_SpriteSheet_RightThruster_0
+    21300002: Player_Ship_SpriteSheet_RightThruster_1
+    21300004: Player_Ship_SpriteSheet_RightThruster_2
+    21300006: Player_Ship_SpriteSheet_RightThruster_3
+    21300008: Player_Ship_SpriteSheet_RightThruster_4
+    21300010: Player_Ship_SpriteSheet_RightThruster_5
+    21300012: Player_Ship_SpriteSheet_RightThruster_6
+    21300014: Player_Ship_SpriteSheet_RightThruster_7
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,7 +92,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Ship_SpriteSheet_TransitionRight_0
+      name: Player_Ship_SpriteSheet_RightThruster_0
       rect:
         serializedVersion: 2
         x: 0
@@ -102,13 +106,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca1c9e53cc7362a40ac3bc635552afbb
+      spriteID: 21b8d8319d314284eb17974829e7001f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Ship_SpriteSheet_TransitionRight_1
+      name: Player_Ship_SpriteSheet_RightThruster_1
       rect:
         serializedVersion: 2
         x: 144
@@ -122,13 +126,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2418f5245840d784d8de3e00930cf30b
+      spriteID: 860ff1f6aff6eb24ca4b953df808ffb4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Ship_SpriteSheet_TransitionRight_2
+      name: Player_Ship_SpriteSheet_RightThruster_2
       rect:
         serializedVersion: 2
         x: 288
@@ -142,13 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0fe45ad686830c443843e1f816d0179a
+      spriteID: 0b8bcd0a005e9584d87fe81c88e53ba6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Ship_SpriteSheet_TransitionRight_3
+      name: Player_Ship_SpriteSheet_RightThruster_3
       rect:
         serializedVersion: 2
         x: 432
@@ -162,7 +166,87 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 391c8d371f3400f4986cf2e051ec4001
+      spriteID: bc14661dac33edc49a5dd4da97e9af4d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Ship_SpriteSheet_RightThruster_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 144
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a64641b0a34d8459fe40326eae189d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Ship_SpriteSheet_RightThruster_5
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 144
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7f6320a4a41bb44bf8eab8b37d4fef
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Ship_SpriteSheet_RightThruster_6
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 144
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a956e39a31225f49a4b01d2190c3a4f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_Ship_SpriteSheet_RightThruster_7
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 0
+        width: 144
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5772cca62d2b544b866148dcd77ef04
       vertices: []
       indices: 
       edges: []
@@ -170,7 +254,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6b1cef0dee5f3e445989e1f1090c2612
+    spriteID: 84ff3402727159e41911530c6f9c237c
     vertices: []
     indices: 
     edges: []
