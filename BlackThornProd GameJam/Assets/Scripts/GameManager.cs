@@ -35,6 +35,8 @@ public class GameManager : MonoBehaviour
     //UI refrences
     public GameObject gameOverPanel;
     public GameObject pausePanel;
+    public GameObject[] loseText;
+    public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
 
     //Scene management and level strings
@@ -60,6 +62,13 @@ public class GameManager : MonoBehaviour
         intPlayerScore = 0;
 
         arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
+
+        // Assign the win and lose texts
+        winText = GameObject. FindGameObjectsWithTag("Win");
+        loseText = GameObject.FindGameObjectsWithTag("Lose");
+        gameOverPanel.SetActive(false);
+        //Debug.Log(winText[0].name);
+        //Debug.Log(winText[1].name);
 
         //currentLevel = SceneManager.GetActiveScene().ToString();
 
@@ -117,17 +126,19 @@ public class GameManager : MonoBehaviour
 
     // Check if the player won the level
     public void CheckForWin() {
-        //intEnemiesRemaining = 0;
-
-        //for (int i = 0; i < arrEnemiesRemaining.Length; i++) {
-        //    intEnemiesRemaining += arrEnemiesRemaining[i].intTotalEnemies;
-        //}
-
-        //Debug.Log("Enemies remaining: " + intEnemiesRemaining);
         if (intEnemiesRemaining < 1) {
             // Good ending for the level
             Debug.Log("YOU WIN!!");
-            gameMng.EndGame();
+            gameMng.EndLevel();
+        }
+    }
+
+    // Activate/Deactivate loss text and deactivate/activate win text
+    public void FlipWinLossTexts(GameObject[] inDeactivate, GameObject[] inActivate) {
+        
+        for (int i = 0; i < loseText.Length; i++) {
+            inDeactivate[i].SetActive(false);
+            inActivate[i].SetActive(true);
         }
     }
 
@@ -135,6 +146,16 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
+
+        FlipWinLossTexts(winText, loseText);
+
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void EndLevel()
+    {
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+        FlipWinLossTexts(loseText, winText);
         Cursor.lockState = CursorLockMode.None;
     }
     public void PauseGame()

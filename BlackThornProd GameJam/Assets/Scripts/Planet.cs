@@ -16,6 +16,7 @@ public class Planet : MonoBehaviour {
     public bool blnTarget;
     public Animator anim;
     private Slider sliderHealth;
+    public AudioSource hitSound;
 
     // Reference for Game Manager
     public GameManager gameMng;
@@ -60,6 +61,7 @@ public class Planet : MonoBehaviour {
             
             // Game Over
             if (intHealth < 1) {
+                sliderHealth.gameObject.SetActive(false);
                 Debug.Log("GAME OVER");
                 gameMng.EndGame();
             }
