@@ -44,8 +44,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textPlayerScore;
     public TextMeshProUGUI textEndMessage1;
     public TextMeshProUGUI textEndMessage2;
-    public Image imgWinLevel;
-    public Image imgLoseLevel;
+    public Image imgEndLevel;
     public Button btnRestartLevel;
     public Button btnMainMenu;
     public Button btnExitGame;
