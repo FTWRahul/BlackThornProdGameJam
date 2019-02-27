@@ -44,14 +44,12 @@ public class RotatePlayer : MonoBehaviour {
 
         } else { // Check distance between player and hit point
             if (Vector3.Magnitude(transform.position - new Vector3(hit.point.x, hit.point.y, 0f)) < gameMng.fltPlayerDistPlanet) {
-
+                Debug.Log("HIT");
                 // Manage indices for target and current planet
                 blnMovingBetweenPlanets = false;
                 gameMng.ManageTargets();
                 anim.SetBool("BetweenPlanet", false);
                 anim.SetBool("Idle", true);
-
-
 
                 // Rotate the player to be aligned with the planet's surface
                 transform.rotation = Quaternion.FromToRotation(Vector3.up, transform.position - gameMng.objPlanet[gameMng.intTargetPlanetIndex].transform.position);
@@ -73,7 +71,6 @@ public class RotatePlayer : MonoBehaviour {
                     //changes the bool for the selected planet
                     hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
                     gameMng.FindTarget();
-                    //MoveToPlanet();
                     blnMovingBetweenPlanets = true;
                 }
             }
@@ -83,6 +80,7 @@ public class RotatePlayer : MonoBehaviour {
         {
             MoveToPlanet();
         }
+
         if(Input.GetKeyDown(KeyCode.W))
         {
             ShootBullet();
