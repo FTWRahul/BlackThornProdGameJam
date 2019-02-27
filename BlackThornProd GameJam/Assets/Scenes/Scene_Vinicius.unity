@@ -143,7 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
+  enemyType1: {fileID: 0}
+  enemyType2: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -277,7 +278,7 @@ PrefabInstance:
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
@@ -448,7 +449,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
+  enemyType1: {fileID: 0}
+  enemyType2: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -1099,7 +1101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111700746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.92, y: 0, z: 0}
+  m_LocalPosition: {x: 16.57, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1118,13 +1120,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
+  enemyType1: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d,
+    type: 3}
+  enemyType2: {fileID: 8807135991934784699, guid: e31dcbf1155538342a383d657308815d,
+    type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
   blnEnemySpawnned: 0
-  arrEnemyTypes: 01000000
+  arrEnemyTypes: 0100000002000000
 --- !u!1 &1184001448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6799963619169249904, guid: 8bd82d2536d080f42a03c8515d9f828a,
@@ -1280,7 +1285,7 @@ PrefabInstance:
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
@@ -1341,7 +1346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1341282840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,7 +1360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
+  enemyType1: {fileID: 0}
+  enemyType2: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -1725,7 +1731,7 @@ PrefabInstance:
     - target: {fileID: 6799963619169249904, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6799963619079315404, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
@@ -2099,7 +2105,7 @@ PrefabInstance:
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
@@ -2409,7 +2415,7 @@ PrefabInstance:
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
@@ -2548,7 +2554,7 @@ PrefabInstance:
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}

@@ -5,8 +5,9 @@ using UnityEngine;
 public class RiftEnemySpawnner : MonoBehaviour
 {
     public GameManager gameMng;
-    public GameObject enemy;
-    private GameObject EnemyTemp; // Temporary reference for the intantiated enemy object
+    public GameObject enemyType1;
+    public GameObject enemyType2;
+    private GameObject EnemyTemp; // Temporary reference for the instantiated enemy object
     public float fltMinSpawnTime;
     public float fltMaxSpawnTime;
     public float fltTimeBetweenSpawn;
@@ -62,9 +63,15 @@ public class RiftEnemySpawnner : MonoBehaviour
         {
             fltMaxSpawnTime--;
         }
-        Debug.Log(intEnemyCount);
-        EnemyTemp = Instantiate(enemy, transform.position, Quaternion.identity);
-        EnemyTemp.GetComponent<EnemyMove>().intHealth = arrEnemyTypes[intEnemyCount];
+        //Debug.Log(intEnemyCount);
+        if (arrEnemyTypes[intEnemyCount] < 2) {
+            EnemyTemp = Instantiate(enemyType1, transform.position, Quaternion.identity);
+            EnemyTemp.GetComponent<EnemyMove>().intHealth = arrEnemyTypes[intEnemyCount];
+        } else {
+            EnemyTemp = Instantiate(enemyType2, transform.position, Quaternion.identity);
+            EnemyTemp.GetComponent<EnemyMove>().intHealth = arrEnemyTypes[intEnemyCount];
+        }
+        
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
     }
 }
