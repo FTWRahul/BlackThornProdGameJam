@@ -60,6 +60,7 @@ public class Planet : MonoBehaviour {
             
             // Game Over
             if (intHealth < 1) {
+                sliderHealth.gameObject.SetActive(false);
                 Debug.Log("GAME OVER");
                 gameMng.EndGame();
             }

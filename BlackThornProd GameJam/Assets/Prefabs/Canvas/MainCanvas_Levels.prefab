@@ -1311,11 +1311,11 @@ GameObject:
   - component: {fileID: 6799963618148329389}
   m_Layer: 5
   m_Name: You-win-tx
-  m_TagString: Untagged
+  m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6799963618148329390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1363,7 +1363,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: You defeat the aliens!
+  m_text: You defeated the aliens!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c06604ef9747ba94386789bd85404147, type: 2}
   m_sharedMaterial: {fileID: 21159862893924332, guid: c06604ef9747ba94386789bd85404147,
@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18.7
+  m_fontSize: 18
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1433,7 +1433,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 6799963618148329389}
-    characterCount: 22
+    characterCount: 24
     spriteCount: 0
     spaceCount: 3
     wordCount: 4
@@ -1441,7 +1441,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -3839,11 +3839,11 @@ GameObject:
   - component: {fileID: 6799963618908211882}
   m_Layer: 5
   m_Name: W-message-tx
-  m_TagString: Untagged
+  m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6799963618908211883
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3891,7 +3891,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: All the aliens from here are dead!
+  m_text: All the aliens here are dead!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69f798428fbfeff4bbc75fd77b41c1de, type: 2}
   m_sharedMaterial: {fileID: 21700438548789256, guid: 69f798428fbfeff4bbc75fd77b41c1de,
@@ -3961,15 +3961,15 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 6799963618908211882}
-    characterCount: 34
+    characterCount: 29
     spriteCount: 0
-    spaceCount: 6
-    wordCount: 7
+    spaceCount: 5
+    wordCount: 6
     linkCount: 0
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -4235,7 +4235,7 @@ GameObject:
   - component: {fileID: 6799963618939918129}
   m_Layer: 5
   m_Name: L-message-tx
-  m_TagString: Untagged
+  m_TagString: Lose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5001,7 +5001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6799963619169249911
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5591,7 +5591,7 @@ GameObject:
   - component: {fileID: 6799963619378030343}
   m_Layer: 5
   m_Name: you-died-tx
-  m_TagString: Untagged
+  m_TagString: Lose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
