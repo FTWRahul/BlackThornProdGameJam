@@ -62,20 +62,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Assign initial values
-        //objPlanet[intCurrentPlanetIndex].blnCurrent = true;
-
         intPlayerScore = 0;
 
-        //objPlanet = new List(FindObjectsOfType<Planet>());
-        //objPlanet.AddRange(FindObjectsOfType<Planet>());
-        objPlanet = FindObjectsOfType<Planet>().ToList();
-
-        //for (int i = 0; i < FindObjectsOfType<Planet>().Length; i++) {
-        //    objPlanet.Add(FindObjectsOfType<Planet>()[i]);
-
-        //}
+        // Assign objects to the game manager
+        objPlanet = FindObjectsOfType<Planet>().ToList(); // transform the array of planets into a list
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
-
         arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
         player = FindObjectOfType<RotatePlayer>();
 
