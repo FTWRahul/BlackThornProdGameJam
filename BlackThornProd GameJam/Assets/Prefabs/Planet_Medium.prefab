@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 2159311573124985495}
   - component: {fileID: 4664056633650381787}
   m_Layer: 0
-  m_Name: Planet
+  m_Name: Planet_Medium
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,7 +328,6 @@ MonoBehaviour:
   blnCurrent: 1
   blnTarget: 0
   anim: {fileID: 0}
-  sliderHealth: {fileID: 7046544758691775702}
   gameMng: {fileID: 0}
 --- !u!50 &2159311573124985495
 Rigidbody2D:
