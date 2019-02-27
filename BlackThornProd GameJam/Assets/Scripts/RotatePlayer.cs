@@ -30,6 +30,8 @@ public class RotatePlayer : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         anim = GetComponent<Animator>();
+        gameMng = FindObjectOfType<GameManager>();
+
     }
 
     // Update is called once per frame

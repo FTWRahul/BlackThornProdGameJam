@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 3e6278a9bfb4dda44b8b9c994c7ada4e
+guid: b65a5bf50de104c4795918ebeb54019f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Planet_SpriteSheet_2_0
-    21300002: Planet_SpriteSheet_2_1
-    21300004: Planet_SpriteSheet_2_2
-    21300006: Planet_SpriteSheet_2_3
-    21300008: Planet_SpriteSheet_2_4
-    21300010: Planet_SpriteSheet_2_5
-    21300012: Planet_SpriteSheet_2_6
-    21300014: Planet_SpriteSheet_2_7
+    21300000: Planet_SpriteSheet_2_Damaged_0
+    21300002: Planet_SpriteSheet_2_Damaged_1
+    21300004: Planet_SpriteSheet_2_Damaged_2
+    21300006: Planet_SpriteSheet_2_Damaged_3
+    21300008: Planet_SpriteSheet_2_Damaged_4
+    21300010: Planet_SpriteSheet_2_Damaged_5
+    21300012: Planet_SpriteSheet_2_Damaged_6
+    21300014: Planet_SpriteSheet_2_Damaged_7
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,22 +88,11 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Planet_SpriteSheet_2_0
+      name: Planet_SpriteSheet_2_Damaged_0
       rect:
         serializedVersion: 2
         x: 0
@@ -117,13 +106,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbf834d18a20611438d11eafbf7cb03a
+      spriteID: 1a691b08bf9c49d4dadd785e09969370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planet_SpriteSheet_2_1
+      name: Planet_SpriteSheet_2_Damaged_1
       rect:
         serializedVersion: 2
         x: 288
@@ -137,13 +126,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7435bb3c1c51eb741839f90f6eb015b3
+      spriteID: 5064a452e8b802d4bb0369d7ca464892
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planet_SpriteSheet_2_2
+      name: Planet_SpriteSheet_2_Damaged_2
       rect:
         serializedVersion: 2
         x: 576
@@ -157,13 +146,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e836fbfe62507a4428c38dce1811faad
+      spriteID: 07b8ab62352cc864aa711f64ebd5402a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planet_SpriteSheet_2_3
+      name: Planet_SpriteSheet_2_Damaged_3
       rect:
         serializedVersion: 2
         x: 864
@@ -177,13 +166,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 136dca4b853d2dc439e020b724000cf8
+      spriteID: 96b801dba88db8444a40b982c1bfc4fe
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planet_SpriteSheet_2_4
+      name: Planet_SpriteSheet_2_Damaged_4
       rect:
         serializedVersion: 2
         x: 1152
@@ -197,13 +186,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1affc53143ca7a43a1b6eab9441a12e
+      spriteID: 53166944853817c4db03ea1ef4c640dd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planet_SpriteSheet_2_5
+      name: Planet_SpriteSheet_2_Damaged_5
       rect:
         serializedVersion: 2
         x: 1440
@@ -217,13 +206,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 019f88a72ea70e044b5e24b4973fbd47
+      spriteID: 837009d44ff09bf4f9f4a51b50f7fe20
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planet_SpriteSheet_2_6
+      name: Planet_SpriteSheet_2_Damaged_6
       rect:
         serializedVersion: 2
         x: 1728
@@ -237,13 +226,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0aef29ca7b1bb64fb3c087d313a2680
+      spriteID: d73590069e80dee48ae941211752e62f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Planet_SpriteSheet_2_7
+      name: Planet_SpriteSheet_2_Damaged_7
       rect:
         serializedVersion: 2
         x: 2016
@@ -257,7 +246,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9d627b8a813ef94aa65fe3fcf4d3296
+      spriteID: 2002debbb60625e4b9b908ba3a402a17
       vertices: []
       indices: 
       edges: []
@@ -265,7 +254,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f94e2f1da8798354f9760325de6bbeeb
+    spriteID: 82d24f121a03f1b4ea6bc4b735242878
     vertices: []
     indices: 
     edges: []
