@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     // Game Manager
     public GameManager gameMng;
 
+    // Player game object
+    public RotatePlayer player;
+
     // Arrays for planets and spawners
     public List<Planet> objPlanet; // Planets from the Planet class
     private RiftEnemySpawnner[] arrEnemiesRemaining;
@@ -62,6 +65,7 @@ public class GameManager : MonoBehaviour
         intPlayerScore = 0;
 
         arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
+        player = FindObjectOfType<RotatePlayer>();
 
         // Assign the win and lose texts
         gameOverPanel.SetActive(true);
@@ -147,6 +151,7 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);
 
         FlipWinLossTexts(winText, loseText);
+        player.gameObject.SetActive(false);
 
         Cursor.lockState = CursorLockMode.None;
     }
@@ -155,6 +160,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
         FlipWinLossTexts(loseText, winText);
+        player.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
     }
     public void PauseGame()
