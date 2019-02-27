@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public RotatePlayer player;
 
     // Arrays for planets and spawners
-    //public List<Planet> objPlanet; // Planets from the Planet class
     public List<Planet> objPlanet; // Planets from the Planet class
     private RiftEnemySpawnner[] arrEnemiesRemaining;
     
@@ -43,6 +42,10 @@ public class GameManager : MonoBehaviour
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
+    public Button btnNextLevel;
+    public Button btnMainMenu;
+    public Button btnExitGame;
+
 
     //Scene management and level strings
     public string Main;
@@ -65,7 +68,7 @@ public class GameManager : MonoBehaviour
         intPlayerScore = 0;
 
         // Assign objects to the game manager
-        objPlanet = FindObjectsOfType<Planet>().ToList(); // transform the array of planets into a list
+        //objPlanet = FindObjectsOfType<Planet>().ToList(); // transform the array of planets into a list
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
         arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
         player = FindObjectOfType<RotatePlayer>();
