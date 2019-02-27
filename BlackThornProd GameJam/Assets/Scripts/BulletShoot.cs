@@ -10,7 +10,6 @@ public class BulletShoot : MonoBehaviour {
     public GameManager gameMng;
     public GameObject player;
     public GameObject bullet;
-    public GameObject tempCollisionObj;
 
     public Animator anim;
 
@@ -57,11 +56,10 @@ public class BulletShoot : MonoBehaviour {
         }
         else if(collision.gameObject.CompareTag("Planet"))
         {
-            tempCollisionObj = collision.gameObject;
-            tempCollisionObj.GetComponent<EnemyMove>().hitSound.Play();
+            collision.gameObject.GetComponent<Planet>().hitSound.Play();
 
             //Set animations for the bullet hit
-            transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - tempCollisionObj.transform.position);
+            transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - collision.gameObject.transform.position);
             anim.SetBool("Hit", true);
             fltVerticalSpeed = 0;
             Destroy(bullet, gameMng.fltAnimaDestroyBullet);
