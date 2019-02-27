@@ -15,6 +15,7 @@ public class BulletShoot : MonoBehaviour {
 
     private void Start()
     {
+        gameMng = FindObjectOfType<GameManager>();
         anim = GetComponent<Animator>();
     }
 
