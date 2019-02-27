@@ -64,11 +64,10 @@ public class GameManager : MonoBehaviour
         arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
 
         // Assign the win and lose texts
+        gameOverPanel.SetActive(true);
         winText = GameObject. FindGameObjectsWithTag("Win");
         loseText = GameObject.FindGameObjectsWithTag("Lose");
         gameOverPanel.SetActive(false);
-        //Debug.Log(winText[0].name);
-        //Debug.Log(winText[1].name);
 
         //currentLevel = SceneManager.GetActiveScene().ToString();
 
