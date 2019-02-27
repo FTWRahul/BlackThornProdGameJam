@@ -7792,7 +7792,7 @@ GameObject:
   - component: {fileID: 1555656371196708165}
   - component: {fileID: 3988782628748584817}
   m_Layer: 5
-  m_Name: Next-Lv-bt
+  m_Name: Restart-Lv-bt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7964,7 +7964,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d74f492cea089b3428edc460802174db, type: 3}
-    m_FontSize: 24
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -7975,4 +7975,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Next Level
+  m_Text: Restart Level
