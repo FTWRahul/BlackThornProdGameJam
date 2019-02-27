@@ -42,10 +42,11 @@ public class GameManager : MonoBehaviour
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
+    public TextMeshProUGUI textMessage1;
+    public TextMeshProUGUI textMessage2;
     public Button btnRestartLevel;
     public Button btnMainMenu;
     public Button btnExitGame;
-
 
     //Scene management and level strings
     public string Main;
