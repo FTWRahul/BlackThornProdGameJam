@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     public RotatePlayer player;
 
     // Arrays for planets and spawners
+    //public List<Planet> objPlanet; // Planets from the Planet class
     public List<Planet> objPlanet; // Planets from the Planet class
     private RiftEnemySpawnner[] arrEnemiesRemaining;
     
@@ -60,9 +62,19 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Assign initial values
-        objPlanet[intCurrentPlanetIndex].blnCurrent = true;
+        //objPlanet[intCurrentPlanetIndex].blnCurrent = true;
 
         intPlayerScore = 0;
+
+        //objPlanet = new List(FindObjectsOfType<Planet>());
+        //objPlanet.AddRange(FindObjectsOfType<Planet>());
+        objPlanet = FindObjectsOfType<Planet>().ToList();
+
+        //for (int i = 0; i < FindObjectsOfType<Planet>().Length; i++) {
+        //    objPlanet.Add(FindObjectsOfType<Planet>()[i]);
+
+        //}
+        objPlanet[intCurrentPlanetIndex].blnCurrent = true;
 
         arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
         player = FindObjectOfType<RotatePlayer>();
