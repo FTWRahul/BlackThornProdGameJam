@@ -51,7 +51,7 @@ public class EnemyMove : MonoBehaviour {
         {
             gameMng.IncreaseScore();
         }
-
+        gameMng.intEnemiesRemaining--;
         gameMng.CheckForWin();
     }
 }

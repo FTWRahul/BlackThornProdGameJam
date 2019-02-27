@@ -148,7 +148,6 @@ MonoBehaviour:
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
-  intEnemyCount: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 
 --- !u!212 &47308574
@@ -450,7 +449,6 @@ MonoBehaviour:
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
-  intEnemyCount: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 
 --- !u!212 &640542601
@@ -791,7 +789,6 @@ MonoBehaviour:
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
-  intEnemyCount: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 0100000002000000
 --- !u!1 &1184001448 stripped
@@ -899,7 +896,7 @@ PrefabInstance:
     - target: {fileID: 2159311573124985488, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: intHealth
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
@@ -1031,7 +1028,6 @@ MonoBehaviour:
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
   fltSpawnTime: 0
-  intEnemyCount: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 0100000002000000
 --- !u!212 &1341282841
@@ -1725,7 +1721,7 @@ PrefabInstance:
     - target: {fileID: 2159311573124985488, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}
       propertyPath: intHealth
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2159311573124985490, guid: f11785a66aa41fa4f86332c2a1c10853,
         type: 3}

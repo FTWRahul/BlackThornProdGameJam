@@ -11,7 +11,7 @@ public class RiftEnemySpawnner : MonoBehaviour
     public float fltMaxSpawnTime;
     public float fltTimeBetweenSpawn;
     public float fltSpawnTime;
-    public int intEnemyCount;
+    private int intEnemyCount; // Variable counter
     public bool blnEnemySpawnned = true;
     public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
 
@@ -24,6 +24,7 @@ public class RiftEnemySpawnner : MonoBehaviour
         // Assign the Game Manager and 
         gameMng = FindObjectOfType<GameManager>();
         intEnemyCount = arrEnemyTypes.Count;
+        gameMng.intEnemiesRemaining += intEnemyCount;
     }
 
     // Update is called once per frame

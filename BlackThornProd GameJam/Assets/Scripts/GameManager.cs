@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public int intPlayerScore;
 
     // Counter of enemies remaining
-    private int intEnemiesRemaining;
+    public int intEnemiesRemaining;
 
     // Animation times
     public float fltAnimaDestroyEnemy;
@@ -117,13 +117,13 @@ public class GameManager : MonoBehaviour
 
     // Check if the player won the level
     public void CheckForWin() {
-        intEnemiesRemaining = 0;
+        //intEnemiesRemaining = 0;
 
-        for (int i = 0; i < arrEnemiesRemaining.Length; i++) {
-            intEnemiesRemaining += arrEnemiesRemaining[i].intEnemyCount;
-        }
+        //for (int i = 0; i < arrEnemiesRemaining.Length; i++) {
+        //    intEnemiesRemaining += arrEnemiesRemaining[i].intTotalEnemies;
+        //}
 
-        Debug.Log("Enemies remaining: " + intEnemiesRemaining);
+        //Debug.Log("Enemies remaining: " + intEnemiesRemaining);
         if (intEnemiesRemaining < 1) {
             // Good ending for the level
             Debug.Log("YOU WIN!!");
