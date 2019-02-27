@@ -2346,6 +2346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
+  player: {fileID: 0}
   objPlanet: []
   intCurrentPlanetIndex: 0
   intTargetPlanetIndex: 0
@@ -4979,9 +4980,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: a03eca3b997aa7d43b4fd5fe2cdd0db3,
+    m_HighlightedSprite: {fileID: 21300000, guid: 5cb15165571343848baeefb283bd9440,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: d1d2a606942573c488d8b16fa74b62ee, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 182ad64cf5757384ca3c3de6cb1f96b6, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -5026,7 +5027,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a3e8073c06b75db439eec768545dafba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e38e87f2ae12d9645a8075fc4e8c29af, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7041,9 +7042,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b29db99b37064f6468138a6279fc7055,
+    m_HighlightedSprite: {fileID: 21300000, guid: 10120966f0204db4f9794a819c5d3d0a,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: c6986eb12c9ce2a4a8902a7e95b22944, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 6fd410b7f0f878048884bdea86b22993, type: 3}
     m_DisabledSprite: {fileID: 21300000, guid: 2f79e60f39b89a348856c8f583073bd0, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -7088,7 +7089,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 705bb8ad65877eb408ab30786cc26b34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d518cbd5ac4be24e8ba5029ddea1849, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9084,9 +9085,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: a03eca3b997aa7d43b4fd5fe2cdd0db3,
+    m_HighlightedSprite: {fileID: 21300000, guid: 5cb15165571343848baeefb283bd9440,
       type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: d1d2a606942573c488d8b16fa74b62ee, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 182ad64cf5757384ca3c3de6cb1f96b6, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -9131,7 +9132,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a3e8073c06b75db439eec768545dafba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e38e87f2ae12d9645a8075fc4e8c29af, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
