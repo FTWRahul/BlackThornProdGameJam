@@ -25,6 +25,10 @@ public class RotatePlayer : MonoBehaviour {
     private RaycastHit2D hit;
 
     public AudioSource shootAudio;
+    //public AudioSource betweenPlanetAudio;
+    //public AudioSource rotatePlanetAudio;
+    public GameObject rotateAudio;
+    public GameObject betweenPlanetAudio;
 
 
     // Start is called before the first frame update
@@ -39,6 +43,8 @@ public class RotatePlayer : MonoBehaviour {
         // Make the player rotate with the horizontal movement keys
         if(!blnMovingBetweenPlanets)
         {
+            betweenPlanetAudio.SetActive(false);
+
             transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltAngularSpeed * Time.deltaTime);
             SetAnimations();
 
@@ -90,6 +96,7 @@ public class RotatePlayer : MonoBehaviour {
     //Moving the player between 2 planets
     void MoveToPlanet()
     {
+        betweenPlanetAudio.SetActive(true);
         anim.SetBool("BetweenPlanet", true);
         anim.SetBool("Idle", false);
 
@@ -108,12 +115,16 @@ public class RotatePlayer : MonoBehaviour {
     {
         if (Input.GetAxisRaw("AnimHorz") == 0)
         {
+            rotateAudio.SetActive(false);
+
             anim.SetBool("Idle", true);
             anim.SetBool("LeftThruster", false);
             anim.SetBool("RightThruster", false);
         }
         else if (Input.GetAxisRaw("AnimHorz") > 0)
         {
+            rotateAudio.SetActive(true);
+
             anim.SetBool("Idle", false);
             anim.SetBool("RightThruster", false);
 
@@ -130,6 +141,8 @@ public class RotatePlayer : MonoBehaviour {
         else if (Input.GetAxisRaw("AnimHorz") < 0)
 
         {
+            rotateAudio.SetActive(true);
+
             anim.SetBool("Idle", false);
             anim.SetBool("LeftThruster", false);
 
