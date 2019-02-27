@@ -675,6 +675,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6799963619169249904, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6799963619607850438, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_WholeNumbers
@@ -688,6 +693,46 @@ PrefabInstance:
     - target: {fileID: 6799963619789643273, guid: 8bd82d2536d080f42a03c8515d9f828a,
         type: 3}
       propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963618148329389, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963618148329389, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963618908211882, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963618908211882, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963618939918129, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963618939918129, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963619378030343, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6799963619378030343, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2418,7 +2463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905523108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.6, y: -0.44, z: 0}
+  m_LocalPosition: {x: -10.4, y: -0.44, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 1576588116}
@@ -2481,6 +2526,7 @@ MonoBehaviour:
   blnCurrent: 0
   blnTarget: 0
   anim: {fileID: 1905523109}
+  hitSound: {fileID: 0}
   gameMng: {fileID: 1434037498}
 --- !u!1 &1963628271
 GameObject:
