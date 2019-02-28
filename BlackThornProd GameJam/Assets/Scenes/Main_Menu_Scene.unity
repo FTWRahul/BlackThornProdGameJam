@@ -2612,17 +2612,12 @@ MonoBehaviour:
   loseText: []
   winText: []
   textPlayerScore: {fileID: 0}
-  textEndMessage1: {fileID: 0}
-  textEndMessage2: {fileID: 0}
   imgEndLevel: {fileID: 0}
-  btnRestartLevel: {fileID: 0}
-  btnMainMenu: {fileID: 0}
-  btnExitGame: {fileID: 0}
   Main: 
-  Master: Copy-Scene_Master
-  level1: Scene_Rahul
-  level2: Copy-Scene_Master
-  level3: Scene_Vinicus
+  Master: 
+  level1: Level_01
+  level2: 
+  level3: 
   level4: 
   level5: 
   currentLevel: 
