@@ -14,22 +14,36 @@ public class RiftEnemySpawnner : MonoBehaviour
     public float fltTimeBetweenSpawn;
     public float fltSpawnTime;
 
-    private int intEnemyCount; // Variable counter
+    public int intEnemyCount; // Variable counter
+    public int intWave;
+    public int intWaveCounter; 
 
     public bool blnEnemySpawnned = true;
 
     public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
-    public Wave testList;
+    public WaveOfEnemies[] arrWaves; // Array of waves of enemies
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         //Define random spawn time for the enemy to spawn from the rift
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
 
-        // Assign the Game Manager and 
+        // Assign the Game Manager
         gameMng = FindObjectOfType<GameManager>();
-        intEnemyCount = arrEnemyTypes.Count;
+
+        // Get the arrays of enemies
+        arrWaves = GetComponentsInChildren<WaveOfEnemies>();
+        intWaveCounter = arrWaves.Length;
+
+        arrEnemyTypes = arrWaves[intWave].arrHealth;
+        //Debug.Log(intWaveCounter);
+
+        //for (int i = 0; i < arrEnemyTypes.Count; i++) {
+        //    intEnemyCount += arrWaves[i].arrHealth.Count;
+        //}
+        intEnemyCount += arrEnemyTypes.Count;
+        Debug.Log(intEnemyCount);
         gameMng.intEnemiesRemaining += intEnemyCount;
     }
 

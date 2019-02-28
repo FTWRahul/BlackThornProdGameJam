@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     // Arrays for planets and spawners
     public List<Planet> objPlanet; // Planets from the Planet class
-    private RiftEnemySpawnner[] arrEnemiesRemaining;
+    //private RiftEnemySpawnner[] arrEnemiesRemaining;
     
     // Indices for the planets
     public int intCurrentPlanetIndex;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         // Assign objects to the game manager
         //objPlanet = FindObjectsOfType<Planet>().ToList(); // transform the array of planets into a list
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
-        arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
+        //arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
         player = FindObjectOfType<RotatePlayer>();
 
         // Assign the win and lose texts
@@ -144,10 +144,18 @@ public class GameManager : MonoBehaviour
     // Check if the player won the level
     public void CheckForWin() {
         if (intEnemiesRemaining < 1) {
+
+            if (FindObjectOfType<RiftEnemySpawnner>().intWave < FindObjectOfType<RiftEnemySpawnner>().intWaveCounter - 1) {
+                //if (1 < 2) {
+                FindObjectOfType<RiftEnemySpawnner>().intWave++;
+                FindObjectOfType<RiftEnemySpawnner>().Start();
+            } else {
             // Good ending for the level
-            Debug.Log("YOU WIN!!");
-            gameMng.EndLevel();
-        }
+                Debug.Log("YOU WIN!!");
+                gameMng.EndLevel();
+            }
+        //FindObjectOfType<RiftEnemySpawnner>().Start();
+    }
     }
 
     // Activate/Deactivate loss text and deactivate/activate win text

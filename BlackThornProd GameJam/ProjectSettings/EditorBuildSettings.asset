@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_Rahul.unity
     guid: cb39fc0f69ec911438c754539d666128
-  - enabled: 1
-    path: Assets/Scenes/Scene_Vinicius.unity
-    guid: 6f3eab5e1f709734e9d982bb9e862030
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wave : MonoBehaviour {
+public class WaveOfEnemies : MonoBehaviour {
 
     public List<int> arrHealth;
 
