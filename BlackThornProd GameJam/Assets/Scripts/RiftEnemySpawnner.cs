@@ -8,13 +8,18 @@ public class RiftEnemySpawnner : MonoBehaviour
     public GameObject enemyType1;
     public GameObject enemyType2;
     private GameObject EnemyTemp; // Temporary reference for the instantiated enemy object
+
     public float fltMinSpawnTime;
     public float fltMaxSpawnTime;
     public float fltTimeBetweenSpawn;
     public float fltSpawnTime;
+
     private int intEnemyCount; // Variable counter
+
     public bool blnEnemySpawnned = true;
+
     public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
+    public Wave testList;
 
     // Start is called before the first frame update
     void Start()

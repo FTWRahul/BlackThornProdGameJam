@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public RotatePlayer player;
 
     // Arrays for planets and spawners
-    //public List<Planet> objPlanet; // Planets from the Planet class
     public List<Planet> objPlanet; // Planets from the Planet class
     private RiftEnemySpawnner[] arrEnemiesRemaining;
     
@@ -40,9 +39,17 @@ public class GameManager : MonoBehaviour
     //UI refrences
     public GameObject gameOverPanel;
     public GameObject pausePanel;
+    public GameObject settingsPanel;
+    public GameObject controlsPanel;
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
+    public TextMeshProUGUI textEndMessage1;
+    public TextMeshProUGUI textEndMessage2;
+    public Image imgEndLevel;
+    public Button btnRestartLevel;
+    public Button btnMainMenu;
+    public Button btnExitGame;
 
     //Scene management and level strings
     public string Main;
@@ -61,11 +68,17 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // Assign a Game Manager if there is not one
+        if (gameMng == null)
+        {
+            gameMng = this.gameObject.GetComponent<GameManager>();
+        }
+
         // Assign initial values
         intPlayerScore = 0;
 
         // Assign objects to the game manager
-        objPlanet = FindObjectsOfType<Planet>().ToList(); // transform the array of planets into a list
+        //objPlanet = FindObjectsOfType<Planet>().ToList(); // transform the array of planets into a list
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
         arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
         player = FindObjectOfType<RotatePlayer>();
@@ -78,11 +91,7 @@ public class GameManager : MonoBehaviour
 
         //currentLevel = SceneManager.GetActiveScene().ToString();
 
-        // Assign a Game Manager if there is not one
-        if (gameMng == null)
-        {
-            gameMng = this.gameObject.GetComponent<GameManager>();
-        }
+        
     }
 
     private void Update()
@@ -97,6 +106,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                settingsPanel.SetActive(false);
+                controlsPanel.SetActive(false);
                 UnPauseGame();
             }
         }
