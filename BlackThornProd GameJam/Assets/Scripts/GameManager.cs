@@ -201,7 +201,7 @@ public class GameManager : MonoBehaviour
     public void RetryLevel()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().ToString());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name.ToString());
     }
     public void MainMenu()
     {

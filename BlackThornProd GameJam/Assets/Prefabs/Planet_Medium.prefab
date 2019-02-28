@@ -290,7 +290,7 @@ MonoBehaviour:
   int1stAnimState: 8
   int2ndAnimState: 6
   blnDead: 0
-  blnCurrent: 1
+  blnCurrent: 0
   blnTarget: 0
   anim: {fileID: 0}
   hitSound: {fileID: 7679389231479411894}

@@ -80,23 +80,16 @@ public class RotatePlayer : MonoBehaviour {
                     Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.green, rayDurition);
                 }
 
-                if(Input.GetKeyDown(KeyCode.S))
-                {
-
-
-
                     //Checking for player input
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        Debug.Log(hit.point);
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Debug.Log(hit.point);
 
-                        //changes the bool for the selected planet
-                        hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
-                        gameMng.FindTarget();
-                        blnMovingBetweenPlanets = true;
-                    }
+                    //changes the bool for the selected planet
+                    hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
+                    gameMng.FindTarget();
+                    blnMovingBetweenPlanets = true;
                 }
-
             }
         }
         
