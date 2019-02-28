@@ -322,9 +322,13 @@ MonoBehaviour:
   shootDirection: {fileID: 188494280}
   fltRayCastDistance: 500
   blnMovingBetweenPlanets: 0
+  lr: {fileID: 0}
+  rend: {fileID: 0}
   shootAudio: {fileID: 3889323816106299795}
   rotateAudio: {fileID: 8355207271200763125}
   betweenPlanetAudio: {fileID: 6519668123404426843}
+  drawRay: 0
+  rayDurition: 0
 --- !u!95 &7698726484734165016
 Animator:
   serializedVersion: 3
@@ -483,7 +487,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 467ef2b09fdd3204f9784871341d620e, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

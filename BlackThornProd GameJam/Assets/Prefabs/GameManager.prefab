@@ -43,20 +43,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e6bf1bdcc850e54cad2ea786c6affc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objPlanet:
-  - {fileID: 0}
-  - {fileID: 0}
   gameMng: {fileID: 7164387446919899363}
+  player: {fileID: 0}
+  objPlanet: []
   intCurrentPlanetIndex: 0
   intTargetPlanetIndex: 0
   intPlayerScore: 0
+  intEnemiesRemaining: 0
   fltAnimaDestroyEnemy: 1
   fltAnimaDestroyBullet: 1
   fltPlayerDistPlanet: 1
   fltDestroyBullet: 5
   gameOverPanel: {fileID: 0}
   pausePanel: {fileID: 0}
+  settingsPanel: {fileID: 0}
+  controlsPanel: {fileID: 0}
+  loseText: []
+  winText: []
   textPlayerScore: {fileID: 0}
+  textEndMessage1: {fileID: 0}
+  textEndMessage2: {fileID: 0}
+  imgEndLevel: {fileID: 0}
+  btnRestartLevel: {fileID: 0}
+  btnMainMenu: {fileID: 0}
+  btnExitGame: {fileID: 0}
   Main: Main_Menu_Scene
   Master: Copy-Scene_Master
+  level1: 
+  level2: 
+  level3: 
+  level4: 
+  level5: 
+  currentLevel: 
   blnPaused: 0
