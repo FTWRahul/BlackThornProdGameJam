@@ -59,7 +59,7 @@ public class Planet : MonoBehaviour {
 
             Debug.Log(intHealth);
             
-            // Game Over
+            // Game Over if any planet is destroyed
             if (intHealth < 1) {
                 sliderHealth.gameObject.SetActive(false);
                 Debug.Log("GAME OVER");
@@ -73,7 +73,6 @@ public class Planet : MonoBehaviour {
             Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
 
             // Disable the health bar after all the animations
-            //yield new WaitForSeconds(1);
             StartCoroutine(LateCall());
             }
     }

@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     //UI refrences
     public GameObject gameOverPanel;
     public GameObject pausePanel;
+    public GameObject settingsPanel;
+    public GameObject controlsPanel;
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
@@ -102,6 +104,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                settingsPanel.SetActive(false);
+                controlsPanel.SetActive(false);
                 UnPauseGame();
             }
         }
