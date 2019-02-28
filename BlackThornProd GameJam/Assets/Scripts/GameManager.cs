@@ -68,6 +68,12 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // Assign a Game Manager if there is not one
+        if (gameMng == null)
+        {
+            gameMng = this.gameObject.GetComponent<GameManager>();
+        }
+
         // Assign initial values
         intPlayerScore = 0;
 
@@ -85,11 +91,7 @@ public class GameManager : MonoBehaviour
 
         //currentLevel = SceneManager.GetActiveScene().ToString();
 
-        // Assign a Game Manager if there is not one
-        if (gameMng == null)
-        {
-            gameMng = this.gameObject.GetComponent<GameManager>();
-        }
+        
     }
 
     private void Update()
