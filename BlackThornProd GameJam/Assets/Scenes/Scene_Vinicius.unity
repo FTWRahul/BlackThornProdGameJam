@@ -151,6 +151,7 @@ MonoBehaviour:
   fltSpawnTime: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 
+  testList: {fileID: 0}
 --- !u!212 &47308574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -463,6 +464,7 @@ MonoBehaviour:
   fltSpawnTime: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 
+  testList: {fileID: 0}
 --- !u!212 &640542601
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1050,7 +1052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1111700747
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1136,6 +1138,7 @@ MonoBehaviour:
   fltSpawnTime: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 0100000002000000
+  testList: {fileID: 1742438471}
 --- !u!1 &1184001448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6799963619169249904, guid: 8bd82d2536d080f42a03c8515d9f828a,
@@ -1374,6 +1377,7 @@ MonoBehaviour:
   fltSpawnTime: 0
   blnEnemySpawnned: 0
   arrEnemyTypes: 01000000
+  testList: {fileID: 0}
 --- !u!212 &1341282841
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2292,6 +2296,50 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1742438470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1742438472}
+  - component: {fileID: 1742438471}
+  m_Layer: 0
+  m_Name: Wave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1742438471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742438470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b2dc28779c1b7b4eb1dc3e4f8b1681b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrHealth: 0000000000000000
+--- !u!4 &1742438472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742438470}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 349.00638, y: 145.72876, z: 1.958252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1783529311
 PrefabInstance:
   m_ObjectHideFlags: 0
