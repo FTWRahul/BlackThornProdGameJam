@@ -23,8 +23,10 @@ public class RotatePlayer : MonoBehaviour {
     public bool blnMovingBetweenPlanets;
 
     private RaycastHit2D hit;
+    private Vector3 tempHit;
     public LineRenderer lr;
     public Renderer rend;
+    private Vector3[] lrPositions;
 
     public AudioSource shootAudio;
     //public AudioSource betweenPlanetAudio;
@@ -49,13 +51,16 @@ public class RotatePlayer : MonoBehaviour {
         // Make the player rotate with the horizontal movement keys
         if(!blnMovingBetweenPlanets)
         {
+            lrPositions = new Vector3[0];
+            lr.positionCount = lrPositions.Length;
+            lr.SetPositions(lrPositions);
             betweenPlanetAudio.SetActive(false);
 
             transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltAngularSpeed * Time.deltaTime);
             SetAnimations();
 
         } else { // Check distance between player and hit point
-            if (Vector3.Magnitude(transform.position - new Vector3(hit.point.x, hit.point.y, 0f)) < gameMng.fltPlayerDistPlanet) {
+            if (Vector3.Magnitude(transform.position - tempHit) < gameMng.fltPlayerDistPlanet) {
                 Debug.Log("HIT");
                 // Manage indices for target and current planet
                 blnMovingBetweenPlanets = false;
@@ -72,33 +77,58 @@ public class RotatePlayer : MonoBehaviour {
         //Casts a ray in a direction
         if(hit)
         {
+
             //Checks if the ray hits obj tagged Planet
             if (hit.collider.CompareTag("Planet"))
             {
-                if(drawRay)
+                if (drawRay)
                 {
                     Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.green, rayDurition);
                 }
 
-                    //Checking for player input
-                if (Input.GetKeyDown(KeyCode.Space))
+                if(Input.GetKey(KeyCode.S))
                 {
-                    Debug.Log(hit.point);
+                    lrPositions = new Vector3[2];
+                    lrPositions[0] = new Vector3(playerTip.transform.position.x, playerTip.transform.position.y, playerTip.transform.position.z);
+                    lrPositions[1] = new Vector3(hit.point.x, hit.point.y, 0);
+                    lr.positionCount = lrPositions.Length;
+                    lr.SetPositions(lrPositions);
+                    //Checking for player input
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        tempHit = new Vector3(hit.point.x, hit.point.y, 0);
+                        Debug.Log(tempHit);
+                        //Debug.Log(hit.point);
 
-                    //changes the bool for the selected planet
-                    hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
-                    gameMng.FindTarget();
-                    blnMovingBetweenPlanets = true;
+                        //changes the bool for the selected planet
+                        hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
+                        gameMng.FindTarget();
+                        blnMovingBetweenPlanets = true;
+                    }
                 }
+
             }
+            //else
+            //{
+            //    lrPositions = new Vector3[0];
+            //    lr.positionCount = lrPositions.Length;
+            //    lr.SetPositions(lrPositions);
+            //}
+
         }
-        
-        if(blnMovingBetweenPlanets)
+        //else
+        //{
+        //    lrPositions = new Vector3[0];
+        //    lr.positionCount = lrPositions.Length;
+        //    lr.SetPositions(lrPositions);
+        //}
+
+        if (blnMovingBetweenPlanets)
         {
             MoveToPlanet();
         }
 
-        if(Input.GetKeyDown(KeyCode.W))
+        if(!blnMovingBetweenPlanets &&(Input.GetKeyDown(KeyCode.W)))
         {
             ShootBullet();
         }
@@ -110,9 +140,16 @@ public class RotatePlayer : MonoBehaviour {
         betweenPlanetAudio.SetActive(true);
         anim.SetBool("BetweenPlanet", true);
         anim.SetBool("Idle", false);
+        lrPositions = new Vector3[2];
+        lrPositions[0] = new Vector3(playerTip.transform.position.x, playerTip.transform.position.y, playerTip.transform.position.z);
+        lrPositions[1] = new Vector3(hit.point.x, hit.point.y, 0);
+        lr.positionCount = lrPositions.Length;
+        lr.SetPositions(lrPositions);
 
 
-        transform.position = Vector3.MoveTowards(transform.position, hit.point, fltLinearSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, tempHit, fltLinearSpeed * Time.deltaTime);
+        Debug.Log("You are travelling to"+tempHit);
+
     }
 
     //Spawns and shoots a bullet from the tip of the ship

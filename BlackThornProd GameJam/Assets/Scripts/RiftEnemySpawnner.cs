@@ -23,14 +23,19 @@ public class RiftEnemySpawnner : MonoBehaviour
     public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
     public WaveOfEnemies[] arrWaves; // Array of waves of enemies
 
+    public Animator anim;
+
     // Start is called before the first frame update
     public void Start()
     {
+        blnEnemySpawnned = true;
         //Define random spawn time for the enemy to spawn from the rift
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
 
         // Assign the Game Manager
         gameMng = FindObjectOfType<GameManager>();
+
+        anim = GetComponent<Animator>();
 
         // Get the arrays of enemies
         arrWaves = GetComponentsInChildren<WaveOfEnemies>();
@@ -92,5 +97,10 @@ public class RiftEnemySpawnner : MonoBehaviour
         }
         
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
+
+        if(intEnemyCount < 1)
+        {
+            anim.SetTrigger("End");
+        }
     }
 }
