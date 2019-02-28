@@ -23,12 +23,18 @@ public class RotatePlayer : MonoBehaviour {
     public bool blnMovingBetweenPlanets;
 
     private RaycastHit2D hit;
+    public LineRenderer lr;
+    public Renderer rend;
 
     public AudioSource shootAudio;
     //public AudioSource betweenPlanetAudio;
     //public AudioSource rotatePlanetAudio;
     public GameObject rotateAudio;
     public GameObject betweenPlanetAudio;
+
+    //Debugging and level help
+    public bool drawRay;
+    public float rayDurition;
 
 
     // Start is called before the first frame update
@@ -65,20 +71,32 @@ public class RotatePlayer : MonoBehaviour {
         hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltRayCastDistance);
         //Casts a ray in a direction
         if(hit)
-        {     
+        {
             //Checks if the ray hits obj tagged Planet
             if (hit.collider.CompareTag("Planet"))
             {
-                //Checking for player input
-                if (Input.GetKeyDown(KeyCode.Space))
+                if(drawRay)
                 {
-                    Debug.Log(hit.point);
-
-                    //changes the bool for the selected planet
-                    hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
-                    gameMng.FindTarget();
-                    blnMovingBetweenPlanets = true;
+                    Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.green, rayDurition);
                 }
+
+                if(Input.GetKeyDown(KeyCode.S))
+                {
+
+
+
+                    //Checking for player input
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        Debug.Log(hit.point);
+
+                        //changes the bool for the selected planet
+                        hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
+                        gameMng.FindTarget();
+                        blnMovingBetweenPlanets = true;
+                    }
+                }
+
             }
         }
         
