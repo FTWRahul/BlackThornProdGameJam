@@ -567,21 +567,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
-        type: 3}
-      propertyPath: objPlanet.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
-        type: 3}
-      propertyPath: objPlanet.Array.data[0]
-      value: 
-      objectReference: {fileID: 1750393382}
-    - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
-        type: 3}
-      propertyPath: Main
-      value: Main_Menu_Scene
-      objectReference: {fileID: 0}
     - target: {fileID: 7164387446919899362, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -637,11 +622,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6799963618411589065, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6799963619347636735, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -661,6 +641,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007148236780123014, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 177.2002
+      objectReference: {fileID: 0}
+    - target: {fileID: 592583207789859697, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 177.2002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
@@ -916,18 +906,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11785a66aa41fa4f86332c2a1c10853, type: 3}
---- !u!114 &1750393382 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2159311573124985488, guid: f11785a66aa41fa4f86332c2a1c10853,
-    type: 3}
-  m_PrefabInstance: {fileID: 1750393381}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fba5781e1cbb7546897ce1d98c5a207, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1839805062
 GameObject:
   m_ObjectHideFlags: 0
