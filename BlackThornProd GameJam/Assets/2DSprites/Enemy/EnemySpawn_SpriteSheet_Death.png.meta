@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e8db1afc5fde2e2438dcd2b8cc37658b
+guid: 0aeed83d604b63448a36513178f7ea82
 TextureImporter:
   fileIDToRecycleName:
-    21300000: EnemySpawn_SpriteSheet_Creation_0
-    21300002: EnemySpawn_SpriteSheet_Creation_1
-    21300004: EnemySpawn_SpriteSheet_Creation_2
-    21300006: EnemySpawn_SpriteSheet_Creation_3
+    21300000: EnemySpawn_SpriteSheet_Death_0
+    21300002: EnemySpawn_SpriteSheet_Death_1
+    21300004: EnemySpawn_SpriteSheet_Death_2
+    21300006: EnemySpawn_SpriteSheet_Death_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -88,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemySpawn_SpriteSheet_Creation_0
+      name: EnemySpawn_SpriteSheet_Death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -102,13 +102,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44f43d8e83dac1d4cb991570554212f8
+      spriteID: a869cfa3423d9824f91fec882810ee44
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpawn_SpriteSheet_Creation_1
+      name: EnemySpawn_SpriteSheet_Death_1
       rect:
         serializedVersion: 2
         x: 168
@@ -122,13 +122,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1abc5b431de0f6f4da40e568b5c512bf
+      spriteID: 96aebfd8855e9c240bdba8a3bed57ac4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpawn_SpriteSheet_Creation_2
+      name: EnemySpawn_SpriteSheet_Death_2
       rect:
         serializedVersion: 2
         x: 336
@@ -142,13 +142,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cad22939ed789ad41b44691d56fa41be
+      spriteID: 239a0cbb210c9834887f7302a8e901f3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemySpawn_SpriteSheet_Creation_3
+      name: EnemySpawn_SpriteSheet_Death_3
       rect:
         serializedVersion: 2
         x: 504
@@ -162,7 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d59914bc76fb92948971bd9108feb898
+      spriteID: 046b540cc73679f449559ac07f86c893
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0e5d315442f60e348854e6430b4bbd7b
+    spriteID: a7ee174a15562de4b85ad1574ca92490
     vertices: []
     indices: 
     edges: []

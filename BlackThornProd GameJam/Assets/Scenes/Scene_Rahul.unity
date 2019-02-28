@@ -921,7 +921,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
+  enemyType1: {fileID: 0}
+  enemyType2: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -1021,7 +1022,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
+  enemyType1: {fileID: 0}
+  enemyType2: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -1121,7 +1123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
+  enemyType1: {fileID: 0}
+  enemyType2: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -2077,7 +2080,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
-  enemy: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d, type: 3}
+  enemyType1: {fileID: 0}
+  enemyType2: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -2728,6 +2732,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet_Large
       objectReference: {fileID: 0}
+    - target: {fileID: 8486455484673482972, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
+        type: 3}
+      propertyPath: gameMng
+      value: 
+      objectReference: {fileID: 1434037498}
+    - target: {fileID: 8486455484673482972, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
+        type: 3}
+      propertyPath: int1stAnimState
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486455484673482972, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
+        type: 3}
+      propertyPath: int2ndAnimState
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8486455484673482961, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2782,21 +2801,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8486455484673482972, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
-        type: 3}
-      propertyPath: gameMng
-      value: 
-      objectReference: {fileID: 1434037498}
-    - target: {fileID: 8486455484673482972, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
-        type: 3}
-      propertyPath: int1stAnimState
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8486455484673482972, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
-        type: 3}
-      propertyPath: int2ndAnimState
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8486455484306689862, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
         type: 3}
