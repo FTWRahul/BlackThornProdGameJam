@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     public GameObject pausePanel;
     public GameObject settingsPanel;
     public GameObject controlsPanel;
+    public GameObject inGamePanel;
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
@@ -171,8 +172,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
-
         FlipWinLossTexts(winText, loseText);
+        inGamePanel.SetActive(false);
         player.gameObject.SetActive(false);
 
         Cursor.lockState = CursorLockMode.None;
@@ -182,6 +183,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
         FlipWinLossTexts(loseText, winText);
+        inGamePanel.SetActive(false);
         player.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
     }
