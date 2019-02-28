@@ -47,6 +47,7 @@ public class Planet : MonoBehaviour {
             sliderHealth.gameObject.SetActive(true);
             intHealth--;
             sliderHealth.value--;
+            hitSound.Play();
 
             if (intHealth < int2ndAnimState)
             {

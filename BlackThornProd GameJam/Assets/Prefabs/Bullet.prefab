@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdf650ab4d72b944aa9ad2a8e91b7fe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fltVerticalSpeed: 5
+  fltVerticalSpeed: 8
   gameMng: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
   player: {fileID: 7320307287539884739, guid: 5ad92c9b46335054fbd81f2ec1f4f074, type: 3}
   bullet: {fileID: 8066632618770329460}
