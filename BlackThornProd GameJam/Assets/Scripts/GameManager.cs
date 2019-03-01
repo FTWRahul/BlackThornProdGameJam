@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
 
     // Arrays for planets and spawners
     public List<Planet> objPlanet; // Planets from the Planet class
-    //private RiftEnemySpawnner[] arrEnemiesRemaining;
-    
+    private RiftEnemySpawnner[] arrSpawners;
+
     // Indices for the planets
     public int intCurrentPlanetIndex;
     public int intTargetPlanetIndex;
@@ -25,6 +25,11 @@ public class GameManager : MonoBehaviour
 
     // Counter of enemies remaining
     public int intEnemiesRemaining;
+
+    //Speed of player depending on the planet he is on
+    public float speedPlanetSmall;
+    public float speedPlanetMed;
+    public float speedPlanetLarge;
 
     // Animation times
     public float fltAnimaDestroyEnemy;
@@ -83,6 +88,7 @@ public class GameManager : MonoBehaviour
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
         //arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
         player = FindObjectOfType<RotatePlayer>();
+        arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
 
         // Assign the win and lose texts
         gameOverPanel.SetActive(true);
@@ -112,6 +118,23 @@ public class GameManager : MonoBehaviour
                 UnPauseGame();
             }
         }
+        if(player.drawRay)
+        {
+            for (int i = 0; i < arrSpawners.Length; i++)
+            {
+                for (int j = 0; j < objPlanet.Count; j++)
+                {
+                    Debug.DrawRay(objPlanet[j].transform.position, arrSpawners[i].transform.position - objPlanet[j].transform.position, Color.blue);
+
+                }
+                //Debug.DrawRay(objPlanet[i].transform.position, arrSpawners[i].transform.position - objPlanet[i].transform.position, Color.blue);
+            }
+            for (int i =0; i<objPlanet.Count;i++)
+            {
+                //Debug.DrawRay(objPlanet[i].transform.position, player.transform.position - objPlanet[i].transform.position, Color.blue);
+            }
+
+        }
     }
 
     // Check which planet is the target
@@ -130,6 +153,7 @@ public class GameManager : MonoBehaviour
         objPlanet[intTargetPlanetIndex].blnTarget = false;
         objPlanet[intTargetPlanetIndex].blnCurrent = true;
         intCurrentPlanetIndex = intTargetPlanetIndex;
+        objPlanet[intCurrentPlanetIndex].SetPlayerSpeeds();
     }
 
     //Updates the score text on UI canvas
@@ -167,6 +191,7 @@ public class GameManager : MonoBehaviour
             inActivate[i].SetActive(true);
         }
     }
+
 
     public void EndGame()
     {

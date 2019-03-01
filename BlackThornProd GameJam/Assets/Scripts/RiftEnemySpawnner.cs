@@ -81,6 +81,7 @@ public class RiftEnemySpawnner : MonoBehaviour
     /// Spawns the enemy: Decreases the max spawn time: Randomizes a new spawn time
     public void SpawnEnemy()
     {
+        anim.SetTrigger("Spawn");
         blnEnemySpawnned = true;
         intEnemyCount--;
         if(fltMaxSpawnTime > 2)

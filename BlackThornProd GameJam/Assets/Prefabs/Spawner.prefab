@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 3391072264014527471}
   - component: {fileID: 3391072264014527470}
   - component: {fileID: 3391072264014527469}
+  - component: {fileID: 5688764550484828801}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -114,7 +115,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300006, guid: e8db1afc5fde2e2438dcd2b8cc37658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -153,6 +154,7 @@ MonoBehaviour:
   blnEnemySpawnned: 0
   arrEnemyTypes: 
   arrWaves: []
+  anim: {fileID: 0}
 --- !u!95 &3391072264014527469
 Animator:
   serializedVersion: 3
@@ -172,3 +174,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &5688764550484828801
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3391072264014527473}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.84

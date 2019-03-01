@@ -294,6 +294,7 @@ MonoBehaviour:
   blnTarget: 0
   anim: {fileID: 0}
   hitSound: {fileID: 7679389231479411894}
+  planetType: 2
   gameMng: {fileID: 0}
 --- !u!50 &2159311573124985495
 Rigidbody2D:
