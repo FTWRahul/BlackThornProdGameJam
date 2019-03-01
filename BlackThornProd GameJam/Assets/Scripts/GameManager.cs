@@ -207,10 +207,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Deactivate the health bars of the planets
+    public void DeactivateHealthBars() {
+        for (int i = 0; i < objPlanet.Count; i++) {
+            objPlanet[i].sliderHealth.gameObject.SetActive(false);
+        }
+    }
 
     public void EndGame()
     {
         Time.timeScale = 0f;
+        DeactivateHealthBars();
         gameOverPanel.SetActive(true);
         FlipWinLossTexts(winText, loseText);
         inGamePanel.SetActive(false);
@@ -221,6 +228,7 @@ public class GameManager : MonoBehaviour
     public void EndLevel()
     {
         Time.timeScale = 0f;
+        DeactivateHealthBars();
         gameOverPanel.SetActive(true);
         FlipWinLossTexts(loseText, winText);
         inGamePanel.SetActive(false);
