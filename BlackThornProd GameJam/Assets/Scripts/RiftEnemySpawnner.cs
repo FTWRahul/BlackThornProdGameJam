@@ -7,6 +7,7 @@ public class RiftEnemySpawnner : MonoBehaviour
     public GameManager gameMng;
     public GameObject enemyType1;
     public GameObject enemyType2;
+    public GameObject enemyType3;
     private GameObject EnemyTemp; // Temporary reference for the instantiated enemy object
 
     public float fltMinSpawnTime;
