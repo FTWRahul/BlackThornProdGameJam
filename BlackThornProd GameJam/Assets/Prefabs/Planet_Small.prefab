@@ -385,6 +385,7 @@ MonoBehaviour:
   blnTarget: 0
   anim: {fileID: 3343918655212745805}
   hitSound: {fileID: 3343918655212745808}
+  planetType: 1
   gameMng: {fileID: 0}
 --- !u!82 &3343918655212745808
 AudioSource:

@@ -61,7 +61,7 @@ public class RotatePlayer : MonoBehaviour {
 
         } else { // Check distance between player and hit point
             if (Vector3.Magnitude(transform.position - tempHit) < gameMng.fltPlayerDistPlanet) {
-                Debug.Log("HIT");
+
                 // Manage indices for target and current planet
                 blnMovingBetweenPlanets = false;
                 gameMng.ManageTargets();
@@ -77,6 +77,10 @@ public class RotatePlayer : MonoBehaviour {
         //Casts a ray in a direction
         if(hit)
         {
+            if(drawRay)
+            {
+                Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.red, rayDurition);
+            }
 
             //Checks if the ray hits obj tagged Planet
             if (hit.collider.CompareTag("Planet"))
@@ -93,18 +97,18 @@ public class RotatePlayer : MonoBehaviour {
                     lrPositions[1] = new Vector3(hit.point.x, hit.point.y, 0);
                     lr.positionCount = lrPositions.Length;
                     lr.SetPositions(lrPositions);
-                    //Checking for player input
-                    if (Input.GetKeyDown(KeyCode.Space))
-                    {
-                        tempHit = new Vector3(hit.point.x, hit.point.y, 0);
-                        Debug.Log(tempHit);
-                        //Debug.Log(hit.point);
+                    //Checking for player input                   
+                }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    tempHit = new Vector3(hit.point.x, hit.point.y, 0);
+                    Debug.Log(tempHit);
+                    //Debug.Log(hit.point);
 
-                        //changes the bool for the selected planet
-                        hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
-                        gameMng.FindTarget();
-                        blnMovingBetweenPlanets = true;
-                    }
+                    //changes the bool for the selected planet
+                    hit.collider.gameObject.GetComponent<Planet>().blnTarget = true;
+                    gameMng.FindTarget();
+                    blnMovingBetweenPlanets = true;
                 }
 
             }
