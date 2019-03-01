@@ -146,22 +146,17 @@ public class GameManager : MonoBehaviour
     public void CheckForWin() {
         if (intEnemiesRemaining < 1) {
 
-            //if (FindObjectOfType<RiftEnemySpawnner>().intWave < FindObjectOfType<RiftEnemySpawnner>().intWaveCounter - 1) {
-                //if (1 < 2) {
             if (CheckForSpawners()) {
-                //FindObjectOfType<RiftEnemySpawnner>().intWave++;
                 arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
-                //Debug.Log(arrSpawners.Length);
                 for (int i = 0; i < arrSpawners.Length; i++) {
                     arrSpawners[i].Start();
                 }
-                //FindObjectOfType<RiftEnemySpawnner>().Start();
+
             } else {
             // Good ending for the level
                 Debug.Log("YOU WIN!!");
                 gameMng.EndLevel();
             }
-        //FindObjectOfType<RiftEnemySpawnner>().Start();
         }
     }
 

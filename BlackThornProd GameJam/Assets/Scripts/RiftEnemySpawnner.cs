@@ -22,7 +22,7 @@ public class RiftEnemySpawnner : MonoBehaviour
 
     public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
     public WaveOfEnemies[] arrWaves; // Array of waves of enemies
-    public Transform objWave;
+    public Transform objWave; // Object of 1 wave
 
     public Animator anim;
 
@@ -40,15 +40,8 @@ public class RiftEnemySpawnner : MonoBehaviour
 
         // Get the arrays of enemies
         arrWaves = GetComponentsInChildren<WaveOfEnemies>();
-        //objWave = this.gameObject.transform.GetChild(0);
-        //intWaveCounter = arrWaves.Length;
 
-        if (arrWaves.Length < 1) {
-        //if (objWave == null) {
-            //Debug.Log("NULL");
-            //Destroy(gameObject); // Destroy self
-            //gameMng.CheckForWin();
-        } else {
+        if (arrWaves.Length > 0) {
             // Get the first wave
             objWave = this.gameObject.transform.GetChild(0);
             arrEnemyTypes = arrWaves[0].arrHealth;
@@ -106,13 +99,8 @@ public class RiftEnemySpawnner : MonoBehaviour
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
 
         if(intEnemyCount < 1) {
-            Destroy(objWave.gameObject);
-            //arrWaves = [];
-            //arrWaves = GetComponentsInChildren<WaveOfEnemies>();
-            Debug.Log("LENGTH:" + GetComponentsInChildren<WaveOfEnemies>().Length);
-            //Debug.Log("LENGTH:" + GetComponentsInChildren<WaveOfEnemies>());
-            if (GetComponentsInChildren<WaveOfEnemies>().Length < 2) {
-                
+            Destroy(objWave.gameObject); // Destroy the current wave
+            if (GetComponentsInChildren<WaveOfEnemies>().Length < 2) { // Check if there are waves remaining
                 anim.SetTrigger("End"); // Animation of ending spawner
                 Destroy(gameObject, 0.8f); // Destroy self
                 StartCoroutine(LateCall());
