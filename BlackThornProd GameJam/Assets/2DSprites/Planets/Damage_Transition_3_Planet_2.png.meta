@@ -1,7 +1,18 @@
 fileFormatVersion: 2
 guid: 1929481070779414c8c1a0d88bb584da
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Damage_Transition_3_Planet_2_0
+    21300002: Damage_Transition_3_Planet_2_1
+    21300004: Damage_Transition_3_Planet_2_2
+    21300006: Damage_Transition_3_Planet_2_3
+    21300008: Damage_Transition_3_Planet_2_4
+    21300010: Damage_Transition_3_Planet_2_5
+    21300012: Damage_Transition_3_Planet_2_6
+    21300014: Damage_Transition_3_Planet_2_7
+    21300016: Damage_Transition_3_Planet_2_8
+    21300018: Damage_Transition_3_Planet_2_9
+    21300020: Damage_Transition_3_Planet_2_10
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -31,7 +42,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,7 +51,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,13 +80,244 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381bccf6ae596e24c9f4c38e4aec5da0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adb5893f8764334ca732e6a65797d9d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a27ed66b5c5e1094db70f9f75f030054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_3
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0d8069bffd0314896308fd16247a83
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_4
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da57457f0256f164ebc42b3462f87901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_5
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b2e504c294e2548bf616bae0cd348e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_6
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d2b71b9bc6bd045ae9bc18366d9baa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_7
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47d5891d617e064f84434e55f394134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_8
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6745a5d3cfcc72e4b9aa0a55ad526c58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_9
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 723e39b48afd1be498ae8bdf4424994b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Damage_Transition_3_Planet_2_10
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 0
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f6a391e3a07bc479e851484e5810a3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2857fa8b37aa5054bbd7f1864288d1eb
+    spriteID: acaa53c3777d84b439abe2cd88f51a71
     vertices: []
     indices: 
     edges: []
