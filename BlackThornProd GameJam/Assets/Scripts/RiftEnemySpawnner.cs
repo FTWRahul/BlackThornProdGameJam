@@ -17,7 +17,9 @@ public class RiftEnemySpawnner : MonoBehaviour
 
     public int intEnemyCount; // Variable counter
     public int intWave;
-    public int intWaveCounter; 
+    public int intWaveCounter;
+
+    public int intMinHealth;
 
     public bool blnEnemySpawnned = true;
 
@@ -30,6 +32,7 @@ public class RiftEnemySpawnner : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
+        intMinHealth = 1;
         blnEnemySpawnned = true;
         //Define random spawn time for the enemy to spawn from the rift
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
@@ -89,13 +92,17 @@ public class RiftEnemySpawnner : MonoBehaviour
         {
             fltMaxSpawnTime--;
         }
-        //Vinny Add the 3rd enemy type to this code please
-        //Debug.Log(intEnemyCount);
-        if (arrEnemyTypes[intEnemyCount] < 2) {
+
+        // Spawn different types of enemies
+        if (arrEnemyTypes[intEnemyCount] < 2 || arrEnemyTypes[intEnemyCount] > 3)
+        { // Fail-safe - types lesser than 2 or greater than 3 will instantiate type 1 with 1 health
             EnemyTemp = Instantiate(enemyType1, transform.position, Quaternion.identity);
-            EnemyTemp.GetComponent<EnemyMove>().intHealth = arrEnemyTypes[intEnemyCount];
-        } else {
+            EnemyTemp.GetComponent<EnemyMove>().intHealth = intMinHealth;
+        } else if (arrEnemyTypes[intEnemyCount] < 3) {
             EnemyTemp = Instantiate(enemyType2, transform.position, Quaternion.identity);
+            EnemyTemp.GetComponent<EnemyMove>().intHealth = arrEnemyTypes[intEnemyCount];
+        } else { 
+            EnemyTemp = Instantiate(enemyType3, transform.position, Quaternion.identity);
             EnemyTemp.GetComponent<EnemyMove>().intHealth = arrEnemyTypes[intEnemyCount];
         }
         
