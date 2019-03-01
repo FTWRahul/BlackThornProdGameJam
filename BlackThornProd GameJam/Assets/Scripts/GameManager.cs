@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     // Counter of enemies and waves remaining
     public int intEnemiesRemaining;
-    public int intWavesRemaining;
+    //public int intEnemiesRemaining;
 
     //Speed of player depending on the planet he is on
     public float speedPlanetSmall;
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             blnPaused = !blnPaused;
-            if (blnPaused)
+            if (!blnPaused)
             {
                 PauseGame();
             }
@@ -197,15 +197,15 @@ public class GameManager : MonoBehaviour
     // Check if the player has won the level
     public void CheckForWin() {
         if (intEnemiesRemaining < 1) {
-            Debug.Log(intWavesRemaining);
-            if (CheckForSpawners() && intWavesRemaining == 0) {
+
+            if (CheckForSpawners()) {
                 arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
                 for (int i = 0; i < arrSpawners.Length; i++) {
                     Debug.Log("SPAWN NEXT WAVE");
                     arrSpawners[i].Start();
                 }
 
-            } else if (!CheckForSpawners()) {
+            } else {
             // Good ending for the level
                 Debug.Log("YOU WIN!!");
                 gameMng.EndLevel();
@@ -217,8 +217,10 @@ public class GameManager : MonoBehaviour
     public bool CheckForSpawners() {
         arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
         if (arrSpawners.Length < 1) {
+            //Debug.Log("NO SPAWNERS");
             return false;
         } else {
+            //Debug.Log("SPAWNERS");
             return true;
         }
     }
