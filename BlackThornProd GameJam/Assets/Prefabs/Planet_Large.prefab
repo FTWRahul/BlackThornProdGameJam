@@ -367,9 +367,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fba5781e1cbb7546897ce1d98c5a207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intHealth: 10
-  int1stAnimState: 8
-  int2ndAnimState: 6
+  intHealth: 7
+  int1stAnimState: 5
+  int2ndAnimState: 3
   blnDead: 0
   blnCurrent: 0
   blnTarget: 0

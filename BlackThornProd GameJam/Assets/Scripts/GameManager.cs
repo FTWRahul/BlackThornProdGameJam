@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
+    public TextMeshProUGUI textEndGameScore;
     public TextMeshProUGUI textEndMessage1;
     public TextMeshProUGUI textEndMessage2;
     public Image imgEndLevel;
@@ -165,6 +166,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Starting");
         intPlayerScore++;
         textPlayerScore.text = intPlayerScore.ToString();
+        textEndGameScore.text = intPlayerScore.ToString();
         //Debug.Log(intPlayerScore);
     }
 
@@ -207,10 +209,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Deactivate the health bars of the planets
+    public void DeactivateHealthBars() {
+        for (int i = 0; i < objPlanet.Count; i++) {
+            objPlanet[i].sliderHealth.gameObject.SetActive(false);
+        }
+    }
 
     public void EndGame()
     {
         Time.timeScale = 0f;
+        DeactivateHealthBars();
         gameOverPanel.SetActive(true);
         FlipWinLossTexts(winText, loseText);
         inGamePanel.SetActive(false);
@@ -221,6 +230,7 @@ public class GameManager : MonoBehaviour
     public void EndLevel()
     {
         Time.timeScale = 0f;
+        DeactivateHealthBars();
         gameOverPanel.SetActive(true);
         FlipWinLossTexts(loseText, winText);
         inGamePanel.SetActive(false);

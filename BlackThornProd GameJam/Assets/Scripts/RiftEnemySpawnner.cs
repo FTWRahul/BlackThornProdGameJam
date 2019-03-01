@@ -7,6 +7,7 @@ public class RiftEnemySpawnner : MonoBehaviour
     public GameManager gameMng;
     public GameObject enemyType1;
     public GameObject enemyType2;
+    public GameObject enemyType3;
     private GameObject EnemyTemp; // Temporary reference for the instantiated enemy object
 
     public float fltMinSpawnTime;
@@ -88,6 +89,7 @@ public class RiftEnemySpawnner : MonoBehaviour
         {
             fltMaxSpawnTime--;
         }
+        //Vinny Add the 3rd enemy type to this code please
         //Debug.Log(intEnemyCount);
         if (arrEnemyTypes[intEnemyCount] < 2) {
             EnemyTemp = Instantiate(enemyType1, transform.position, Quaternion.identity);

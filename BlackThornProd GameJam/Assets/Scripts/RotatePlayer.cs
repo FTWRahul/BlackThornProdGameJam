@@ -6,7 +6,10 @@ public class RotatePlayer : MonoBehaviour {
 
     /* Variables */
     public float fltAngularSpeed;
-    public float fltLinearSpeed; 
+    public float fltLinearSpeed;
+    public float fltTimeBetweenShots;
+    private bool blnBulletShot;
+    public float fltBulletSpawnTime;
     //public float fltAngle;
     //public int intPlanetNum;
 
@@ -47,9 +50,10 @@ public class RotatePlayer : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         // Make the player rotate with the horizontal movement keys
-        if(!blnMovingBetweenPlanets)
+        if (!blnMovingBetweenPlanets)
         {
             lrPositions = new Vector3[0];
             lr.positionCount = lrPositions.Length;
@@ -59,8 +63,11 @@ public class RotatePlayer : MonoBehaviour {
             transform.RotateAround(gameMng.objPlanet[gameMng.intCurrentPlanetIndex].transform.position, Vector3.back, Input.GetAxis("Horizontal") * fltAngularSpeed * Time.deltaTime);
             SetAnimations();
 
-        } else { // Check distance between player and hit point
-            if (Vector3.Magnitude(transform.position - tempHit) < gameMng.fltPlayerDistPlanet) {
+        }
+        else
+        { // Check distance between player and hit point
+            if (Vector3.Magnitude(transform.position - tempHit) < gameMng.fltPlayerDistPlanet)
+            {
 
                 // Manage indices for target and current planet
                 blnMovingBetweenPlanets = false;
@@ -73,11 +80,12 @@ public class RotatePlayer : MonoBehaviour {
             }
         }
 
+
         hit = Physics2D.Raycast(playerTip.transform.position, shootDirection.transform.position - playerTip.transform.position, fltRayCastDistance);
         //Casts a ray in a direction
-        if(hit)
+        if (hit)
         {
-            if(drawRay)
+            if (drawRay)
             {
                 Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.red, rayDurition);
             }
@@ -90,7 +98,7 @@ public class RotatePlayer : MonoBehaviour {
                     Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.green, rayDurition);
                 }
 
-                if(Input.GetKey(KeyCode.S))
+                if (Input.GetKey(KeyCode.S))
                 {
                     lrPositions = new Vector3[2];
                     lrPositions[0] = new Vector3(playerTip.transform.position.x, playerTip.transform.position.y, playerTip.transform.position.z);
@@ -132,9 +140,24 @@ public class RotatePlayer : MonoBehaviour {
             MoveToPlanet();
         }
 
-        if(!blnMovingBetweenPlanets &&(Input.GetKeyDown(KeyCode.W)))
+        if (!blnBulletShot)
         {
-            ShootBullet();
+            if (!blnMovingBetweenPlanets && (Input.GetKeyDown(KeyCode.W)))
+            {
+                ShootBullet();
+            }
+        }
+        else
+        {
+            //Increament the time bewteen spawns
+            fltTimeBetweenShots += Time.deltaTime;
+            //Check if the time that has passed is greater than the time the enemy should spawn
+            if (fltTimeBetweenShots > fltBulletSpawnTime)
+            {
+                //Set value of time between spawn to 0 and spawn enemy
+                fltTimeBetweenShots = 0;
+                blnBulletShot = false;
+            }
         }
     }
 
@@ -160,6 +183,7 @@ public class RotatePlayer : MonoBehaviour {
     void ShootBullet()
     {
         shootAudio.Play();
+        blnBulletShot = true;
         Instantiate(bullet, playerTip.transform.position, Player.transform.rotation);
     }
 
@@ -207,6 +231,24 @@ public class RotatePlayer : MonoBehaviour {
             //    {
             //        anim.SetBool("RightTran", false);
             //    }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyMove>().hitSound.Play();
+            // Kill the Enemy and destroy both Enemy and Bullet
+            //collision.GetComponent<EnemyMove>().blnDead = true;
+            collision.GetComponent<EnemyMove>().intHealth--;
+            if (collision.GetComponent<EnemyMove>().intHealth == 0)
+            {
+                collision.GetComponent<EnemyMove>().blnKilled = true;
+                //collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - collision.gameObject.transform.position);
+                collision.GetComponent<EnemyMove>().anim.SetBool("Killed", true);
+                Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
+            }
         }
     }
 }

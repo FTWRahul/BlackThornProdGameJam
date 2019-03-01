@@ -142,7 +142,9 @@ MonoBehaviour:
   gameMng: {fileID: 0}
   enemyType1: {fileID: 8807135991934784699, guid: 8e04672cf298a004f8c738c60c3d536d,
     type: 3}
-  enemyType2: {fileID: 8807135991934784699, guid: e31dcbf1155538342a383d657308815d,
+  enemyType2: {fileID: 198622279000224434, guid: 85fc2e88d3cec2845ab9411357f0dded,
+    type: 3}
+  enemyType3: {fileID: 4565670462449006133, guid: e31dcbf1155538342a383d657308815d,
     type: 3}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
@@ -154,6 +156,7 @@ MonoBehaviour:
   blnEnemySpawnned: 0
   arrEnemyTypes: 
   arrWaves: []
+  objWave: {fileID: 0}
   anim: {fileID: 0}
 --- !u!95 &3391072264014527469
 Animator:
