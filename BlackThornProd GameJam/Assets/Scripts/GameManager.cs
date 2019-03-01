@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
+    public TextMeshProUGUI textEndGameScore;
     public TextMeshProUGUI textEndMessage1;
     public TextMeshProUGUI textEndMessage2;
     public Image imgEndLevel;
@@ -165,6 +166,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Starting");
         intPlayerScore++;
         textPlayerScore.text = intPlayerScore.ToString();
+        textEndGameScore.text = intPlayerScore.ToString();
         //Debug.Log(intPlayerScore);
     }
 
