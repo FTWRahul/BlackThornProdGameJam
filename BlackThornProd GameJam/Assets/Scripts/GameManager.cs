@@ -23,8 +23,9 @@ public class GameManager : MonoBehaviour
     public int intTargetPlanetIndex;
     public int intPlayerScore;
 
-    // Counter of enemies remaining
+    // Counter of enemies and waves remaining
     public int intEnemiesRemaining;
+    //public int intEnemiesRemaining;
 
     //Speed of player depending on the planet he is on
     public float speedPlanetSmall;
@@ -84,9 +85,7 @@ public class GameManager : MonoBehaviour
         intPlayerScore = 0;
 
         // Assign objects to the game manager
-        //objPlanet = FindObjectsOfType<Planet>().ToList(); // transform the array of planets into a list
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
-        //arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
         player = FindObjectOfType<RotatePlayer>();
         arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
 
@@ -98,7 +97,6 @@ public class GameManager : MonoBehaviour
 
         //currentLevel = SceneManager.GetActiveScene().ToString();
 
-        
     }
 
     private void Update()
@@ -168,29 +166,23 @@ public class GameManager : MonoBehaviour
         intPlayerScore++;
         textPlayerScore.text = intPlayerScore.ToString();
         //Debug.Log(intPlayerScore);
-
     }
 
-    // Check if the player won the level
+    // Check if the player has won the level
     public void CheckForWin() {
         if (intEnemiesRemaining < 1) {
 
-            //if (FindObjectOfType<RiftEnemySpawnner>().intWave < FindObjectOfType<RiftEnemySpawnner>().intWaveCounter - 1) {
-                //if (1 < 2) {
             if (CheckForSpawners()) {
-                //FindObjectOfType<RiftEnemySpawnner>().intWave++;
                 arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
-                //Debug.Log(arrSpawners.Length);
                 for (int i = 0; i < arrSpawners.Length; i++) {
                     arrSpawners[i].Start();
                 }
-                //FindObjectOfType<RiftEnemySpawnner>().Start();
+
             } else {
             // Good ending for the level
                 Debug.Log("YOU WIN!!");
                 gameMng.EndLevel();
             }
-        //FindObjectOfType<RiftEnemySpawnner>().Start();
         }
     }
 
