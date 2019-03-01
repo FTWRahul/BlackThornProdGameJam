@@ -102,17 +102,20 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel") && !blnPaused)
+        if (Input.GetButtonDown("Cancel"))
         {
-            //Call the DoPause function to pause the game
-            PauseGame();
-            blnPaused = true;
-        } else if (Input.GetButtonDown("Cancel") && blnPaused)
-        {
-            settingsPanel.SetActive(false);
-            controlsPanel.SetActive(false);
-            UnPauseGame();
-            blnPaused = false;
+
+            blnPaused = !blnPaused;
+            if (blnPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                settingsPanel.SetActive(false);
+                controlsPanel.SetActive(false);
+                UnPauseGame();
+            }
         }
         if (player.drawRay)
         {
