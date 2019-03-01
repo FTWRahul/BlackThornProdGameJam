@@ -22,6 +22,7 @@ public class RiftEnemySpawnner : MonoBehaviour
 
     public List<int> arrEnemyTypes; // Array of types of enemies (with health values)
     public WaveOfEnemies[] arrWaves; // Array of waves of enemies
+    public Transform objWave;
 
     public Animator anim;
 
@@ -39,17 +40,23 @@ public class RiftEnemySpawnner : MonoBehaviour
 
         // Get the arrays of enemies
         arrWaves = GetComponentsInChildren<WaveOfEnemies>();
-        intWaveCounter = arrWaves.Length;
+        //objWave = this.gameObject.transform.GetChild(0);
+        //intWaveCounter = arrWaves.Length;
 
-        arrEnemyTypes = arrWaves[intWave].arrHealth;
-        //Debug.Log(intWaveCounter);
-
-        //for (int i = 0; i < arrEnemyTypes.Count; i++) {
-        //    intEnemyCount += arrWaves[i].arrHealth.Count;
-        //}
-        intEnemyCount += arrEnemyTypes.Count;
-        Debug.Log(intEnemyCount);
-        gameMng.intEnemiesRemaining += intEnemyCount;
+        if (arrWaves.Length < 1) {
+        //if (objWave == null) {
+            //Debug.Log("NULL");
+            //Destroy(gameObject); // Destroy self
+            //gameMng.CheckForWin();
+        } else {
+            // Get the first wave
+            objWave = this.gameObject.transform.GetChild(0);
+            arrEnemyTypes = arrWaves[0].arrHealth;
+            intEnemyCount += arrEnemyTypes.Count;
+            gameMng.intEnemiesRemaining += intEnemyCount; // Total counter for the Gama Manager
+        }
+        
+        
     }
 
     // Update is called once per frame
@@ -98,9 +105,24 @@ public class RiftEnemySpawnner : MonoBehaviour
         
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
 
-        if(intEnemyCount < 1)
-        {
-            anim.SetTrigger("End");
+        if(intEnemyCount < 1) {
+            Destroy(objWave.gameObject);
+            //arrWaves = [];
+            //arrWaves = GetComponentsInChildren<WaveOfEnemies>();
+            Debug.Log("LENGTH:" + GetComponentsInChildren<WaveOfEnemies>().Length);
+            //Debug.Log("LENGTH:" + GetComponentsInChildren<WaveOfEnemies>());
+            if (GetComponentsInChildren<WaveOfEnemies>().Length < 2) {
+                
+                anim.SetTrigger("End"); // Animation of ending spawner
+                Destroy(gameObject, 0.8f); // Destroy self
+                StartCoroutine(LateCall());
+            }
         }
+    }
+
+    // Wait for 1 second to check for win, but keep running the code
+    IEnumerator LateCall() {
+        yield return new WaitForSeconds(1);
+        gameMng.CheckForWin();
     }
 }
