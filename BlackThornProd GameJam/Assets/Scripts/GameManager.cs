@@ -105,6 +105,9 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Cancel") && !blnPaused)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of e06ad6f... Planet Animations final push
             //Call the DoPause function to pause the game
             PauseGame();
             blnPaused = true;
@@ -114,6 +117,7 @@ public class GameManager : MonoBehaviour
             controlsPanel.SetActive(false);
             UnPauseGame();
             blnPaused = false;
+<<<<<<< HEAD
 =======
             blnPaused = !blnPaused;
             if (blnPaused)
@@ -127,6 +131,8 @@ public class GameManager : MonoBehaviour
                 UnPauseGame();
             }
 >>>>>>> parent of 7c53ee8... Game manager changes
+=======
+>>>>>>> parent of e06ad6f... Planet Animations final push
         }
         if (player.drawRay)
         {
