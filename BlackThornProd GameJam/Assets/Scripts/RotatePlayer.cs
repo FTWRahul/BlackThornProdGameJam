@@ -233,4 +233,22 @@ public class RotatePlayer : MonoBehaviour {
             //    }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.gameObject.GetComponent<EnemyMove>().hitSound.Play();
+            // Kill the Enemy and destroy both Enemy and Bullet
+            //collision.GetComponent<EnemyMove>().blnDead = true;
+            collision.GetComponent<EnemyMove>().intHealth--;
+            if (collision.GetComponent<EnemyMove>().intHealth == 0)
+            {
+                collision.GetComponent<EnemyMove>().blnKilled = true;
+                //collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - collision.gameObject.transform.position);
+                collision.GetComponent<EnemyMove>().anim.SetBool("Killed", true);
+                Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
+            }
+        }
+    }
 }

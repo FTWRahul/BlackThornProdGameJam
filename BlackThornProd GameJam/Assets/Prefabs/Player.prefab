@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 7698726484734165016}
   - component: {fileID: 3889323816106299795}
   - component: {fileID: 1720910905}
+  - component: {fileID: 1250786316}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -315,6 +316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fltAngularSpeed: 100
   fltLinearSpeed: 10
+  fltTimeBetweenShots: 0
+  fltBulletSpawnTime: 0.2
   gameMng: {fileID: 0}
   anim: {fileID: 7698726484734165016}
   Player: {fileID: 7320307287539884739}
@@ -538,6 +541,32 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!61 &1250786316
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7320307287539884739}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.18}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.44, y: 1.44}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 1.04}
+  m_EdgeRadius: 0
 --- !u!1 &8355207271200763125
 GameObject:
   m_ObjectHideFlags: 0
