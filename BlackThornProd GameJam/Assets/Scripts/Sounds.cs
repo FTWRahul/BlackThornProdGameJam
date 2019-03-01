@@ -20,7 +20,7 @@ public class Sounds : MonoBehaviour
         // Update is called once per frame
         void Update()
         {
-            audioSrc.volume = musicVolume;
+            //audioSrc.volume = musicVolume;
         }
 
         // Method that is called by slider game object: This method takes vol value passed by slider and sets it as musicValue
