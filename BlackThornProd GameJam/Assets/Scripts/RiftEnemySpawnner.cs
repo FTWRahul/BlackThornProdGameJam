@@ -113,6 +113,7 @@ public class RiftEnemySpawnner : MonoBehaviour
         
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
 
+        // When all enemies of the wave have spawned
         if(intEnemyCount < 1) {
             Destroy(objWave.gameObject); // Destroy the current wave
             gameMng.intWavesRemaining--;
