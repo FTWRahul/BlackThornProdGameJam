@@ -13,10 +13,6 @@ public class GameManager : MonoBehaviour
 
     // Player game object
     public RotatePlayer player;
-    public int intScoreMultiplier = 1;
-    public int intMultiplierCounter;
-    public int intMultiplierCap;
-    public int intMaxMultiplier;
 
     // Arrays for planets and spawners
     public List<Planet> objPlanet; // Planets from the Planet class
@@ -55,7 +51,6 @@ public class GameManager : MonoBehaviour
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
-    public TextMeshProUGUI textScoreMultiplier;
     public TextMeshProUGUI textEndGameScore;
     public TextMeshProUGUI textEndMessage1;
     public TextMeshProUGUI textEndMessage2;
@@ -121,7 +116,6 @@ public class GameManager : MonoBehaviour
                 UnPauseGame();
             }
         }
-
         if (player.drawRay)
         {
             for (int i = 0; i < arrSpawners.Length; i++)
@@ -146,8 +140,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
     // Check which planet is the target
     public void FindTarget() {
         for (int i = 0; i < objPlanet.Count; i++) {
@@ -171,27 +163,10 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore()
     {
         //Debug.Log("Starting");
-        intPlayerScore = intPlayerScore + intScoreMultiplier;
+        intPlayerScore++;
         textPlayerScore.text = intPlayerScore.ToString();
         textEndGameScore.text = intPlayerScore.ToString();
-        textScoreMultiplier.text = intScoreMultiplier.ToString();
         //Debug.Log(intPlayerScore);
-    }
-    public void IncreaseMultiplier()
-    {
-        if(intMultiplierCap < 10)
-        {
-            if (intMultiplierCounter < 5)
-            {
-                intMultiplierCounter++;
-            }
-            else
-            {
-                intScoreMultiplier += 2;
-                intMultiplierCounter = 0;
-            }
-        }
-
     }
 
     // Check if the player has won the level

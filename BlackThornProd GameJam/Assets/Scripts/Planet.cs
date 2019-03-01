@@ -45,49 +45,19 @@ public class Planet : MonoBehaviour {
     // Detects collision of enemy to planet; decreases the planet's health; destroys enemy
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
-   
             // Decrase health and show that in the health bar
-            
-            if(blnDead)
-            {
-                anim.SetTrigger("Damaged3");
-                //while(collision.gameObject.GetComponent<EnemyMove>().intPlanetToKill == )
-            }
-            else if (intHealth < int2ndAnimState)
+            sliderHealth.gameObject.SetActive(true);
+            intHealth--;
+            sliderHealth.value--;
+            hitSound.Play();
+
+            if (intHealth < int2ndAnimState)
             {
                 anim.SetTrigger("Damaged2");
-                sliderHealth.gameObject.SetActive(true);
-                intHealth--;
-                sliderHealth.value--;
-                hitSound.Play();
-                collision.gameObject.GetComponent<EnemyMove>().blnDead = true;
-                collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - transform.position);
-                collision.GetComponent<EnemyMove>().anim.SetBool("PlanetHit", true);
-
-                // Destroy enemy
-                Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
-
-                // Disable the health bar after all the animations
-                StartCoroutine(LateCall());
-
             }
             else if(intHealth < int1stAnimState )
             {
-
                 anim.SetTrigger("Damaged1");
-                sliderHealth.gameObject.SetActive(true);
-                intHealth--;
-                sliderHealth.value--;
-                hitSound.Play();
-                collision.gameObject.GetComponent<EnemyMove>().blnDead = true;
-                collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - transform.position);
-                collision.GetComponent<EnemyMove>().anim.SetBool("PlanetHit", true);
-
-                // Destroy enemy
-                Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
-
-                // Disable the health bar after all the animations
-                StartCoroutine(LateCall());
             }
 
             Debug.Log(intHealth);
@@ -96,10 +66,17 @@ public class Planet : MonoBehaviour {
             if (intHealth < 1) {
                 //sliderHealth.gameObject.SetActive(false);
                 Debug.Log("GAME OVER");
-                blnDead = true;
-                //gameMng.EndGame();
+                gameMng.EndGame();
             }
+            collision.gameObject.GetComponent<EnemyMove>().blnDead = true;
+            collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - transform.position);
+            collision.GetComponent<EnemyMove>().anim.SetBool("PlanetHit", true);
 
+            // Destroy enemy
+            Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
+
+            // Disable the health bar after all the animations
+            StartCoroutine(LateCall());
         }
     }
 

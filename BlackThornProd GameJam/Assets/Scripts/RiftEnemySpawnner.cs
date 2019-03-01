@@ -46,11 +46,6 @@ public class RiftEnemySpawnner : MonoBehaviour
         arrWaves = GetComponentsInChildren<WaveOfEnemies>();
 
         if (arrWaves.Length > 0) {
-            // Set the maximum number of waves in a spawner
-            if (arrWaves.Length > gameMng.intWavesRemaining) {
-                gameMng.intWavesRemaining = arrWaves.Length;
-            }
-
             // Get the first wave
             objWave = this.gameObject.transform.GetChild(0);
             arrEnemyTypes = arrWaves[0].arrHealth;
@@ -113,10 +108,8 @@ public class RiftEnemySpawnner : MonoBehaviour
         
         fltSpawnTime = Random.Range(fltMinSpawnTime, fltMaxSpawnTime);
 
-        // When all enemies of the wave have spawned
         if(intEnemyCount < 1) {
             Destroy(objWave.gameObject); // Destroy the current wave
-            gameMng.intWavesRemaining--;
             if (GetComponentsInChildren<WaveOfEnemies>().Length < 2) { // Check if there are waves remaining
                 anim.SetTrigger("End"); // Animation of ending spawner
                 Destroy(gameObject, 0.8f); // Destroy self

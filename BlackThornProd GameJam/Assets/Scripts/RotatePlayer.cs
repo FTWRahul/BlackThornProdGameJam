@@ -7,7 +7,7 @@ public class RotatePlayer : MonoBehaviour {
     /* Variables */
     public float fltAngularSpeed;
     public float fltLinearSpeed;
-    private float fltTimeBetweenShots;
+    public float fltTimeBetweenShots;
     private bool blnBulletShot;
     public float fltBulletSpawnTime;
     //public float fltAngle;
@@ -122,8 +122,20 @@ public class RotatePlayer : MonoBehaviour {
                 }
 
             }
+            //else
+            //{
+            //    lrPositions = new Vector3[0];
+            //    lr.positionCount = lrPositions.Length;
+            //    lr.SetPositions(lrPositions);
+            //}
 
         }
+        //else
+        //{
+        //    lrPositions = new Vector3[0];
+        //    lr.positionCount = lrPositions.Length;
+        //    lr.SetPositions(lrPositions);
+        //}
 
         if (blnMovingBetweenPlanets)
         {
@@ -195,8 +207,15 @@ public class RotatePlayer : MonoBehaviour {
             anim.SetBool("Idle", false);
             anim.SetBool("RightThruster", false);
 
+            //if (!anim.GetBool("LeftThruster"))
+            //{
+            //    anim.SetBool("LeftTran", true);
             anim.SetBool("LeftThruster", true);
-
+            //}
+            //else
+            //{
+            //    anim.SetBool("LeftTran", false);
+            //}
         }
         else if (Input.GetAxisRaw("AnimHorz") < 0)
 
@@ -206,8 +225,15 @@ public class RotatePlayer : MonoBehaviour {
             anim.SetBool("Idle", false);
             anim.SetBool("LeftThruster", false);
 
+            //    if (!anim.GetBool("RightThruster"))
+            //    {
+            //        anim.SetBool("RightTran", true);
             anim.SetBool("RightThruster", true);
-
+            //    }
+            //    else
+            //    {
+            //        anim.SetBool("RightTran", false);
+            //    }
         }
     }
 
@@ -223,11 +249,10 @@ public class RotatePlayer : MonoBehaviour {
             //if (collision.GetComponent<EnemyMove>().intHealth == 0)
             //{
                 
-            collision.GetComponent<EnemyMove>().blnKilled = true;
-            gameMng.IncreaseMultiplier();
-            //collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - collision.gameObject.transform.position);
-            collision.GetComponent<EnemyMove>().anim.SetBool("Killed", true);
-            Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
+                collision.GetComponent<EnemyMove>().blnKilled = true;
+                //collision.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.down, collision.gameObject.transform.position - collision.gameObject.transform.position);
+                collision.GetComponent<EnemyMove>().anim.SetBool("Killed", true);
+                Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
             //}
         }
     }
