@@ -2604,6 +2604,9 @@ MonoBehaviour:
   intTargetPlanetIndex: 0
   intPlayerScore: 0
   intEnemiesRemaining: 0
+  speedPlanetSmall: 0
+  speedPlanetMed: 0
+  speedPlanetLarge: 0
   fltAnimaDestroyEnemy: 0
   fltAnimaDestroyBullet: 0
   fltPlayerDistPlanet: 0
@@ -2616,6 +2619,7 @@ MonoBehaviour:
   loseText: []
   winText: []
   textPlayerScore: {fileID: 0}
+  textEndGameScore: {fileID: 0}
   textEndMessage1: {fileID: 0}
   textEndMessage2: {fileID: 0}
   imgEndLevel: {fileID: 0}
@@ -4361,7 +4365,7 @@ RectTransform:
   m_GameObject: {fileID: 696862610}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.788285, y: 5.907044, z: 4.788285}
+  m_LocalScale: {x: 3.6058538, y: 4.4483438, z: 3.6058538}
   m_Children: []
   m_Father: {fileID: 1285286156}
   m_RootOrder: 1
@@ -4391,7 +4395,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: CAPTAIN NASIC
+  m_text: "CAPTAIN \nNASIC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 69f798428fbfeff4bbc75fd77b41c1de, type: 2}
   m_sharedMaterial: {fileID: 21700438548789256, guid: 69f798428fbfeff4bbc75fd77b41c1de,
@@ -4420,10 +4424,10 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 33.3
-  m_fontSizeBase: 36
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 100
   m_fontStyle: 0
@@ -4435,10 +4439,10 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 50
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 9
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -4461,9 +4465,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 0}
-    characterCount: 13
+    characterCount: 14
     spriteCount: 0
-    spaceCount: 1
+    spaceCount: 2
     wordCount: 2
     linkCount: 0
     lineCount: 2
