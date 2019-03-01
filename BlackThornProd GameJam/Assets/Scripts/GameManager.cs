@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel") && !blnPaused)
         {
+<<<<<<< HEAD
             //Call the DoPause function to pause the game
             PauseGame();
             blnPaused = true;
@@ -113,6 +114,19 @@ public class GameManager : MonoBehaviour
             controlsPanel.SetActive(false);
             UnPauseGame();
             blnPaused = false;
+=======
+            blnPaused = !blnPaused;
+            if (blnPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                settingsPanel.SetActive(false);
+                controlsPanel.SetActive(false);
+                UnPauseGame();
+            }
+>>>>>>> parent of 7c53ee8... Game manager changes
         }
         if (player.drawRay)
         {
