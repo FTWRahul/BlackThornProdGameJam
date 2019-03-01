@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     // Counter of enemies and waves remaining
     public int intEnemiesRemaining;
-    //public int intEnemiesRemaining;
+    public int intWavesRemaining;
 
     //Speed of player depending on the planet he is on
     public float speedPlanetSmall;
@@ -102,19 +102,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetButtonDown("Cancel") && !blnPaused)
         {
-            blnPaused = !blnPaused;
-            if (!blnPaused)
-            {
-                PauseGame();
-            }
-            else
-            {
-                settingsPanel.SetActive(false);
-                controlsPanel.SetActive(false);
-                UnPauseGame();
-            }
+            //Call the DoPause function to pause the game
+            PauseGame();
+            blnPaused = true;
+        } else if (Input.GetButtonDown("Cancel") && blnPaused)
+        {
+            settingsPanel.SetActive(false);
+            controlsPanel.SetActive(false);
+            UnPauseGame();
+            blnPaused = false;
         }
         if (player.drawRay)
         {
@@ -172,15 +170,15 @@ public class GameManager : MonoBehaviour
     // Check if the player has won the level
     public void CheckForWin() {
         if (intEnemiesRemaining < 1) {
-
-            if (CheckForSpawners()) {
+            Debug.Log(intWavesRemaining);
+            if (CheckForSpawners() && intWavesRemaining == 0) {
                 arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
                 for (int i = 0; i < arrSpawners.Length; i++) {
                     Debug.Log("SPAWN NEXT WAVE");
                     arrSpawners[i].Start();
                 }
 
-            } else {
+            } else if (!CheckForSpawners()) {
             // Good ending for the level
                 Debug.Log("YOU WIN!!");
                 gameMng.EndLevel();
@@ -192,10 +190,8 @@ public class GameManager : MonoBehaviour
     public bool CheckForSpawners() {
         arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
         if (arrSpawners.Length < 1) {
-            //Debug.Log("NO SPAWNERS");
             return false;
         } else {
-            //Debug.Log("SPAWNERS");
             return true;
         }
     }
