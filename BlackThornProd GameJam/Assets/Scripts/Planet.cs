@@ -17,6 +17,7 @@ public class Planet : MonoBehaviour {
     public Animator anim;
     private Slider sliderHealth;
     public AudioSource hitSound;
+    public int planetType;
 
     // Reference for Game Manager
     public GameManager gameMng;
@@ -31,6 +32,7 @@ public class Planet : MonoBehaviour {
         sliderHealth.maxValue = intHealth;
         sliderHealth.value = sliderHealth.maxValue;
         sliderHealth.gameObject.SetActive(false);
+
     }
 
     // Planet Constructor
@@ -82,5 +84,25 @@ public class Planet : MonoBehaviour {
         yield return new WaitForSeconds(1);
 
         sliderHealth.gameObject.SetActive(false);
+    }
+
+    public void SetPlayerSpeeds()
+    {
+        if (planetType < 2 )
+        {
+            gameMng.player.fltAngularSpeed = gameMng.speedPlanetSmall;
+        }
+        else if (planetType < 3)
+        {
+            gameMng.player.fltAngularSpeed = gameMng.speedPlanetMed;
+        }
+        else if (planetType < 4)
+        {
+            gameMng.player.fltAngularSpeed = gameMng.speedPlanetLarge;
+        }
+        else
+        {
+            gameMng.player.fltAngularSpeed = gameMng.speedPlanetLarge;
+        }
     }
 }

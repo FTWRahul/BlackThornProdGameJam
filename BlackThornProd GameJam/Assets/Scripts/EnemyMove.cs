@@ -21,8 +21,8 @@ public class EnemyMove : MonoBehaviour {
 
     private void Start()
     {
-        intPlanetToKill = Random.Range(0, gameMng.objPlanet.Count);
         gameMng = FindObjectOfType<GameManager>();
+        intPlanetToKill = Random.Range(0, gameMng.objPlanet.Count);
         anim = GetComponent<Animator>();
         transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - gameMng.objPlanet[intPlanetToKill].transform.position);
 
