@@ -6,15 +6,7 @@ public class WaveOfEnemies : MonoBehaviour {
 
     public List<int> arrHealth;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void DestroySelf() {
+        Destroy(gameObject);
     }
 }

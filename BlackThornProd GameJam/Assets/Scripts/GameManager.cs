@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         // Assign objects to the game manager
         //objPlanet = FindObjectsOfType<Planet>().ToList(); // transform the array of planets into a list
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
-        //arrEnemiesRemaining = FindObjectsOfType<RiftEnemySpawnner>();
+        //arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
         player = FindObjectOfType<RotatePlayer>();
         arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
 
@@ -170,17 +170,35 @@ public class GameManager : MonoBehaviour
     public void CheckForWin() {
         if (intEnemiesRemaining < 1) {
 
-            if (FindObjectOfType<RiftEnemySpawnner>().intWave < FindObjectOfType<RiftEnemySpawnner>().intWaveCounter - 1) {
+            //if (FindObjectOfType<RiftEnemySpawnner>().intWave < FindObjectOfType<RiftEnemySpawnner>().intWaveCounter - 1) {
                 //if (1 < 2) {
-                FindObjectOfType<RiftEnemySpawnner>().intWave++;
-                FindObjectOfType<RiftEnemySpawnner>().Start();
+            if (CheckForSpawners()) {
+                //FindObjectOfType<RiftEnemySpawnner>().intWave++;
+                arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
+                //Debug.Log(arrSpawners.Length);
+                for (int i = 0; i < arrSpawners.Length; i++) {
+                    arrSpawners[i].Start();
+                }
+                //FindObjectOfType<RiftEnemySpawnner>().Start();
             } else {
             // Good ending for the level
                 Debug.Log("YOU WIN!!");
                 gameMng.EndLevel();
             }
         //FindObjectOfType<RiftEnemySpawnner>().Start();
+        }
     }
+
+    // Check if there are any spawners left in the level
+    public bool CheckForSpawners() {
+        arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
+        if (arrSpawners.Length < 1) {
+            //Debug.Log("NO SPAWNERS");
+            return false;
+        } else {
+            //Debug.Log("SPAWNERS");
+            return true;
+        }
     }
 
     // Activate/Deactivate loss text and deactivate/activate win text
