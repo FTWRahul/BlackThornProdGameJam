@@ -47,6 +47,7 @@ public class EnemyMove : MonoBehaviour {
     // Increase score and check if all aliens have been killed
     private void OnDestroy()
     {
+        Debug.Log("KILLED ON IMPACT");
         if(blnKilled)
         {
             gameMng.IncreaseScore();
