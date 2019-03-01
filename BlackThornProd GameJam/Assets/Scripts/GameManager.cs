@@ -125,6 +125,11 @@ public class GameManager : MonoBehaviour
                 for (int j = 0; j < objPlanet.Count; j++)
                 {
                     Debug.DrawRay(objPlanet[j].transform.position, arrSpawners[i].transform.position - objPlanet[j].transform.position, Color.blue);
+                    for(int k = 0; k< objPlanet.Count; k++)
+                    {
+                        Debug.DrawRay(objPlanet[k].transform.position, objPlanet[j].transform.position - objPlanet[k].transform.position, Color.yellow);
+
+                    }
 
                 }
                 //Debug.DrawRay(objPlanet[i].transform.position, arrSpawners[i].transform.position - objPlanet[i].transform.position, Color.blue);
