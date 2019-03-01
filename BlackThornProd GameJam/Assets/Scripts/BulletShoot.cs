@@ -39,7 +39,7 @@ public class BulletShoot : MonoBehaviour {
             transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - collision.gameObject.transform.position);
             anim.SetBool("Hit", true);
             Destroy(bullet, gameMng.fltAnimaDestroyBullet);
-
+            gameMng.IncreaseMultiplier();
             // Kill the Enemy and destroy both Enemy and Bullet
             //collision.GetComponent<EnemyMove>().blnDead = true;
             collision.GetComponent<EnemyMove>().intHealth--;
@@ -58,7 +58,8 @@ public class BulletShoot : MonoBehaviour {
         else if(collision.gameObject.CompareTag("Planet"))
         {
             collision.gameObject.GetComponent<Planet>().hitSound.Play();
-
+            gameMng.intMultiplierCounter = 0;
+            gameMng.intScoreMultiplier = 1;
             //Set animations for the bullet hit
             transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - collision.gameObject.transform.position);
             anim.SetBool("Hit", true);
