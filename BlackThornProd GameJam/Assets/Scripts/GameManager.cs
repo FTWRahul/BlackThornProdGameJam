@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject controlsPanel;
     public GameObject inGamePanel;
+    public TextMeshProUGUI multiplierText;
+    public TextMeshProUGUI multiplierValue;
+    public Image imgCheckMark;
     public GameObject[] loseText;
     public GameObject[] winText;
     public TextMeshProUGUI textPlayerScore;
