@@ -98,7 +98,8 @@ public class RotatePlayer : MonoBehaviour {
                     Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.green, rayDurition);
                 }
 
-                if (Input.GetKey(KeyCode.S))
+                //if (Input.GetKey(KeyCode.S))
+                if (Input.GetButton("Aim"))
                 {
                     lrPositions = new Vector3[2];
                     lrPositions[0] = new Vector3(playerTip.transform.position.x, playerTip.transform.position.y, playerTip.transform.position.z);
@@ -107,7 +108,8 @@ public class RotatePlayer : MonoBehaviour {
                     lr.SetPositions(lrPositions);
                     //Checking for player input                   
                 }
-                if (Input.GetKeyDown(KeyCode.Space))
+                //if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetButtonDown("Fly"))
                 {
                     tempHit = new Vector3(hit.point.x, hit.point.y, 0);
                     Debug.Log(tempHit);
@@ -142,7 +144,8 @@ public class RotatePlayer : MonoBehaviour {
 
         if (!blnBulletShot)
         {
-            if (!blnMovingBetweenPlanets && (Input.GetKeyDown(KeyCode.W)))
+            //if (!blnMovingBetweenPlanets && (Input.GetKeyDown(KeyCode.W)))
+            if (!blnMovingBetweenPlanets && Input.GetButtonDown("Shoot"))
             {
                 ShootBullet();
             }
@@ -238,7 +241,7 @@ public class RotatePlayer : MonoBehaviour {
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("ENEMY HIT");
+            //Debug.Log("ENEMY HIT");
             collision.gameObject.GetComponent<EnemyMove>().hitSound.Play();
             // Kill the Enemy on impact
             //collision.GetComponent<EnemyMove>().blnDead = true;

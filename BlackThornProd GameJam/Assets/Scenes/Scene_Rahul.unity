@@ -269,6 +269,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &352465036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6799963619421943552, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1434037497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &523480898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6799963618411589065, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1434037497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &527603316
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +314,7 @@ MonoBehaviour:
   gameMng: {fileID: 0}
   enemyType1: {fileID: 0}
   enemyType2: {fileID: 0}
+  enemyType3: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -409,6 +422,7 @@ MonoBehaviour:
   gameMng: {fileID: 0}
   enemyType1: {fileID: 0}
   enemyType2: {fileID: 0}
+  enemyType3: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -768,12 +782,12 @@ PrefabInstance:
         type: 3}
       propertyPath: gameOverPanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 523480898}
     - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: pausePanel
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 352465036}
     - target: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: textPlayerScore
@@ -954,6 +968,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
+    - target: {fileID: 1334583442, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
+      propertyPath: m_FirstSelected
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8324138295451559962, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1133,6 +1151,7 @@ MonoBehaviour:
   gameMng: {fileID: 0}
   enemyType1: {fileID: 0}
   enemyType2: {fileID: 0}
+  enemyType3: {fileID: 0}
   fltMinSpawnTime: 1
   fltMaxSpawnTime: 10
   fltTimeBetweenSpawn: 0
@@ -1948,11 +1967,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8486455484306689862, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 120
-      objectReference: {fileID: 0}
     - target: {fileID: 8486455485301455085, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1962,6 +1976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8486455484306689862, guid: 5e3581c0a6e5d7547af66ecc592dceeb,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e3581c0a6e5d7547af66ecc592dceeb, type: 3}
