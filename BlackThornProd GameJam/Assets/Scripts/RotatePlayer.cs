@@ -241,7 +241,7 @@ public class RotatePlayer : MonoBehaviour {
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("ENEMY HIT");
+            //Debug.Log("ENEMY HIT");
             collision.gameObject.GetComponent<EnemyMove>().hitSound.Play();
             // Kill the Enemy on impact
             //collision.GetComponent<EnemyMove>().blnDead = true;
