@@ -14,6 +14,9 @@ public class EnemyMove : MonoBehaviour {
     //public int intEnemyType;
 
     public int intPlanetToKill;
+    //public int intNewPlanetToKill;
+    public int intOldPlanetToKill;
+
 
 
     public Animator anim;
@@ -22,9 +25,14 @@ public class EnemyMove : MonoBehaviour {
     private void Start()
     {
         gameMng = FindObjectOfType<GameManager>();
-        intPlanetToKill = Random.Range(0, gameMng.objPlanet.Count);
+        //RandomizePlanet();
+        do
+        {
+            intPlanetToKill = Random.Range(0, gameMng.objPlanet.Count);
+            transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - gameMng.objPlanet[intPlanetToKill].transform.position);
+        }
+        while (gameMng.objPlanet[intPlanetToKill].blnDead);
         anim = GetComponent<Animator>();
-        transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - gameMng.objPlanet[intPlanetToKill].transform.position);
 
     }
 
@@ -42,6 +50,12 @@ public class EnemyMove : MonoBehaviour {
                                                  gameMng.objPlanet[intPlanetToKill].transform.position,
                                                  fltSpeed * Time.deltaTime);
         }
+    }
+
+    public void RandomizePlanet()
+    {
+        intPlanetToKill = Random.Range(0, gameMng.objPlanet.Count);
+        transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - gameMng.objPlanet[intPlanetToKill].transform.position);
     }
 
     // Increase score and check if all aliens have been killed
