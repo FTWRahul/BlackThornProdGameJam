@@ -88,7 +88,7 @@ public class RotatePlayer : MonoBehaviour {
         {
             if (drawRay)
             {
-                Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.red, rayDurition);
+                //Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.red, rayDurition);
             }
 
             //Checks if the ray hits obj tagged Planet
@@ -96,7 +96,7 @@ public class RotatePlayer : MonoBehaviour {
             {
                 if (drawRay)
                 {
-                    Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.green, rayDurition);
+                    //Debug.DrawRay(playerTip.transform.position, new Vector3(hit.point.x, hit.point.y, 0) - playerTip.transform.position, Color.green, rayDurition);
                 }
 
                 //if (Input.GetKey(KeyCode.S))
