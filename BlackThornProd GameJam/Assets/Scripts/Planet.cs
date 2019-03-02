@@ -70,11 +70,15 @@ public class Planet : MonoBehaviour {
                 if (intHealth < int2ndAnimState)
                 {
 
+                    hitSound.Play();
+
                     anim.SetTrigger("Damaged2");
 
                 }
                 else if (intHealth < int1stAnimState)
                 {
+                    hitSound.Play();
+
                     anim.SetTrigger("Damaged1");
 
                 }
@@ -96,6 +100,8 @@ public class Planet : MonoBehaviour {
                 if (intHealth < 1)
                 {
                     blnDead = true;
+                    hitSound.Play();
+
                     anim.SetTrigger("Damaged3");
                     bool blnAllDead = true;
                     for(int i =0; i < gameMng.objPlanet.Count; i++)
