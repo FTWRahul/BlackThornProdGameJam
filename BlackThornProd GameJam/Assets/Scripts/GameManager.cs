@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI textEndGameScore;
     public TextMeshProUGUI textEndMessage1;
     public TextMeshProUGUI textEndMessage2;
+    public TextMeshProUGUI textPlayerNeedsMedals;
     public Image imgEndLevel;
     public Button btnRestartLevel;
     public Button btnMainMenu;
@@ -327,7 +328,9 @@ public class GameManager : MonoBehaviour
     }
     public void Level5()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(level5);
+        if (globalMng.blnUnlock5) {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(level5);
+        }
     }
 }
