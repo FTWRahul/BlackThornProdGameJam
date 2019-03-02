@@ -333,6 +333,7 @@ MonoBehaviour:
   arrWaves: []
   objWave: {fileID: 0}
   anim: {fileID: 0}
+  spawnSound: {fileID: 0}
 --- !u!212 &527603318
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -442,6 +443,7 @@ MonoBehaviour:
   arrWaves: []
   objWave: {fileID: 0}
   anim: {fileID: 0}
+  spawnSound: {fileID: 0}
 --- !u!212 &608561171
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1054,9 +1056,19 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8919912608515623794, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4989590242407159452, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4989590242407159452, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1202,6 +1214,7 @@ MonoBehaviour:
   arrWaves: []
   objWave: {fileID: 0}
   anim: {fileID: 0}
+  spawnSound: {fileID: 0}
 --- !u!212 &1466501125
 SpriteRenderer:
   m_ObjectHideFlags: 0
