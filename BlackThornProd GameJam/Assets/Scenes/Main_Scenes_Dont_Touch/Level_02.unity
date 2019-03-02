@@ -887,6 +887,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5804652064811270586, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dead
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388346239837882861, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Alive
+      objectReference: {fileID: 0}
     - target: {fileID: 4989590242407159452, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -900,12 +910,12 @@ PrefabInstance:
     - target: {fileID: 4958124355356746702, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_TagString
-      value: Lose
+      value: Dead
       objectReference: {fileID: 0}
     - target: {fileID: 8721298658944552599, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
       propertyPath: m_TagString
-      value: Win
+      value: Alive
       objectReference: {fileID: 0}
     - target: {fileID: 2384790987502736445, guid: c3379b25a9d21ca4aa5ad131b4332ce1,
         type: 3}
