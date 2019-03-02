@@ -218,7 +218,7 @@ public class RotatePlayer : MonoBehaviour {
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<EnemyMove>().hitSound.Play();
+            collision.gameObject.GetComponent<EnemyMove>().killedSound.Play();
             gameMng.IncreaseMultiplier();
             collision.GetComponent<EnemyMove>().blnKilled = true;
             collision.GetComponent<EnemyMove>().anim.SetBool("Killed", true);

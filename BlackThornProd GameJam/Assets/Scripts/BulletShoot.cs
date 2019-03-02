@@ -12,6 +12,7 @@ public class BulletShoot : MonoBehaviour {
     public GameObject bullet;
 
     public Animator anim;
+    [SerializeField]
     public AudioSource hitSound;
 
     private void Start()

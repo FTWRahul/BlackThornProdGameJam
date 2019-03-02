@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2566283822325343090}
   - component: {fileID: 1270875642661575313}
   m_Layer: 2
-  m_Name: Enemy
+  m_Name: Enemy_Blue
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,8 +100,9 @@ MonoBehaviour:
   blnDead: 0
   blnKilled: 0
   intHealth: 1
-  hitSound: {fileID: 1270875642661575313}
+  killedSound: {fileID: 1270875642661575313}
   intPlanetToKill: 0
+  intOldPlanetToKill: 0
   anim: {fileID: 2566283822325343090}
   gameMng: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
 --- !u!50 &1520718221127876472
@@ -180,7 +181,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef223d945388fbf41b025280d52138e8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c01bf20ff067cbd4fa0c5170866681b1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
