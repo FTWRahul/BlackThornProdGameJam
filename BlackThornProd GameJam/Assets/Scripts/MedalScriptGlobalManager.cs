@@ -9,6 +9,7 @@ public class MedalScriptGlobalManager : MonoBehaviour
     public GameObject medal2;
     public GameObject medal3;
     public GameObject medal4;
+    public GameObject medal5;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,10 @@ public class MedalScriptGlobalManager : MonoBehaviour
         if(globalMng.blnMedal4)
         {
             medal4.SetActive(true);
+        }
+        if (globalMng.blnMedal5)
+        {
+            medal5.SetActive(true);
         }
     }
 }
