@@ -19,6 +19,7 @@ public class Planet : MonoBehaviour {
     public AudioSource hitSound;
     public int planetType;
 
+
     // Reference for Game Manager
     public GameManager gameMng;
 
@@ -32,7 +33,7 @@ public class Planet : MonoBehaviour {
         sliderHealth.maxValue = intHealth;
         sliderHealth.value = sliderHealth.maxValue;
         sliderHealth.gameObject.SetActive(false);
-
+        transform.Rotate(0, 0, gameMng.planetRotation);
     }
 
     // Planet Constructor
@@ -53,7 +54,6 @@ public class Planet : MonoBehaviour {
             if(blnDead)
             {
                 collision.gameObject.GetComponent<EnemyMove>().intOldPlanetToKill = collision.gameObject.GetComponent<EnemyMove>().intPlanetToKill;
-                anim.SetTrigger("Damaged3");
                 do
                 {
                     collision.gameObject.GetComponent<EnemyMove>().RandomizePlanet();
@@ -96,6 +96,7 @@ public class Planet : MonoBehaviour {
                 if (intHealth < 1)
                 {
                     blnDead = true;
+                    anim.SetTrigger("Damaged3");
                     bool blnAllDead = true;
                     for(int i =0; i < gameMng.objPlanet.Count; i++)
                     {

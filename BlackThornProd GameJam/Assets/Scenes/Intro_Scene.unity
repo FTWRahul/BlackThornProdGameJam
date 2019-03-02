@@ -1224,7 +1224,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 0}
+  globalMng: {fileID: 0}
   player: {fileID: 0}
+  intScoreMultiplier: 1
+  intMultiplierCounter: 0
+  intMultiplierCap: 0
+  intMaxMultiplier: 0
   objPlanet: []
   intCurrentPlanetIndex: 0
   intTargetPlanetIndex: 0
@@ -1237,13 +1242,13 @@ MonoBehaviour:
   fltAnimaDestroyEnemy: 0
   fltAnimaDestroyBullet: 0
   fltPlayerDistPlanet: 0
+  planetRotation: 0
   fltDestroyBullet: 0
   gameOverPanel: {fileID: 0}
   pausePanel: {fileID: 0}
   settingsPanel: {fileID: 0}
   controlsPanel: {fileID: 0}
   inGamePanel: {fileID: 0}
-  multiplierText: {fileID: 0}
   multiplierValue: {fileID: 0}
   imgCheckMark: {fileID: 0}
   loseText: []
@@ -1252,6 +1257,7 @@ MonoBehaviour:
   textEndGameScore: {fileID: 0}
   textEndMessage1: {fileID: 0}
   textEndMessage2: {fileID: 0}
+  textPlayerNeedsMedals: {fileID: 0}
   imgEndLevel: {fileID: 0}
   btnRestartLevel: {fileID: 0}
   btnMainMenu: {fileID: 0}
@@ -1264,6 +1270,7 @@ MonoBehaviour:
   level4: 
   level5: 
   currentLevel: 
+  blnAllPlanetsAlive: 0
   blnPaused: 0
 --- !u!1 &1236501369
 GameObject:
@@ -2847,7 +2854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2055382940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2857,7 +2864,7 @@ RectTransform:
   m_GameObject: {fileID: 2055382939}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.8801, y: 3.8801, z: 3.8801}
   m_Children: []
   m_Father: {fileID: 665586800}
   m_RootOrder: 2
@@ -2875,7 +2882,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055382939}
   m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_VideoClip: {fileID: 32900000, guid: 7f24fa26214e01649ac56167bdd51974, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
