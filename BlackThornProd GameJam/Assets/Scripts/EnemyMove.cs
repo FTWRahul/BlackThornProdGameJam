@@ -62,7 +62,7 @@ public class EnemyMove : MonoBehaviour {
     private void OnDestroy()
     {
         //Debug.Log("KILLED ON IMPACT");
-        if(blnKilled)
+        if (blnKilled)
         {
             gameMng.IncreaseScore();
         }

@@ -8,8 +8,9 @@ using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
-    // Game Manager
+    // Game and Global Managers
     public GameManager gameMng;
+    public GlobalManager globalMng;
 
     // Player game object
     public RotatePlayer player;
@@ -72,8 +73,11 @@ public class GameManager : MonoBehaviour
     public string level5;
     public string currentLevel;
 
+    // Boolean for planet destruction
+    public bool blnAllPlanetsAlive;
+
+    // Booleans for the panels
     public bool blnPaused;
-    //private bool isPaused;
     //public bool otherPanelOpen;
 
     // Use this for initialization
@@ -84,9 +88,11 @@ public class GameManager : MonoBehaviour
         {
             gameMng = this.gameObject.GetComponent<GameManager>();
         }
+        globalMng = FindObjectOfType<GlobalManager>();
 
         // Assign initial values
         intPlayerScore = 0;
+        blnAllPlanetsAlive = true;
 
         // Assign objects to the game manager
         objPlanet[intCurrentPlanetIndex].blnCurrent = true;
@@ -99,7 +105,7 @@ public class GameManager : MonoBehaviour
         loseText = GameObject.FindGameObjectsWithTag("Lose");
         gameOverPanel.SetActive(false);
 
-        //currentLevel = SceneManager.GetActiveScene().ToString();
+        currentLevel = SceneManager.GetActiveScene().name.ToString();
 
     }
 
@@ -218,6 +224,33 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Check what is the current level and award the proper medal
+    public void AwardMedal() {
+        for (int i = 0; i < objPlanet.Count; i++) {
+            // Check if there are dead planets
+            blnAllPlanetsAlive = blnAllPlanetsAlive && !objPlanet[i].blnDead;
+
+            if (blnAllPlanetsAlive) { // Give the proper medal
+                Debug.Log("MEDAL HERE!!");
+                Debug.Log(currentLevel);
+                if (currentLevel == level1) {
+                    globalMng.blnMedal1 = true;
+                } else if (currentLevel == level2) {
+                    globalMng.blnMedal2 = true;
+                } else if (currentLevel == level3) {
+                    globalMng.blnMedal3 = true;
+                } else if (currentLevel == level4) {
+                    globalMng.blnMedal4 = true;
+                } else if (currentLevel == level5) {
+                    globalMng.blnMedal5 = true;
+                }else if (currentLevel == "Scene_Vinicius") {
+                    globalMng.blnMedal5 = true;
+                }
+                globalMng.UnlockLevel5();
+            }
+        }
+    }
+
     public void EndGame()
     {
         Time.timeScale = 0f;
@@ -231,6 +264,7 @@ public class GameManager : MonoBehaviour
     }
     public void EndLevel()
     {
+        AwardMedal();
         Time.timeScale = 0f;
         DeactivateHealthBars();
         gameOverPanel.SetActive(true);
