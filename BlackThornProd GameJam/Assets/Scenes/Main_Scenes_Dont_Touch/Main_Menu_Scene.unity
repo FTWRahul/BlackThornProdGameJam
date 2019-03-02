@@ -9319,7 +9319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -61.50006, y: 0}
+  m_AnchoredPosition: {x: -61.5, y: 0}
   m_SizeDelta: {x: 71, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1282668116
@@ -11161,6 +11161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1443138410}
+  - component: {fileID: 1443138411}
   m_Layer: 5
   m_Name: Medals-Container
   m_TagString: Untagged
@@ -11192,6 +11193,24 @@ RectTransform:
   m_AnchoredPosition: {x: -799, y: -33}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1443138411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443138409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e0d82a3bd4c8074781fb7133793adb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalMng: {fileID: 0}
+  medal1: {fileID: 1594624800}
+  medal2: {fileID: 1200878064}
+  medal3: {fileID: 1254913081}
+  medal4: {fileID: 621497695}
+  medal5: {fileID: 825153108}
 --- !u!1 &1459687246
 GameObject:
   m_ObjectHideFlags: 0
