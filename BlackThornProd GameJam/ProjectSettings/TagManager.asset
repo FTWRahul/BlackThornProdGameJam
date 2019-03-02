@@ -10,6 +10,7 @@ TagManager:
   - Win
   - Lose
   - Load
+  - Level5
   layers:
   - Default
   - TransparentFX

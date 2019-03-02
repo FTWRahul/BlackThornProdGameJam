@@ -181,7 +181,7 @@ public class RotatePlayer : MonoBehaviour {
 
     void SetAnimations()
     {
-        if (Input.GetAxisRaw("AnimHorz") == 0)
+        if ((Input.GetAxisRaw("AnimHorz") == 0) && (Time.timeScale != 0))
         {
             idleAudio.SetActive(true);
             rotateAudio.SetActive(false);
@@ -190,7 +190,7 @@ public class RotatePlayer : MonoBehaviour {
             anim.SetBool("LeftThruster", false);
             anim.SetBool("RightThruster", false);
         }
-        else if (Input.GetAxisRaw("AnimHorz") > 0)
+        else if ((Input.GetAxisRaw("AnimHorz") > 0) && (Time.timeScale != 0))
         {
             idleAudio.SetActive(false);
 
@@ -201,7 +201,7 @@ public class RotatePlayer : MonoBehaviour {
 
             anim.SetBool("LeftThruster", true);
         }
-        else if (Input.GetAxisRaw("AnimHorz") < 0)
+        else if ((Input.GetAxisRaw("AnimHorz") < 0) && (Time.timeScale != 0))
         {
             idleAudio.SetActive(false);
 
