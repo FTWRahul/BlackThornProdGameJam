@@ -197,7 +197,33 @@ public class GameManager : MonoBehaviour
 
 
     // Check if the player has won the level
+    //public void CheckForWin() {
+    //    if (intEnemiesRemaining < 1) {
+    //        Debug.Log(intWavesRemaining);
+    //        if (CheckForSpawners() && intWavesRemaining < 1) {
+    //            arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
+    //            for (int i = 0; i < arrSpawners.Length; i++) {
+    //                Debug.Log("SPAWN NEXT WAVE");
+    //                arrSpawners[i].fltMaxSpawnTime = 10;
+    //                arrSpawners[i].Start();
+    //            }
+
+    //        } else if (!CheckForSpawners()) {
+    //        // Good ending for the level
+    //            Debug.Log("YOU WIN!!");
+    //            gameMng.EndLevel();
+    //        }
+    //    }
+    //}
+
     public void CheckForWin() {
+        StartCoroutine(CheckBuffer());
+    }
+
+    IEnumerator CheckBuffer()
+    {
+        //yield return new WaitForSeconds(3f);
+        yield return new WaitForEndOfFrame();
         if (intEnemiesRemaining < 1) {
             Debug.Log(intWavesRemaining);
             if (CheckForSpawners() && intWavesRemaining < 1) {
