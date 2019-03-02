@@ -12,7 +12,7 @@ public class GameData {
     public bool dataMedal4;
     public bool dataMedal5;
 
-    public bool dataLoadState;
+    //public bool dataLoadState;
 
     public GameData(bool inUnlock5, bool inMedal1, bool inMedal2, bool inMedal3, bool inMedal4, bool inMedal5) {
         dataUnlock5 = inUnlock5;
@@ -23,8 +23,8 @@ public class GameData {
         dataMedal5 = inMedal5;
     }
 
-    // Load just the state at the beginning (for the load button)
-    public GameData(bool inLoadState) {
-        dataLoadState = inLoadState;
-    }
+    //// Load just the state at the beginning (for the load button)
+    //public GameData(bool inLoadState) {
+    //    dataLoadState = inLoadState;
+    //}
 }

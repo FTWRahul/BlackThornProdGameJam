@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour
             {
                 for (int j = 0; j < objPlanet.Count; j++)
                 {
-                    Debug.DrawRay(objPlanet[j].transform.position, arrSpawners[i].transform.position - objPlanet[j].transform.position, Color.blue);
+                    //Debug.DrawRay(objPlanet[j].transform.position, arrSpawners[i].transform.position - objPlanet[j].transform.position, Color.blue);
                     for (int k = 0; k< objPlanet.Count; k++)
                     {
                         Debug.DrawRay(objPlanet[k].transform.position, objPlanet[j].transform.position - objPlanet[k].transform.position, Color.yellow);
@@ -302,8 +302,8 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         globalMng.SaveFile();
-        globalMng.SaveState();
-        globalMng.LoadState();
+        //globalMng.SaveState();
+        //globalMng.LoadState();
     }
     public void PauseGame()
     {
