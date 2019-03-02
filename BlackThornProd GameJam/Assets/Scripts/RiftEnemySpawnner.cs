@@ -28,6 +28,7 @@ public class RiftEnemySpawnner : MonoBehaviour
     public Transform objWave; // Object of 1 wave
 
     public Animator anim;
+    public AudioSource spawnSound;
 
     // Start is called before the first frame update
     public void Start()
@@ -90,6 +91,7 @@ public class RiftEnemySpawnner : MonoBehaviour
     /// Spawns the enemy: Decreases the max spawn time: Randomizes a new spawn time
     public void SpawnEnemy()
     {
+        spawnSound.Play();
         anim.SetTrigger("Spawn");
         blnEnemySpawnned = true;
         intEnemyCount--;

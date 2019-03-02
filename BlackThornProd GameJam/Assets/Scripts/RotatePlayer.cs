@@ -36,6 +36,7 @@ public class RotatePlayer : MonoBehaviour {
     //public AudioSource rotatePlanetAudio;
     public GameObject rotateAudio;
     public GameObject betweenPlanetAudio;
+    public GameObject idleAudio;
 
     //Debugging and level help
     public bool drawRay;
@@ -182,6 +183,7 @@ public class RotatePlayer : MonoBehaviour {
     {
         if (Input.GetAxisRaw("AnimHorz") == 0)
         {
+            idleAudio.SetActive(true);
             rotateAudio.SetActive(false);
 
             anim.SetBool("Idle", true);
@@ -190,6 +192,8 @@ public class RotatePlayer : MonoBehaviour {
         }
         else if (Input.GetAxisRaw("AnimHorz") > 0)
         {
+            idleAudio.SetActive(false);
+
             rotateAudio.SetActive(true);
 
             anim.SetBool("Idle", false);
@@ -198,8 +202,9 @@ public class RotatePlayer : MonoBehaviour {
             anim.SetBool("LeftThruster", true);
         }
         else if (Input.GetAxisRaw("AnimHorz") < 0)
-
         {
+            idleAudio.SetActive(false);
+
             rotateAudio.SetActive(true);
 
             anim.SetBool("Idle", false);

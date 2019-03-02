@@ -12,6 +12,7 @@ public class BulletShoot : MonoBehaviour {
     public GameObject bullet;
 
     public Animator anim;
+    public AudioSource hitSound;
 
     private void Start()
     {
@@ -34,7 +35,7 @@ public class BulletShoot : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("Enemy")) {
 
-            collision.gameObject.GetComponent<EnemyMove>().hitSound.Play();
+            hitSound.Play();
             //Set animations for the bullet hit
             transform.rotation = Quaternion.FromToRotation(Vector3.down, transform.position - collision.gameObject.transform.position);
             anim.SetBool("Hit", true);
@@ -45,6 +46,7 @@ public class BulletShoot : MonoBehaviour {
             collision.GetComponent<EnemyMove>().intHealth--;
             if(collision.GetComponent<EnemyMove>().intHealth == 0)
             {
+                collision.gameObject.GetComponent<EnemyMove>().killedSound.Play();
                 collision.GetComponent<EnemyMove>().blnKilled = true;
                 collision.GetComponent<EnemyMove>().anim.SetBool("Killed", true);
                 Destroy(collision.gameObject, gameMng.fltAnimaDestroyEnemy);
@@ -55,7 +57,8 @@ public class BulletShoot : MonoBehaviour {
         }
         else if(collision.gameObject.CompareTag("Planet"))
         {
-            collision.gameObject.GetComponent<Planet>().hitSound.Play();
+            hitSound.Play();
+            //collision.gameObject.GetComponent<Planet>().hitSound.Play();
             gameMng.intMultiplierCounter = 0;
             gameMng.intScoreMultiplier = 1;
             //Set animations for the bullet hit
