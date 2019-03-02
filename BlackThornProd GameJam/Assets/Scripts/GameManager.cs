@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour
     public void CheckForWin() {
         if (intEnemiesRemaining < 1) {
             Debug.Log(intWavesRemaining);
-            if (CheckForSpawners() && intWavesRemaining == 0) {
+            if (CheckForSpawners() && intWavesRemaining < 1) {
                 arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
                 for (int i = 0; i < arrSpawners.Length; i++) {
                     Debug.Log("SPAWN NEXT WAVE");

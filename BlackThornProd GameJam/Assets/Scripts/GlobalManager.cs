@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class GlobalManager : MonoBehaviour {
 
@@ -14,12 +15,21 @@ public class GlobalManager : MonoBehaviour {
     public bool blnMedal4;
     public bool blnMedal5;
 
+    public string level5;
+
     private void Awake() {
         DontDestroyOnLoad(gameObject);
     }
 
     public void UnlockLevel5() {
-        blnUnlock5 = blnMedal1 && blnMedal2 && blnMedal3 && blnMedal4 && blnMedal5;
+        blnUnlock5 = blnMedal1 && blnMedal2 && blnMedal3 && blnMedal4;
+    }
+
+    public void Level5() {
+        if (blnUnlock5) {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(level5);
+        }
     }
 
     public void SaveFile() {
