@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameMng: {fileID: 7164387446919899363}
+  globalMng: {fileID: 0}
   player: {fileID: 0}
   objPlanet: []
   intCurrentPlanetIndex: 0
@@ -162,6 +163,7 @@ MonoBehaviour:
   level4: Level_04
   level5: Level_05
   currentLevel: 
+  blnAllPlanetsAlive: 0
   blnPaused: 0
 --- !u!1001 &1596524473
 PrefabInstance:
@@ -794,6 +796,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721298658321107246, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Win
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958124353966924919, guid: 8bd82d2536d080f42a03c8515d9f828a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lose
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bd82d2536d080f42a03c8515d9f828a, type: 3}
