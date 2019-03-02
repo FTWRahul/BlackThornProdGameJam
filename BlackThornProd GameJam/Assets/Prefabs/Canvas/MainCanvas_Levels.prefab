@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 696801039787826842}
   m_Layer: 5
   m_Name: AudioSource-ST-Lose
-  m_TagString: Untagged
+  m_TagString: Lose
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1054,7 +1054,7 @@ GameObject:
   - component: {fileID: 8788937924271890813}
   m_Layer: 5
   m_Name: AudioSource-ST-WIn
-  m_TagString: Untagged
+  m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
