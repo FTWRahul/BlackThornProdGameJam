@@ -49,3 +49,6 @@ MonoBehaviour:
   blnMedal3: 0
   blnMedal4: 0
   blnMedal5: 0
+  blnLoadState: 0
+  level5: Level_05
+  mainMenu: Main_Menu_Scene
