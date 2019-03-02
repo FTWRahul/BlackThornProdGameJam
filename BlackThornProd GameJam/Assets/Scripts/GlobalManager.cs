@@ -22,12 +22,13 @@ public class GlobalManager : MonoBehaviour {
 
     private void Awake() {
         DontDestroyOnLoad(gameObject);
+        StartCoroutine(LoadMainMenu());
         LoadState();
     }
 
     public void Start()
     {
-        StartCoroutine(LoadMainMenu());
+
     }
 
     IEnumerator LoadMainMenu()
