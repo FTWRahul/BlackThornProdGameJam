@@ -20,7 +20,8 @@ public class SkipCutscene : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if ((Input.GetButtonDown("Shoot")) || (Input.GetButtonDown("Fly")) || (Input.GetButtonDown("Aim"))) {
+        
             SceneManager.LoadScene(mainMenuScene);
         }
     }
