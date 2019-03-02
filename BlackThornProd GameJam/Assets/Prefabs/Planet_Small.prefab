@@ -384,6 +384,7 @@ MonoBehaviour:
   blnCurrent: 0
   blnTarget: 0
   anim: {fileID: 3343918655212745805}
+  sliderHealth: {fileID: 0}
   hitSound: {fileID: 3343918655212745808}
   planetType: 1
   gameMng: {fileID: 0}
