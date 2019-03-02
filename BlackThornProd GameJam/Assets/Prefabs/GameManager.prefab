@@ -133,7 +133,7 @@ MonoBehaviour:
   inGamePanel: {fileID: 6799963620067833857}
   multiplierText: {fileID: 8744086939265016462}
   multiplierValue: {fileID: 1028601203713858501}
-  imgCheckMark: {fileID: 0}
+  imgCheckMark: {fileID: 3928788488610957279}
   loseText:
   - {fileID: 0}
   - {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   winText: []
   textPlayerScore: {fileID: 6799963618527172725}
   textEndGameScore: {fileID: 8919912608515623794}
-  textEndMessage1: {fileID: 6799963619441680404}
+  textEndMessage1: {fileID: 0}
   textEndMessage2: {fileID: 6799963619765488915}
   imgEndLevel: {fileID: 6799963618393863954}
   btnRestartLevel: {fileID: 3988782627391267016}
@@ -809,16 +809,16 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1596524473}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6799963619441680404 stripped
+--- !u!114 &3928788488610957279 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6799963618148329389, guid: 8bd82d2536d080f42a03c8515d9f828a,
+  m_CorrespondingSourceObject: {fileID: 3928788489501786214, guid: 8bd82d2536d080f42a03c8515d9f828a,
     type: 3}
   m_PrefabInstance: {fileID: 1596524473}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6799963619765488915 stripped
