@@ -60,6 +60,7 @@ public class BulletShoot : MonoBehaviour {
         {
             hitSound.Play();
             //collision.gameObject.GetComponent<Planet>().hitSound.Play();
+            gameMng.multiplierValue.SetActive(false);
             gameMng.intMultiplierCounter = 0;
             gameMng.intScoreMultiplier = 1;
             //Set animations for the bullet hit

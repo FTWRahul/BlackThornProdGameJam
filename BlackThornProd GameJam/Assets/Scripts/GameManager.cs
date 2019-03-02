@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
     public GameObject controlsPanel;
     public GameObject inGamePanel;
     //public TextMeshProUGUI multiplierText;
-    public TextMeshProUGUI multiplierValue;
+    public GameObject multiplierValue;
     public Image imgCheckMark;
     public GameObject[] loseText;
     public GameObject[] winText;
@@ -122,18 +122,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-
-            blnPaused = !blnPaused;
-            if (blnPaused)
-            {
-                PauseGame();
-            }
-            else
-            {
-                settingsPanel.SetActive(false);
-                controlsPanel.SetActive(false);
-                UnPauseGame();
-            }
+            CheckPauseState();
         }
         if (player.drawRay)
         {
@@ -184,13 +173,13 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Starting");
         intPlayerScore = intPlayerScore + intScoreMultiplier;
         textPlayerScore.text = intPlayerScore.ToString();
-        textEndGameScore.text = intPlayerScore.ToString();
-        multiplierValue.text = "x"+intScoreMultiplier.ToString();
         //Debug.Log(intPlayerScore);
     }
 
     public void IncreaseMultiplier()
     {
+        multiplierValue.SetActive(true);
+        multiplierValue.GetComponent<TextMeshProUGUI>().text = "x" + intScoreMultiplier.ToString();
         if (intMultiplierCap < 10)
         {
             if (intMultiplierCounter < 5)
@@ -281,6 +270,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void CheckPauseState()
+    {
+       
+
+            blnPaused = !blnPaused;
+            if (blnPaused)
+            {
+                PauseGame();
+            }
+            else
+            {
+                settingsPanel.SetActive(false);
+                controlsPanel.SetActive(false);
+                UnPauseGame();
+            }
+        
+    }
+
     public void EndGame()
     {
         Time.timeScale = 0f;
@@ -289,6 +296,7 @@ public class GameManager : MonoBehaviour
         FlipWinLossTexts(winText, loseText);
         inGamePanel.SetActive(false);
         player.gameObject.SetActive(false);
+        textEndGameScore.text = intPlayerScore.ToString();
 
         Cursor.lockState = CursorLockMode.None;
     }
@@ -303,6 +311,7 @@ public class GameManager : MonoBehaviour
         player.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
         globalMng.SaveFile();
+        textEndGameScore.text = intPlayerScore.ToString();
         //globalMng.SaveState();
         //globalMng.LoadState();
     }
