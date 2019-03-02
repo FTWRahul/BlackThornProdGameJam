@@ -43,6 +43,8 @@ public class GameManager : MonoBehaviour
 
     // Comfort distance between player and surface of the planet
     public float fltPlayerDistPlanet;
+    public float planetRotation;
+
 
     // Time to destroy the bullets
     public float fltDestroyBullet;
@@ -88,6 +90,8 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        planetRotation = Random.Range(0, 360);
+
         // Assign a Game Manager if there is not one
         if (gameMng == null)
         {
@@ -137,8 +141,8 @@ public class GameManager : MonoBehaviour
             {
                 for (int j = 0; j < objPlanet.Count; j++)
                 {
-                    //Debug.DrawRay(objPlanet[j].transform.position, arrSpawners[i].transform.position - objPlanet[j].transform.position, Color.blue);
-                    for(int k = 0; k< objPlanet.Count; k++)
+                    Debug.DrawRay(objPlanet[j].transform.position, arrSpawners[i].transform.position - objPlanet[j].transform.position, Color.blue);
+                    for (int k = 0; k< objPlanet.Count; k++)
                     {
                         Debug.DrawRay(objPlanet[k].transform.position, objPlanet[j].transform.position - objPlanet[k].transform.position, Color.yellow);
 
