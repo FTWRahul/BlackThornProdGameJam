@@ -1636,6 +1636,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211263418}
   m_CullTransparentMesh: 0
+--- !u!1001 &220674565
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6566143839633078456, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_Name
+      value: GlobalManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.1339335
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4838847
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.0390625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566143839633078462, guid: 94a1c437699d7654b98735c0b95ff242,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94a1c437699d7654b98735c0b95ff242, type: 3}
+--- !u!114 &220674566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6566143839633078463, guid: 94a1c437699d7654b98735c0b95ff242,
+    type: 3}
+  m_PrefabInstance: {fileID: 220674565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656ad99cf87439046be36a234b221203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &223434061
 GameObject:
   m_ObjectHideFlags: 0
@@ -6662,9 +6743,10 @@ GameObject:
   - component: {fileID: 917803713}
   - component: {fileID: 917803712}
   - component: {fileID: 917803711}
+  - component: {fileID: 917803714}
   m_Layer: 5
   m_Name: Lvl_05-Bt
-  m_TagString: Untagged
+  m_TagString: Level5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6730,7 +6812,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 220674566}
         m_MethodName: Level5
         m_Mode: 1
         m_Arguments:
@@ -6780,6 +6862,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 917803709}
   m_CullTransparentMesh: 0
+--- !u!114 &917803714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917803709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5bc2042b1360d48bbc4bb7c4db3c5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalMng: {fileID: 0}
+  level5Button: {fileID: 0}
 --- !u!1 &942957363
 GameObject:
   m_ObjectHideFlags: 0
