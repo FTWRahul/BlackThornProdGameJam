@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
     public Image imgCheckMark;
     public GameObject[] loseText;
     public GameObject[] winText;
+    public GameObject[] deadPlanetRewards;
+    public GameObject[] alivePlanetRewards;
     public TextMeshProUGUI textPlayerScore;
     public TextMeshProUGUI textEndGameScore;
     public TextMeshProUGUI textEndMessage1;
@@ -112,6 +114,11 @@ public class GameManager : MonoBehaviour
         gameOverPanel.SetActive(true);
         winText = GameObject. FindGameObjectsWithTag("Win");
         loseText = GameObject.FindGameObjectsWithTag("Lose");
+
+        alivePlanetRewards = GameObject.FindGameObjectsWithTag("Alive");
+        deadPlanetRewards = GameObject.FindGameObjectsWithTag("Dead");
+        FlipWinLossTexts(deadPlanetRewards, alivePlanetRewards);
+
         gameOverPanel.SetActive(false);
 
         currentLevel = SceneManager.GetActiveScene().name.ToString();
@@ -255,9 +262,19 @@ public class GameManager : MonoBehaviour
     // Activate/Deactivate loss text and deactivate/activate win text
     public void FlipWinLossTexts(GameObject[] inDeactivate, GameObject[] inActivate) {
         
-        for (int i = 0; i < loseText.Length; i++) {
+        for (int i = 0; i < inDeactivate.Length; i++) {
             inDeactivate[i].SetActive(false);
             inActivate[i].SetActive(true);
+        }
+    }
+
+    // Check if the player has earned a medal
+    public void CheckIfEarnedMedal() {
+        for (int i = 0; i < objPlanet.Count; i++) {
+            if (objPlanet[i].blnDead) {
+                FlipWinLossTexts(alivePlanetRewards, deadPlanetRewards);
+                break;
+            }
         }
     }
 
@@ -320,6 +337,7 @@ public class GameManager : MonoBehaviour
         DeactivateHealthBars();
         gameOverPanel.SetActive(true);
         FlipWinLossTexts(winText, loseText);
+        CheckIfEarnedMedal();
         inGamePanel.SetActive(false);
         player.gameObject.SetActive(false);
         textEndGameScore.text = intPlayerScore.ToString();
@@ -333,6 +351,7 @@ public class GameManager : MonoBehaviour
         DeactivateHealthBars();
         gameOverPanel.SetActive(true);
         FlipWinLossTexts(loseText, winText);
+        CheckIfEarnedMedal();
         inGamePanel.SetActive(false);
         player.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.None;

@@ -11,6 +11,8 @@ TagManager:
   - Lose
   - Load
   - Level5
+  - Dead
+  - Alive
   layers:
   - Default
   - TransparentFX
