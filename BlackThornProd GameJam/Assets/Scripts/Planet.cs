@@ -56,12 +56,9 @@ public class Planet : MonoBehaviour {
                 anim.SetTrigger("Damaged3");
                 do
                 {
-                    //collision.gameObject.GetComponent<EnemyMove>().intPlanetToKill = new Random.range(0, gameMng.objPlanet.Count);
                     collision.gameObject.GetComponent<EnemyMove>().RandomizePlanet();
                 }
                 while (collision.gameObject.GetComponent<EnemyMove>().intOldPlanetToKill == collision.gameObject.GetComponent<EnemyMove>().intPlanetToKill);
-                //collision.gameObject.GetComponent<EnemyMove>().intPlanetToKill =
-
             }
             else
             {
@@ -98,9 +95,6 @@ public class Planet : MonoBehaviour {
                 // Game Over if any planet is destroyed
                 if (intHealth < 1)
                 {
-                    //sliderHealth.gameObject.SetActive(false);
-                    //Debug.Log("GAME OVER");
-                    //gameMng.EndGame();
                     blnDead = true;
                     bool blnAllDead = true;
                     for(int i =0; i < gameMng.objPlanet.Count; i++)
@@ -111,18 +105,8 @@ public class Planet : MonoBehaviour {
                     {
                         gameMng.EndGame();
                     }
-                    //bool blnAllAlive = true;
-                    //for(int i=0; i< gameMng.objPlanet.Count; i++)
-                    //{
-                    //    blnAllAlive = blnAllAlive && !gameMng.objPlanet[i].blnDead;                       
-                    //}
-                    //if(!blnAllAlive)
-                    //{
-                    //    gameMng.EndGame();
-                    //}
                 }
             }
-
         }
     }
 
