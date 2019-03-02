@@ -18,10 +18,22 @@ public class GlobalManager : MonoBehaviour {
     public bool blnLoadState;
 
     public string level5;
+    public string mainMenu;
 
     private void Awake() {
         DontDestroyOnLoad(gameObject);
         LoadState();
+    }
+
+    public void Start()
+    {
+        StartCoroutine(LoadMainMenu());
+    }
+
+    IEnumerator LoadMainMenu()
+    {
+        yield return new WaitForSeconds(70f);
+        SceneManager.LoadScene(mainMenu);
     }
 
     public void UnlockLevel5() {
