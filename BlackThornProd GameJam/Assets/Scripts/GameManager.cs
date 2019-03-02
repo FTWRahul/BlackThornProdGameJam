@@ -296,6 +296,7 @@ public class GameManager : MonoBehaviour
         inGamePanel.SetActive(false);
         player.gameObject.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
+        globalMng.SaveFile();
     }
     public void PauseGame()
     {
