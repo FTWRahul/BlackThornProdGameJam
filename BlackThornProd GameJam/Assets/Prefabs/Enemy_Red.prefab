@@ -100,8 +100,9 @@ MonoBehaviour:
   blnDead: 0
   blnKilled: 0
   intHealth: 3
-  hitSound: {fileID: 4565670462449006122}
+  killedSound: {fileID: 4565670462449006122}
   intPlanetToKill: 0
+  intOldPlanetToKill: 0
   anim: {fileID: 0}
   gameMng: {fileID: 7164387446919899363, guid: c3379b25a9d21ca4aa5ad131b4332ce1, type: 3}
 --- !u!50 &4565670462449006121
@@ -161,7 +162,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef223d945388fbf41b025280d52138e8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c01bf20ff067cbd4fa0c5170866681b1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1

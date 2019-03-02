@@ -9,7 +9,7 @@ public class EnemyMove : MonoBehaviour {
     public bool blnKilled;
     public int intHealth;
 
-    public AudioSource hitSound;
+    public AudioSource killedSound;
 
     //public int intEnemyType;
 
