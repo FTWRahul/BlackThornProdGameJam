@@ -72,6 +72,9 @@ public class GameManager : MonoBehaviour
     public Button btnMainMenu;
     public Button btnExitGame;
 
+    // Thank you for playing image
+    public GameObject thankYouForPlaying;
+
     //Scene management and level strings
     public string Main;
     public string Master;
@@ -357,9 +360,21 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         globalMng.SaveFile();
         textEndGameScore.text = intPlayerScore.ToString();
-        //globalMng.SaveState();
-        //globalMng.LoadState();
+
+        // Thank players for finishing level 5
+        if (currentLevel == level5) {
+            thankYouForPlaying.SetActive(true);
+            StartCoroutine(DestoryThankYouForPlaying());
+        }
     }
+
+    IEnumerator DestoryThankYouForPlaying()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        Destroy(thankYouForPlaying);
+
+    }
+
     public void PauseGame()
     {
         Time.timeScale = 0f;
