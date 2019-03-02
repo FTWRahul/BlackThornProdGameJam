@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
 
     // Player game object
     public RotatePlayer player;
+    public int intScoreMultiplier = 1;
+    public int intMultiplierCounter;
+    public int intMultiplierCap;
+    public int intMaxMultiplier;
 
     // Arrays for planets and spawners
     public List<Planet> objPlanet; // Planets from the Planet class
@@ -49,7 +53,7 @@ public class GameManager : MonoBehaviour
     public GameObject settingsPanel;
     public GameObject controlsPanel;
     public GameObject inGamePanel;
-    public TextMeshProUGUI multiplierText;
+    //public TextMeshProUGUI multiplierText;
     public TextMeshProUGUI multiplierValue;
     public Image imgCheckMark;
     public GameObject[] loseText;
@@ -174,11 +178,30 @@ public class GameManager : MonoBehaviour
     public void IncreaseScore()
     {
         //Debug.Log("Starting");
-        intPlayerScore++;
+        intPlayerScore = intPlayerScore + intScoreMultiplier;
         textPlayerScore.text = intPlayerScore.ToString();
         textEndGameScore.text = intPlayerScore.ToString();
+        multiplierValue.text = "x"+intScoreMultiplier.ToString();
         //Debug.Log(intPlayerScore);
     }
+
+    public void IncreaseMultiplier()
+    {
+        if (intMultiplierCap < 10)
+        {
+            if (intMultiplierCounter < 5)
+            {
+                intMultiplierCounter++;
+            }
+            else
+            {
+                intScoreMultiplier += 2;
+                intMultiplierCounter = 0;
+            }
+        }
+
+    }
+
 
     // Check if the player has won the level
     public void CheckForWin() {
