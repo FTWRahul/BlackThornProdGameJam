@@ -15,10 +15,13 @@ public class GlobalManager : MonoBehaviour {
     public bool blnMedal4;
     public bool blnMedal5;
 
+    public bool blnLoadState;
+
     public string level5;
 
     private void Awake() {
         DontDestroyOnLoad(gameObject);
+        LoadState();
     }
 
     public void UnlockLevel5() {
@@ -76,5 +79,41 @@ public class GlobalManager : MonoBehaviour {
         Debug.Log(data.dataMedal3);
         Debug.Log(data.dataMedal4);
         Debug.Log(data.dataMedal5);
+    }
+
+    public void SaveState() {
+        string destination = Application.persistentDataPath + "/saveState.dat";
+        FileStream file;
+
+        if (File.Exists(destination)) {
+            file = File.OpenWrite(destination);
+        } else {
+            file = File.Create(destination);
+        }
+
+        GameData data = new GameData(blnLoadState);
+        BinaryFormatter bf = new BinaryFormatter();
+        bf.Serialize(file, data);
+        file.Close();
+    }
+
+    public void LoadState() {
+        string destination = Application.persistentDataPath + "/saveState.dat";
+        FileStream file;
+
+        if (File.Exists(destination)) {
+            file = File.OpenRead(destination);
+        } else {
+            Debug.LogError("File not found");
+            return;
+        }
+
+        BinaryFormatter bf = new BinaryFormatter();
+        GameData data = (GameData)bf.Deserialize(file);
+        file.Close();
+
+        blnLoadState = data.dataLoadState;
+
+        Debug.Log(data.dataLoadState);
     }
 }
