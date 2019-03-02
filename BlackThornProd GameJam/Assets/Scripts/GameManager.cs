@@ -215,6 +215,7 @@ public class GameManager : MonoBehaviour
                 arrSpawners = FindObjectsOfType<RiftEnemySpawnner>();
                 for (int i = 0; i < arrSpawners.Length; i++) {
                     Debug.Log("SPAWN NEXT WAVE");
+                    arrSpawners[i].fltMaxSpawnTime = 10;
                     arrSpawners[i].Start();
                 }
 
