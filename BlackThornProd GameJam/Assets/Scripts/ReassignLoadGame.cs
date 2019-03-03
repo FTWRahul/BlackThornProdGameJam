@@ -23,7 +23,6 @@ public class ReassignLoadGame : MonoBehaviour {
 
     public void RetryLevel() {
         Time.timeScale = 1f;
-        //SceneManager.LoadScene("Intro_Scene");
-        SceneManager.LoadScene("Main_Menu_Scene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name.ToString());
     }
 }
