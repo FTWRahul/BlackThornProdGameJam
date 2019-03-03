@@ -305,12 +305,11 @@ public class GameManager : MonoBehaviour
                     globalMng.blnMedal3 = true;
                 } else if (currentLevel == level4) {
                     globalMng.blnMedal4 = true;
-                }
-                //else if (currentLevel == level5) {
-                //    globalMng.blnMedal5 = true;
+                } else if (currentLevel == level5) {
+                    globalMng.blnMedal5 = true;
                 //}else if (currentLevel == "Scene_Vinicius") {
                 //    globalMng.blnMedal5 = true;
-                //}
+                }
                 globalMng.UnlockLevel5();
             }
         }
