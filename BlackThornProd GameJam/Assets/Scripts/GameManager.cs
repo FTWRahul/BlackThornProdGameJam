@@ -290,14 +290,15 @@ public class GameManager : MonoBehaviour
 
     // Check what is the current level and award the proper medal
     public void AwardMedal() {
-        for (int i = 0; i < objPlanet.Count; i++) {
+        //for (int i = 0; i < objPlanet.Count; i++) {
             // Check if there are dead planets
-            blnAllPlanetsAlive = blnAllPlanetsAlive && !objPlanet[i].blnDead;
+            //blnAllPlanetsAlive = blnAllPlanetsAlive && !objPlanet[i].blnDead;
 
             if (blnAllPlanetsAlive) { // Give the proper medal
                 Debug.Log("MEDAL HERE!!");
-                Debug.Log(currentLevel);
+                
                 if (currentLevel == level1) {
+                    Debug.Log(currentLevel);
                     globalMng.blnMedal1 = true;
                 } else if (currentLevel == level2) {
                     globalMng.blnMedal2 = true;
@@ -312,7 +313,7 @@ public class GameManager : MonoBehaviour
                 }
                 globalMng.UnlockLevel5();
             }
-        }
+        //}
     }
 
     public void CheckPauseState()

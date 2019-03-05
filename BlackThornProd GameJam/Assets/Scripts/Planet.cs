@@ -101,6 +101,7 @@ public class Planet : MonoBehaviour {
                 {
                     blnDead = true;
                     hitSound.Play();
+                    gameMng.blnAllPlanetsAlive = false;
 
                     anim.SetTrigger("Damaged3");
                     bool blnAllDead = true;
